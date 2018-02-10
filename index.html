@@ -27,11 +27,12 @@
                     <li id="nav5" onclick="target('li5')"><a>Get IID Windows<span class="float-right"><i class="glyphicon glyphicon-education"></i></span></a></li>
                     <li id="nav6" onclick="target('li6')"><a>Remove Windows Defender<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
                     <li id="nav7" onclick="target('li7')"><a>Remove Internet Explorer<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
+                    <li id="nav8" onclick="target('li8')"><a>Remove Contact Support<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
                 </ul>
             </div>
             <div class="col-sm-10">
                 <h2>Your code will appear here / Environment : Command Script</h2>
-                <pre id="code"></pre>
+                <pre id="code" class="bash"></pre>
                 <button type="button" class="btn btn-primary" id="btnCopy" data-clipboard-target="#code">COPY</button>
                 <div id="hidden">
                     <pre id="li1">:: Author - Hung Hoang
@@ -425,6 +426,42 @@ for /f "tokens=7-10 delims=-~." %%b in ("%pack%") do (set vers=%%b.%%c.%%d.%%e)
 set packremove=(Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~%vers%,Microsoft-Windows-InternetExplorer-Optional-Package~31bf3856ad364e35~%arch%~~%vers%)
  
 for /d %%b in %packremove% do (
+echo ========================================================================
+echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f
+echo.
+echo ========================================================================
+echo Removing package %%b...
+dism /online /remove-package /packagename:%%b /NoRestart
+)
+echo ========================================================================
+pause</pre><pre id="li8">:: Made by Hoang Hung
+:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
+:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
+
+@echo off
+ 
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+ echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+ echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+ "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+ 
+Title Remove Contact Support
+ 
+for /f "tokens=2*" %%e in ('reg query "HKEY_CLASSES_ROOT\CLSID\{5FDD51E2-A9D0-44CE-8C8D-162BA0C591A0}" /v "Version"') do set vers=%%f
+ 
+if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arc=amd64) else (set arc=x86)
+ 
+echo.
+echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications\windows.contactsupport_%vers%_neutral_neutral_cw5n1h2txyewy " /f
+ 
+set pack=(Microsoft-Windows-ContactSupport-Package~31bf3856ad364e35~%arc%~~%vers%)
+ 
+for /d %%b in %pack% do (
 echo ========================================================================
 echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f
