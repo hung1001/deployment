@@ -1,10 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <title>Deployment in hung1001</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./lib/css.css">
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="./lib/favicon.ico">
+    <script src="./lib/jquery-3.3.1.min.js"></script>
+    <script src="./lib/SmoothScroll.min.js"></script>
+    <script src="./lib/clipboard.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-	
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="https://hung1001.github.io">Home<span class="float-right"><i class="glyphicon glyphicon-home"></i></span></a></li>
+                    <li id="nav2" onclick="target('li1')"><a>Auto change file name<span class="float-right "><i class="glyphicon glyphicon-refresh"></i></span></a></li>
+                    <li id="nav2" onclick="target('li2')"><a>Get IID Office<span class="float-right "><i class="glyphicon glyphicon-bookmark"></i></span></a></li>
+                    <li id="nav3" onclick="target('li3')"><a>Install key &amp; Get IID Office<span class="float-right "><i class="glyphicon glyphicon-asterisk"></i></span></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-10">
+                <h2>Your Code</h2>
+                <pre id="code"></pre>
+                <button type="button" class="btn btn-primary" id="btnCopy" data-clipboard-target="#code">COPY</button>
+                <div id="hidden">
+                    <pre id="li1">:: Author - Hung Hoang
+@echo off
+pushd %~dp0
+set /a var=0
+setlocal enabledelayedexpansion
+for /f %%a in ('dir /b *.phan_mo_rong') do (
+ set /a var+=1
+ ren "%%a " "[ten_tuy_thich]!var!.phan_mo_rong "
+)
+exit /b</pre>
+                    <pre id="li2">:: Made by Hoang Hung
+:: Homepage: https://hung1001nd.blogspot.com
+@echo off
+color 0f
+pushd "%~dp0 "
+title Get IID Office 2010-2013-2016
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe " "%SYSTEMROOT%\system32\config\system "
+if "%errorlevel% " NEQ "0 " (
+ echo: Set UAC = CreateObject^("Shell.Application "^) > "%temp%\getadmin.vbs "
+ echo: UAC.ShellExecute "%~s0 ", " ", " ", "runas ", 1 >> "%temp%\getadmin.vbs "
+ "%temp%\getadmin.vbs " & exit 
+)
+if exist "%temp%\getadmin.vbs " del /f /q "%temp%\getadmin.vbs "
+ 
+setLocal EnableDelayedExpansion
+set ver=(4,5,6)
+for /d %%a in %ver% do call:path "%%a "
+start %~dp0id.txt
+timeout 2 >nul 
+del /f %~dp0id.txt
+exit
+ 
+:path
+if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs " (
+ cd /d "C:\Program Files\Microsoft Office\Office1%~1 "
+ call:getID "%~1 "
+)
+ 
+if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs " (
+ cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1 "
+ call:getID "%~1 "
+)
+goto:eof
+ 
+:getID
+for /f "tokens=4-8 delims=:, " %%b in ('cscript //nologo ospp.vbs /dinstid ^| findstr /i "Installation ID "') do (
+ set id=%%f
+ if %~1 EQU 4 (
+  set id1=!id:~0,6!& set id2=!id:~6,6!& set id3=!id:~12,6!& set id4=!id:~18,6!& set id5=!id:~24,6!& set id6=!id:~30,6!& set id7=!id:~36,6!& set id8=!id:~42,6!& set id9=!id:~48,6!
+  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt 
+ ) else (
+  set id1=!id:~0,7!& set id2=!id:~7,7!& set id3=!id:~14,7!& set id4=!id:~21,7!& set id5=!id:~28,7!& set id6=!id:~35,7!& set id7=!id:~42,7!& set id8=!id:~49,7!& set id9=!id:~56,7!
+  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt
+ )
+)
+exit /b</pre><pre class="li3 ">:: Made by Hoang Hung
+:: Homepage: https://hung1001nd.blogspot.com
+@echo off
+color 0f
+ 
+:: ########## Paste key here ########## 
+:: 1 key
+set keyoff14=(Key1)
+:: 2 key
+set keyoff15=(Key1,Key2)
+:: 3 key
+set keyoff16=(Key1,Key2,Key3)
+:: ########## Paste key here ########## 
+ 
+pushd "%~dp0 "
+title Install key ^& Get IID Office 2010-2013-2016
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe " "%SYSTEMROOT%\system32\config\system "
+if "%errorlevel% " NEQ "0 " (
+ echo: Set UAC = CreateObject^("Shell.Application "^) > "%temp%\getadmin.vbs "
+ echo: UAC.ShellExecute "%~s0 ", " ", " ", "runas ", 1 >> "%temp%\getadmin.vbs "
+ "%temp%\getadmin.vbs " & exit 
+)
+if exist "%temp%\getadmin.vbs " del /f /q "%temp%\getadmin.vbs "
+ 
+setLocal EnableDelayedExpansion
+set ver=(4,5,6)
+for /d %%a in %ver% do call:path "%%a "
+start %~dp0id.txt
+timeout 2 >nul 
+del /f %~dp0id.txt
+exit
+ 
+:path
+if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs " (
+ cd /d "C:\Program Files\Microsoft Office\Office1%~1 "
+ call:getID "%~1 "
+)
+if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs " (
+ cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1 "
+ call:getID "%~1 "
+)
+goto:eof
+ 
+:getID
+if %~1 equ 4 (
+  for /d %%c in %keyoff14% do (
+   echo Installing key %%c...
+   cscript //nologo ospp.vbs /inpkey:%%c | find "key "
+  )
+ )
+if %~1 equ 5 (
+  for /d %%c in %keyoff15% do (
+   echo Installing key %%c...
+   cscript //nologo ospp.vbs /inpkey:%%c | find "key "
+  )
+ )
+if %~1 equ 6 (
+  for /d %%c in %keyoff16% do (
+   echo Installing key %%c...
+   cscript //nologo ospp.vbs /inpkey:%%c | find "key "
+  )
+ )
+for /f "tokens=4-8 delims=:, " %%b in ('cscript //nologo ospp.vbs /dinstid ^| findstr /i "Installation ID "') do (
+ set id=%%f
+ if %~1 EQU 4 (
+  set id1=!id:~0,6!& set id2=!id:~6,6!& set id3=!id:~12,6!& set id4=!id:~18,6!& set id5=!id:~24,6!& set id6=!id:~30,6!& set id7=!id:~36,6!& set id8=!id:~42,6!& set id9=!id:~48,6!
+  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt 
+ ) else (
+  set id1=!id:~0,7!& set id2=!id:~7,7!& set id3=!id:~14,7!& set id4=!id:~21,7!& set id5=!id:~28,7!& set id6=!id:~35,7!& set id7=!id:~42,7!& set id8=!id:~49,7!& set id9=!id:~56,7!
+  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt
+ )
+)
+exit /b</pre><pre id="li3">:: Made by Hoang Hung
+:: Homepage: https://hung1001nd.blogspot.com
+@echo off
+color 0f
+ 
+:: ########## Paste key here ########## 
+:: 1 key
+set keyoff14=(Key1)
+:: 2 key
+set keyoff15=(Key1,Key2)
+:: 3 key
+set keyoff16=(Key1,Key2,Key3)
+:: ########## Paste key here ########## 
+ 
+pushd "%~dp0"
+title Install key ^& Get IID Office 2010-2013-2016
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+ echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+ echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+ "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+ 
+setLocal EnableDelayedExpansion
+set ver=(4,5,6)
+for /d %%a in %ver% do call:path "%%a"
+start %~dp0id.txt
+timeout 2 >nul 
+del /f %~dp0id.txt
+exit
+ 
+:path
+if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
+ cd /d "C:\Program Files\Microsoft Office\Office1%~1"
+ call:getID "%~1"
+)
+if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
+ cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
+ call:getID "%~1"
+)
+goto:eof
+ 
+:getID
+if %~1 equ 4 (
+  for /d %%c in %keyoff14% do (
+   echo Installing key %%c...
+   cscript //nologo ospp.vbs /inpkey:%%c | find "key"
+  )
+ )
+if %~1 equ 5 (
+  for /d %%c in %keyoff15% do (
+   echo Installing key %%c...
+   cscript //nologo ospp.vbs /inpkey:%%c | find "key"
+  )
+ )
+if %~1 equ 6 (
+  for /d %%c in %keyoff16% do (
+   echo Installing key %%c...
+   cscript //nologo ospp.vbs /inpkey:%%c | find "key"
+  )
+ )
+for /f "tokens=4-8 delims=:, " %%b in ('cscript //nologo ospp.vbs /dinstid ^| findstr /i "Installation ID"') do (
+ set id=%%f
+ if %~1 EQU 4 (
+  set id1=!id:~0,6!& set id2=!id:~6,6!& set id3=!id:~12,6!& set id4=!id:~18,6!& set id5=!id:~24,6!& set id6=!id:~30,6!& set id7=!id:~36,6!& set id8=!id:~42,6!& set id9=!id:~48,6!
+  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt 
+ ) else (
+  set id1=!id:~0,7!& set id2=!id:~7,7!& set id3=!id:~14,7!& set id4=!id:~21,7!& set id5=!id:~28,7!& set id6=!id:~35,7!& set id7=!id:~42,7!& set id8=!id:~49,7!& set id9=!id:~56,7!
+  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt
+ )
+)
+exit /b</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='backTop'>
+        <a href='#' id='backTop'>
+  <span id='backTopBackground'></span>
+ <i class="glyphicon glyphicon-chevron-up "></i>
+ </a>
+    </div>
+    <script src="./lib/js.js "></script>
 </body>
+
 </html>
