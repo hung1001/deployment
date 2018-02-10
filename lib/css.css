@@ -20,12 +20,16 @@
     margin: 23px 0 0
 }
 
+.nav-pills>li:last-child {
+    margin: 0 0 23px
+}
+
 .nav>li>a {
     font-size: 13px !important
 }
 
 #code {
-    height: 38em
+    height: 36em
 }
 
 #hidden {
@@ -37,7 +41,7 @@
 }
 
 .row.content {
-    height: 1000px;
+    /* height: 1000px; */
 }
 
 .sidenav {
@@ -50,6 +54,15 @@
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
     background-color: #337ab7 !important;
+}
+
+footer {
+    background: transparent;
+    padding: 5px 0
+}
+
+footer i {
+    top: 3px !important
 }
 
 @media screen and (max-width: 767px) {
