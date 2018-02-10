@@ -25,6 +25,8 @@
                     <li id="nav3" onclick="target('li3')"><a>Install key &amp; Get IID Office<span class="float-right"><i class="glyphicon glyphicon-asterisk"></i></span></a></li>
                     <li id="nav4" onclick="target('li4')"><a>Auto activate Office VL<span class="float-right"><i class="glyphicon glyphicon-move"></i></span></a></li>
                     <li id="nav5" onclick="target('li5')"><a>Get IID Windows<span class="float-right"><i class="glyphicon glyphicon-education"></i></span></a></li>
+                    <li id="nav6" onclick="target('li6')"><a>Remove Windows Defender<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
+                    <li id="nav7" onclick="target('li7')"><a>Remove Internet Explorer<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
                 </ul>
             </div>
             <div class="col-sm-10">
@@ -355,7 +357,84 @@ for /f "tokens=3" %i in ('cscript //nologo %windir%\system32\slmgr.vbs /dti') do
 if %ver% LEQ 7601 ((echo Key: %key%&echo.&echo Installation ID: %id:~0,6%-%id:~6,6%-%id:~12,6%-%id:~18,6%-%id:~24,6%-%id:~30,6%-%id:~36,6%-%id:~42,6%-%id:~48,6%)> id.txt) else (
 (echo Key: %key%&echo.&echo Installation ID: %id:~0,7%-%id:~7,7%-%id:~14,7%-%id:~21,7%-%id:~28,7%-%id:~35,7%-%id:~42,7%-%id:~49,7%-%id:~56,7%)> id.txt)
 start id.txt&timeout 2 >nul&del /f /q %windir%\system32\id.txt
-cls</pre>
+cls</pre><pre id="li6">:: Made by Hoang Hung
+:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
+:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
+
+@echo off
+ 
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+ echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+ echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+ "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+ 
+Title Remove Windows Defender
+ 
+for /f "tokens=2*" %%e in ('reg query "HKEY_CLASSES_ROOT\CLSID\{5FDD51E2-A9D0-44CE-8C8D-162BA0C591A0}" /v "Version"') do set vers=%%f
+ 
+if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arc=amd64) else (set arc=x86)
+ 
+echo.
+echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications\Microsoft.Windows.SecHealthUI_%vers%_neutral_neutral_cw5n1h2txyewy" /f >nul 2>&1
+ 
+reg delete "HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\EPP" /f >nul 2>&1
+reg delete "HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\EPP" /f >nul 2>&1
+reg delete "HKEY_CLASSES_ROOT\Drive\shellex\ContextMenuHandlers\EPP" /f >nul 2>&1
+ 
+set pack=(Windows-Defender-AM-Default-Definitions-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-ApplicationGuard-Inbox-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Client-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-CloudClean-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Core-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Core-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Core-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Group-Policy-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-MDM-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Powershell-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Nis-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Shield-Provider-Core-Package~31bf3856ad364e35~%arc%~~%vers%)
+ 
+for /d %%b in %pack% do (
+echo ========================================================================
+echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f >nul 2>&1
+)
+ 
+set packremove=(Windows-Defender-AM-Default-Definitions-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-ApplicationGuard-Inbox-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Client-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Group-Policy-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Shield-Provider-Core-Package~31bf3856ad364e35~%arc%~~%vers%)
+ 
+for /d %%c in %packremove% do (
+echo ========================================================================
+echo Removing package %%c...
+dism /online /remove-package /packagename:%%c /NoRestart
+)
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT" /v DontOfferThroughWUAU /t REG_DWORD /d 1 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "SettingsPageVisibility" /t REG_SZ /d "hide:windowsdefender" /f >nul 2>&1
+echo ========================================================================
+pause</pre><pre id="li7">:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
+	
+@echo off
+ 
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+ echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+ echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+ "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+ 
+title Remove Internet Explorer
+ 
+if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arch=amd64) else (set arch=x86)
+ 
+for /f "tokens=10 delims=\ " %%a in ('reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages" ^| find /i "Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~"') do (set pack=%%a)
+for /f "tokens=7-10 delims=-~." %%b in ("%pack%") do (set vers=%%b.%%c.%%d.%%e)
+ 
+set packremove=(Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~%vers%,Microsoft-Windows-InternetExplorer-Optional-Package~31bf3856ad364e35~%arch%~~%vers%)
+ 
+for /d %%b in %packremove% do (
+echo ========================================================================
+echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f
+echo.
+echo ========================================================================
+echo Removing package %%b...
+dism /online /remove-package /packagename:%%b /NoRestart
+)
+echo ========================================================================
+pause</pre>
                 </div>
             </div>
         </div>
