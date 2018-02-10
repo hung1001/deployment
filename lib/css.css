@@ -10,6 +10,14 @@
     cursor: pointer
 }
 
+.nav-pills>li:first-child {
+    margin: 23px 0 0
+}
+
+.nav>li>a {
+    padding: 10px 20px !important;
+}
+
 #code {
     height: 38em
 }
@@ -35,7 +43,7 @@
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-    background-color: ##007bff;
+    background-color: #337ab7 !important;
 }
 
 @media screen and (max-width: 767px) {
