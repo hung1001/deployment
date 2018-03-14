@@ -12,6 +12,9 @@
     background: #444
 }
 
+a:hover{
+    text-decoration: none !important
+}
 .nav-pills>li>a {
     cursor: pointer
 }

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Windows command library</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+    	<h2 class="text-center">Windows activation command library</h2>
+        <div class="row"><pre>Windows Software Licensing Management Tool
+
+Usage: slmgr.vbs [MachineName [User Password]] [&lt;Option&gt;]
+
+           MachineName: Name of remote machine (default is local machine)
+
+           User:        Account with required privilege on remote machine
+
+           Password:    password for the previous account
+
+
+
+Global Options:
+
+/ipk &lt;Product Key&gt;
+
+    Install product key (replaces existing key)
+
+/ato [Activation ID]
+
+    Activate Windows
+
+/dli [Activation ID | All]
+
+    Display license information (default: current license)
+
+/dlv [Activation ID | All]
+
+    Display detailed license information (default: current license)
+
+/xpr [Activation ID]
+
+    Expiration date for current license state
+</pre></div><hr />
+        <div class="row"><pre>Advanced Options:
+
+/cpky 
+
+    Clear product key from the registry (prevents disclosure attacks)
+
+/ilc &lt;License file&gt;
+
+    Install license
+
+/rilc 
+
+    Re-install system license files
+
+/rearm 
+
+    Reset the licensing status of the machine
+
+/upk [Activation ID]
+
+    Uninstall product key
+
+
+
+/dti [Activation ID]
+
+    Display Installation ID for offline activation
+
+/atp &lt;Confirmation ID&gt; [Activation ID]
+
+    Activate product with user-provided Confirmation ID
+
+
+
+Volume Licensing: Key Management Service (KMS) Client Options:
+
+/skms &lt;Name[:Port] | : port&gt; [Activation ID] [Activation ID]
+
+    Set the name and/or the port for the KMS computer this machine will use. IPv6 address must be specified in the format [hostname]:port
+
+/ckms [Activation ID]
+
+    Clear name of KMS computer used (sets the port to the default)
+
+/skhc 
+
+    Enable KMS host caching
+
+/ckhc 
+
+    Disable KMS host caching
+</pre></div><hr />
+        <div class="row"><pre>
+Volume Licensing: Token-based Activation Options:
+
+/lil 
+
+    List installed Token-based Activation Issuance Licenses
+
+/ril &lt;ILID&gt; &lt;ILvID&gt;
+
+    Remove installed Token-based Activation Issuance License
+
+/ctao 
+
+    Clear Token-based Activation Only flag (default)
+
+/stao 
+
+    Set Token-based Activation Only flag
+
+/ltc 
+
+    List Token-based Activation Certificates
+
+/fta &lt;Certificate Thumbprint&gt; [&lt;PIN&gt;]
+
+    Force Token-based Activation
+</pre></div><hr />
+        <div class="row"><pre>Volume Licensing: Key Management Service (KMS) Options:
+
+/sprt &lt;Port&gt;
+
+    Set TCP port KMS will use to communicate with clients
+
+/sai &lt;Activation Interval&gt;
+
+    Set interval (minutes) for unactivated clients to attempt KMS connection. The activation interval must be between 15 minutes (min) and 30 days (max) although the default (2 hours) is recommended.
+
+/sri &lt;Renewal Interval&gt;
+
+    Set renewal interval (minutes) for activated clients to attempt KMS connection. The renewal interval must be between 15 minutes (min) and 30 days (max) although the default (7 days) is recommended.
+
+/sdns 
+
+    Enable DNS publishing by KMS (default)
+
+/cdns 
+
+    Disable DNS publishing by KMS
+
+/spri 
+
+    Set KMS priority to normal (default)
+
+/cpri 
+
+    Set KMS priority to low
+</pre></div><hr />
+        <div class="row"><pre>Volume Licensing: Active Directory (AD) Activation Options:
+
+/ad-activation-online &lt;Product Key&gt; [Activation Object name]
+
+    Activate AD (Active Directory) forest with user-provided product key
+
+/ad-activation-get-iid &lt;Product Key&gt;
+
+    Display Installation ID for AD (Active Directory) forest
+
+/ad-activation-apply-cid &lt;Product Key&gt; &lt;Confirmation ID&gt; [Activation Object name]
+
+    Activate AD (Active Directory) forest with user-provided product key and Confirmation ID
+
+/ao-list 
+
+    Display Activation Objects in AD (Active Directory)
+
+/del-ao &lt;Activation Object DN | Activation Object RDN&gt;
+
+    Delete Activation Objects in AD (Active Directory) for user-provided Activation Object</pre></div>
+    </div>
+</body>
+
+</html>
