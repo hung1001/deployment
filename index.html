@@ -547,12 +547,8 @@ echo ========================================================
 echo Checking license...
 echo ========================================================&echo.
 for %%a in %ver% do (
-if exist "%ProgramFiles%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft 
-
-Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus)
-if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%
-
-\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus))
+if exist "%ProgramFiles%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus)
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus))
 echo.&echo ========================================================
 set /p key=Enter last 5 characters of installed product key: 
 echo ========================================================
