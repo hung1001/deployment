@@ -32,6 +32,7 @@
                     <li id="nav9" onclick="target('li9')"><a>Auto checking License Office<span class="float-right"><i class="glyphicon glyphicon-signal"></i></span></a></li>
                     <li id="nav10" onclick="target('li10')"><a>Auto activate Office 2016 Retail<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
                     <li id="nav11" onclick="target('li11')"><a>Auto activate Office 2016 VL<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
+                    <li id="nav12" onclick="target('li12')"><a>Remove Office Product Key<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
                 </ul>
             </div>
             <div class="col-sm-10">
@@ -532,7 +533,35 @@ if "%version%" EQU "Office16VisioProVL" cscript //nologo %folder%\ospp.vbs" /inp
 if "%version%" EQU "Office16StandardVL" cscript //nologo %folder%\ospp.vbs" /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM
 if "%version%" EQU "Office16ProjectStdVL" cscript //nologo %folder%\ospp.vbs" /inpkey:GNFHQ-F6YQM-KQDGJ-327XX-KQBVC
 if "%version%" EQU "Office16VisioStdVL" cscript //nologo %folder%\ospp.vbs" /inpkey:7WHWN-4T7MP-G96JF-G33KR-W8GF4
-goto:eof</pre>
+goto:eof</pre><pre id="li12">:: Author - Hoang Hung
+@echo off
+Title Remove Office Product Key
+color 0f
+::----------------------------------------------------------
+:: Update version here
+set ver=(4,5,6)
+::----------------------------------------------------------
+:main
+cls
+echo ========================================================
+echo Checking license...
+echo ========================================================&echo.
+for %%a in %ver% do (
+if exist "%ProgramFiles%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft 
+
+Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus)
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%
+
+\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus))
+echo.&echo ========================================================
+set /p key=Enter last 5 characters of installed product key: 
+echo ========================================================
+echo Removing product key %key%
+echo.&cscript //nologo OSPP.VBS /unpkey:%key%
+echo.&echo ========================================================
+CHOICE /C YN /M "Do you want to continue: "
+IF %ERRORLEVEL%==1 GOTO:main
+IF %ERRORLEVEL%==2 GOTO:EOF</pre>
                 </div>
             </div>
         </div>
