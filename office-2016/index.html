@@ -14,13 +14,14 @@
         background: #337ab7
     }
 
+    .navbar-brand {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
     .navbar-brand,
     .navbar-default .navbar-nav>li>a {
         color: #fff !important;
-    }
-
-    .text-center {
-        font-size: 18px
     }
 
     #BackToTop {
@@ -108,23 +109,23 @@
         transition: 0s
     }
 
-    ::-webkit-scrollbar-track {
+     ::-webkit-scrollbar-track {
         background-color: #fff;
         border-left: 1px solid #e1e1e1;
         border-right: 1px solid #e1e1e1
     }
 
-    ::-webkit-scrollbar-thumb:active {
+     ::-webkit-scrollbar-thumb:active {
         background: #aaa;
         -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3)
     }
 
-    ::-webkit-scrollbar {
+     ::-webkit-scrollbar {
         height: 9px;
         width: 9px
     }
 
-    ::-webkit-scrollbar-thumb {
+     ::-webkit-scrollbar-thumb {
         background: #337ab7
     }
     </style>
@@ -144,9 +145,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117"><i class="glyphicon glyphicon-star"></i> Deployment Tool</a></li>
-                    <li><a href="https://docs.microsoft.com/en-us/DeployOffice/configuration-options-for-the-office-2016-deployment-tool"><i class="glyphicon glyphicon-education"></i> Reference for Click-to-Run</a></li>
-                    <li><a href="https://support.office.com/en-us/article/uninstall-office-from-a-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8"><i class="glyphicon glyphicon-remove"></i> Uninstall Office</a></li>
+                    <li><a target="blank" href="https://www.microsoft.com/en-us/download/details.aspx?id=49117"><i class="glyphicon glyphicon-star"></i> Deployment Tool</a></li>
+                    <li><a target="blank" href="https://docs.microsoft.com/en-us/DeployOffice/configuration-options-for-the-office-2016-deployment-tool"><i class="glyphicon glyphicon-education"></i> Reference for Click-to-Run</a></li>
+                    <li><a target="blank" href="https://support.office.com/en-us/article/uninstall-office-from-a-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8"><i class="glyphicon glyphicon-remove"></i> Uninstall Office</a></li>
                 </ul>
             </div>
         </div>
@@ -180,7 +181,7 @@
                         </div>
                     </form>
                     <hr />
-                    <h4>Choose your apps you want to install: </h4>
+                    <h4>Choose apps you want to install: </h4>
                     <form>
                         <div class="checkbox">
                             <label>
@@ -298,7 +299,50 @@
             </div>
         </div>
         <hr />
-        <div class="row"></div>
+        <div class="row">
+            <h2 class="text-center">Directory</h2>
+            <pre>For Windows 32-bit
+              \----folder
+                   +---configuration.xml
+                   +---setup.cmd
+                   +---setup.exe
+                   +---office
+                       +---data
+                           +---v32.cab
+                           +---v32_build.cab
+                           +---build
+                               +---fre.cab
+                               +---i320.cab
+                               +---i321033.cab
+                               +---s320.cab
+                               +---s321033.cab
+                               +---stream.x86.en-us.dat
+                               +---stream.x86.en-US.dat.cobra
+                               +---stream.x86.x-none.dat
+                               +---stream.x86.x-none.dat.cobra
+            </pre>
+            <hr />
+            <pre>For Windows 64-bit
+              \----folder
+                   +---configuration.xml
+                   +---setup.cmd
+                   +---setup.exe
+                   +---office
+                       +---data
+                           +---v64.cab
+                           +---v64_build.cab
+                           +---build
+                               +---fre.cab
+                               +---i640.cab
+                               +---i641033.cab
+                               +---s640.cab
+                               +---s641033.cab
+                               +---stream.x64.en-us.dat
+                               +---stream.x64.en-US.dat.cobra
+                               +---stream.x64.x-none.dat
+                               +---stream.x64.x-none.dat.cobra
+            </pre>
+        </div>
     </div>
     <footer class="footer-bottom">
         <hr />
