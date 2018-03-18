@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Make configuration.xml Office 2016</title>
+    <script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../lib/clipboard.min.js"></script>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="../lib/favicon.png">
+    <style type="text/css">
+    .navbar-default {
+        background: #337ab7
+    }
+
+    .navbar-brand,
+    .navbar-default .navbar-nav>li>a {
+        color: #fff !important;
+    }
+
+    .text-center {
+        font-size: 18px
+    }
+
+    #BackToTop {
+        overflow: hidden;
+        position: fixed;
+        transform: scale(0);
+        z-index: 90;
+        right: 28px;
+        bottom: 31px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        width: 55px;
+        height: 55px;
+        color: #fff;
+        text-align: center;
+        background-color: #444444;
+        font-size: 22px;
+        line-height: 52px;
+        cursor: pointer;
+        border-radius: 100%;
+        transition: all .2s ease-in-out
+    }
+
+    #BackToTop i {
+        color: #fff!important
+    }
+
+    #BackToTop:hover {
+        transform: scale(1.1)!important
+    }
+
+    #BackToTop.active {
+        transform: scale(1)
+    }
+
+    .waves-effect {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        vertical-align: middle;
+        z-index: 1;
+        will-change: opacity, transform;
+        -webkit-transition: all .2s ease-out;
+        -moz-transition: all .2s ease-out;
+        -o-transition: all .2s ease-out;
+        -ms-transition: all .2s ease-out;
+        transition: all .2s ease-out
+    }
+
+    .waves-effect.waves-light {
+        background-color: rgba(255, 255, 255, 0.45)
+    }
+
+    .ripple {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0)
+    }
+
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s
+    }
+
+    .ripple:active:after {
+        transform: scale(0, 0);
+        opacity: .2;
+        transition: 0s
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #fff;
+        border-left: 1px solid #e1e1e1;
+        border-right: 1px solid #e1e1e1
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background: #aaa;
+        -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3)
+    }
+
+    ::-webkit-scrollbar {
+        height: 9px;
+        width: 9px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #337ab7
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="javascript:void(0)">OFFICE 2016 CONFIGURATION</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117"><i class="glyphicon glyphicon-star"></i> Deployment Tool</a></li>
+                    <li><a href="https://docs.microsoft.com/en-us/DeployOffice/configuration-options-for-the-office-2016-deployment-tool"><i class="glyphicon glyphicon-education"></i> Reference for Click-to-Run</a></li>
+                    <li><a href="https://support.office.com/en-us/article/uninstall-office-from-a-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8"><i class="glyphicon glyphicon-remove"></i> Uninstall Office</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="clear: both;margin: 4em 0"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="col-lg-6">
+                    <h4>Choose your edition: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="edition" value="ProPlusRetail" />Office 2016 Pro Plus</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="edition" value="O365ProPlusRetail" checked="" id="rad1" />Office 365 Pro Plus</label>
+                        </div>
+                    </form>
+                    <hr />
+                    <h4>Choose your platform: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform" value="32" id="rad8" />32-bit</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform" value="64" checked="" id="rad2" />64-bit</label>
+                        </div>
+                    </form>
+                    <hr />
+                    <h4>Choose your apps you want to install: </h4>
+                    <form>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Access" id="checkAccess" class="checkAllApps">Access</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Excel" id="checkExcel" class="checkAllApps">Excel</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Groove" id="checkGroove" class="checkAllApps">Groove (OneDrive for Business)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Lync" id="checkLync" class="checkAllApps">Lync (Skype for Busines)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="OneDrive" id="checkOneDrive" class="checkAllApps">OneDrive</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="OneNote" id="checkOneNote" class="checkAllApps">OneNote</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Outlook" id="checkOutlook" class="checkAllApps">Outlook</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="PowerPoint" id="checkPowerPoint" class="checkAllApps">PowerPoint</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Publisher" id="checkPublisher" class="checkAllApps">Publisher</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="Word" id="checkWord" class="checkAllApps">Word</label>
+                        </div>
+                        <a href="javascript:void(0)" id="checkAllApps">Check All</a> |
+                        <a href="javascript:void(0)" id="uncheckAllApps">Uncheck All</a>
+                    </form>
+                    <hr />
+                    <h4>[Extra] Want to install Project or Visio: </h4>
+                    <form>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" class="checkAllApps1" id="project">Project Pro</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" class="checkAllApps1" id="visio">Visio Pro</label>
+                        </div>
+                        <a href="javascript:void(0)" id="checkAllApps1">Check All</a> |
+                        <a href="javascript:void(0)" id="uncheckAllApps1">Uncheck All</a>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Choose your channel: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel" checked="" value="Current" id="rad3">Curent/RTM</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel" value="InsiderFast" id="rad4">Insider Fast Ring</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel" value="FirstReleaseCurrent" id="rad5">Insider Slow Ring</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel" value="Deferred" id="rad6">Business</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel" value="FirstReleaseDeferred" id="rad7">Business Insider</label>
+                        </div>
+                    </form>
+                    <hr />
+                    <h4>Get lastet build here: </h4>
+                    <ul>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=492350f6-3a01-4f97-b9c0-c7c6ddf67d60">Curent/RTM</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=5440fd1f-7ecb-4221-8110-145efaa6372f">Insider Fast Ring</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=64256afe-f5d9-4f86-8936-8840a6a4f5be">Insider Slow Ring</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=7ffbc6bf-bc32-4f92-8982-f9dd17fd3114">Business</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=b8f9b850-328d-4355-9145-c59439a0c4cf">Business Insider</a></li>
+                    </ul>
+                    <h4>Enter build: </h4>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="usr" required="">
+                        </div>
+                    </form>
+                </div>
+                <br />
+                <button class="btn btn-primary" id="generator">Generator</button>
+                <button class="btn btn-danger" id="reset">Reset</button>
+            </div>
+            <div class="col-lg-6">
+                <h4>Configuration.xml</h4>
+                <textarea id="config" class="form-control" rows="10"></textarea>
+                <br />
+                <button class="btn btn-success" id="copy-config" data-clipboard-target="#config">COPY</button>
+                <hr />
+                <h4>Link download</h4>
+                <textarea id="linkdown" class="form-control" rows="10"></textarea>
+                <br />
+                <button class="btn btn-success" id="copy-linkdown" data-clipboard-target="#linkdown">COPY</button>
+                <hr />
+            </div>
+        </div>
+        <hr />
+        <div class="row"></div>
+    </div>
+    <footer class="footer-bottom">
+        <hr />
+        <div class="copyright-container">
+            <p class="text-center">©
+                <script type="text/javascript">
+                document.write(new Date().getFullYear())
+                </script> by <a href="https://hung1001nd.blogspot.com">Hưng Hoàng Văn</a></p>
+        </div>
+        <hr />
+    </footer>
+    <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
+    <script type="text/javascript">
+    jQuery(document).ready(function(e) {
+        var t = e("#BackToTop");
+        e(window).scroll(function() {
+            e(this).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active")
+        });
+        t.click(function(t) {
+            t.preventDefault();
+            e("html,body").animate({
+                    scrollTop: 0
+                },
+                800)
+        })
+    })
+    var x1 = document.getElementById("checkAccess");
+    var x2 = document.getElementById("checkExcel");
+    var x3 = document.getElementById("checkGroove");
+    var x4 = document.getElementById("checkLync");
+    var x5 = document.getElementById("checkOneDrive");
+    var x6 = document.getElementById("checkOneNote");
+    var x7 = document.getElementById("checkOutlook");
+    var x8 = document.getElementById("checkPowerPoint");
+    var x9 = document.getElementById("checkPublisher");
+    var x10 = document.getElementById("checkWord");
+    var x11 = document.getElementById("project");
+    var x12 = document.getElementById("visio");
+    var result = '';
+    var link = '';
+    $(document).ready(function() {
+        new Clipboard('#copy-config,#copy-linkdown');
+        $("#generator").click(function() {
+            if (x1.checked == false && x2.checked == false && x3.checked == false && x4.checked == false && x5.checked == false && x6.checked == false && x7.checked == false && x8.checked == false && x9.checked == false && x10.checked == false) {
+                alert('Please choose minimize 1 apps to install');
+            } else {
+                $("#config").val('');
+                var radios = document.getElementsByName('edition');
+                var radios1 = document.getElementsByName('platform');
+                var radios2 = document.getElementsByName('channel');
+
+                for (var i = 0; i < radios1.length; i++) {
+                    for (var j = 0; j < radios2.length; j++) {
+                        if (radios1[i].checked) {
+                            if (radios2[j].checked) {
+                                result += '<Configuration>\n    <Add OfficeClientEdition="' + radios1[i].value + '" Channel="' + radios2[j].value + '">\n';
+                                break;
+                            }
+
+                        }
+                    }
+
+                }
+
+                for (var i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        result += '        <Product ID="' + radios[i].value + '">\n';
+                        break;
+                    }
+                }
+                result += '            <Language ID="en-us"/>\n';
+                if (x1.checked == false) result += '            <ExcludeApp ID="Access"/>\n';
+                if (x2.checked == false) result += '            <ExcludeApp ID="Excel"/>\n';
+                if (x3.checked == false) result += '            <ExcludeApp ID="Groove"/>\n';
+                if (x4.checked == false) result += '            <ExcludeApp ID="Lync"/>\n';
+                if (x5.checked == false) result += '            <ExcludeApp ID="OneDrive"/>\n';
+                if (x6.checked == false) result += '            <ExcludeApp ID="OneNote"/>\n';
+                if (x7.checked == false) result += '            <ExcludeApp ID="Outlook"/>\n';
+                if (x8.checked == false) result += '            <ExcludeApp ID="PowerPoint"/>\n';
+                if (x9.checked == false) result += '            <ExcludeApp ID="Publisher"/>\n';
+                if (x10.checked == false) result += '            <ExcludeApp ID="Word"/>\n';
+                result += '        </Product>\n';
+                if (x11.checked == true) result += '        <Product ID="ProjectProRetail">\n            <Language ID="en-us"/>\n        </Product>\n';
+                if (x12.checked == true) result += '        <Product ID="VisioProRetail">\n            <Language ID="en-us"/>\n        </Product>\n';
+                result += '    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n</Configuration>';
+                $("#config").val(result);
+                result = '';
+            }
+
+            if ($('#usr').val().length > 0) {
+                var ver = document.getElementById('usr').value;
+                if (document.getElementById("rad3").checked == true) {
+                    var h1 = "http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60";
+                    if (document.getElementById("rad8").checked == true) {
+                        link += h1 + '/Office/Data/v32_' + ver + '.cab\n';
+                        link += h1 + '/Office/Data/v32.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/i320.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/i321033.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/s320.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/s321033.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x86.en-us.dat\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x86.en-us.dat.cobra\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x86.x-none.dat\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x86.x-none.dat.cobra\n';
+                    } else {
+                        link += h1 + '/Office/Data/v64_' + ver + '.cab\n';
+                        link += h1 + '/Office/Data/v64.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/i640.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/i641033.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/s640.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/s641033.cab\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x64.en-us.dat\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x64.en-us.dat.cobra\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x64.x-none.dat\n';
+                        link += h1 + '/Office/Data/' + ver + '/stream.x64.x-none.dat.cobra\n';
+                    }
+                }
+                if (document.getElementById("rad4").checked == true) {
+                    var h2 = "http://officecdn.microsoft.com/pr/5440fd1f-7ecb-4221-8110-145efaa6372f";
+                    if (document.getElementById("rad8").checked == true) {
+                        link += h2 + '/Office/Data/v32_' + ver + '.cab\n';
+                        link += h2 + '/Office/Data/v32.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/i320.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/i321033.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/s320.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/s321033.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x86.en-us.dat\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x86.en-us.dat.cobra\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x86.x-none.dat\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x86.x-none.dat.cobra\n';
+                    } else {
+                        link += h2 + '/Office/Data/v64_' + ver + '.cab\n';
+                        link += h2 + '/Office/Data/v64.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/i640.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/i641033.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/s640.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/s641033.cab\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x64.en-us.dat\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x64.en-us.dat.cobra\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x64.x-none.dat\n';
+                        link += h2 + '/Office/Data/' + ver + '/stream.x64.x-none.dat.cobra\n';
+                    }
+                }
+                if (document.getElementById("rad5").checked == true) {
+                    var h3 = "http://officecdn.microsoft.com/pr/64256afe-f5d9-4f86-8936-8840a6a4f5be";
+                    if (document.getElementById("rad8").checked == true) {
+                        link += h3 + '/Office/Data/v32_' + ver + '.cab\n';
+                        link += h3 + '/Office/Data/v32.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/i320.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/i321033.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/s320.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/s321033.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x86.en-us.dat\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x86.en-us.dat.cobra\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x86.x-none.dat\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x86.x-none.dat.cobra\n';
+                    } else {
+                        link += h3 + '/Office/Data/v64_' + ver + '.cab\n';
+                        link += h3 + '/Office/Data/v64.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/i640.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/i641033.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/s640.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/s641033.cab\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x64.en-us.dat\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x64.en-us.dat.cobra\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x64.x-none.dat\n';
+                        link += h3 + '/Office/Data/' + ver + '/stream.x64.x-none.dat.cobra\n';
+                    }
+                }
+                if (document.getElementById("rad6").checked == true) {
+                    var h4 = "http://officecdn.microsoft.com/pr/7ffbc6bf-bc32-4f92-8982-f9dd17fd3114";
+                    if (document.getElementById("rad8").checked == true) {
+                        link += h4 + '/Office/Data/v32_' + ver + '.cab\n';
+                        link += h4 + '/Office/Data/v32.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/i320.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/i321033.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/s320.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/s321033.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x86.en-us.dat\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x86.en-us.dat.cobra\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x86.x-none.dat\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x86.x-none.dat.cobra\n';
+                    } else {
+                        link += h4 + '/Office/Data/v64_' + ver + '.cab\n';
+                        link += h4 + '/Office/Data/v64.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/i640.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/i641033.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/s640.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/s641033.cab\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x64.en-us.dat\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x64.en-us.dat.cobra\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x64.x-none.dat\n';
+                        link += h4 + '/Office/Data/' + ver + '/stream.x64.x-none.dat.cobra\n';
+                    }
+                }
+                if (document.getElementById("rad7").checked == true) {
+                    var h5 = "http://officecdn.microsoft.com/pr/b8f9b850-328d-4355-9145-c59439a0c4cf";
+                    if (document.getElementById("rad8").checked == true) {
+                        link += h5 + '/Office/Data/v32_' + ver + '.cab\n';
+                        link += h5 + '/Office/Data/v32.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/i320.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/i321033.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/s320.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/s321033.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x86.en-us.dat\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x86.en-us.dat.cobra\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x86.x-none.dat\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x86.x-none.dat.cobra\n';
+                    } else {
+                        link += h5 + '/Office/Data/v64_' + ver + '.cab\n';
+                        link += h5 + '/Office/Data/v64.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/fre.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/i640.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/i641033.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/s640.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/s641033.cab\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x64.en-us.dat\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x64.en-us.dat.cobra\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x64.x-none.dat\n';
+                        link += h5 + '/Office/Data/' + ver + '/stream.x64.x-none.dat.cobra\n';
+                    }
+                }
+                $("#linkdown").val(link);
+                link = '';
+            }
+
+        });
+    });
+    $("#reset").click(function() {
+        $("#config,#usr").val('');
+        $("#rad1,#rad2,#rad3").prop('checked', true);
+        $(".checkAllApps,.checkAllApps1").prop('checked', false);
+    });
+    $("#checkAllApps").click(function() {
+        $(".checkAllApps").prop('checked', true);
+    });
+    $("#uncheckAllApps").click(function() {
+        $(".checkAllApps").prop('checked', false);
+    });
+    $("#checkAllApps1").click(function() {
+        $(".checkAllApps1").prop('checked', true);
+    });
+    $("#uncheckAllApps1").click(function() {
+        $(".checkAllApps1").prop('checked', false);
+    });
+    </script>
+</body>
+
+</html>
