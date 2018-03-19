@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Office 2016</title>
+    <title>Click To Run</title>
     <script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/clipboard.min.js"></script>
@@ -48,17 +48,50 @@
                             <label>
                                 <input type="radio" name="edition" value="O365ProPlusRetail" checked="" id="rad1" />Office 365 Pro Plus</label>
                         </div>
-                    </form>
-                    <hr />
-                    <h4>Choose your platform: </h4>
-                    <form>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="platform" value="32" id="rad8" />32-bit</label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="platform" value="64" checked="" id="rad2" />64-bit</label>
+                        <div class="form-group">
+                            <select class="form-control" id="sel">
+                                <option value="en-us">Choose your language</option>
+                                <option value="ar-sa">Arabic</option>
+                                <option value="bg-bg">Bulgarian</option>
+                                <option value="zh-cn">Chinese (Simplified)</option>
+                                <option value="zh-tw">Chinese</option>
+                                <option value="hr-hr">Croatian</option>
+                                <option value="cs-cz">Czech</option>
+                                <option value="da-dk">Danish</option>
+                                <option value="nl-nl">Dutch</option>
+                                <option value="en-us">English</option>
+                                <option value="et-ee">Estonian</option>
+                                <option value="fi-fi">Finnish</option>
+                                <option value="fr-fr">French</option>
+                                <option value="de-de">German</option>
+                                <option value="el-gr">Greek</option>
+                                <option value="he-il">Hebrew</option>
+                                <option value="hi-in">Hindi</option>
+                                <option value="hu-hu">Hungarian</option>
+                                <option value="id-id">Indonesian</option>
+                                <option value="it-it">Italian</option>
+                                <option value="ja-jp">Japanese</option>
+                                <option value="kk-kz">Kazakh</option>
+                                <option value="ko-kr">Korean</option>
+                                <option value="lv-lv">Latvian</option>
+                                <option value="lt-lt">Lithuanian</option>
+                                <option value="ms-my">Malay</option>
+                                <option value="nb-no">Norwegian</option>
+                                <option value="pl-pl">Polish</option>
+                                <option value="pt-br">Portuguese (Brazil)</option>
+                                <option value="pt-pt">Portuguese</option>
+                                <option value="ro-ro">Romanian</option>
+                                <option value="ru-ru">Russian</option>
+                                <option value="sr-latn-rs">Serbian (Latin)</option>
+                                <option value="sk-sk">Slovak</option>
+                                <option value="sl-si">Slovenian</option>
+                                <option value="es-es">Spanish</option>
+                                <option value="sv-se">Swedish</option>
+                                <option value="th-th">Thai</option>
+                                <option value="tr-tr">Turkish</option>
+                                <option value="uk-ua">Ukrainian</option>
+                                <option value="vi-vn">Vietnamese</option>
+                            </select>
                         </div>
                     </form>
                     <hr />
@@ -104,25 +137,115 @@
                             <label>
                                 <input type="checkbox" value="Word" id="checkWord" class="checkAllApps">Word</label>
                         </div>
-                        <a href="javascript:void(0)" id="checkAllApps">Check All</a> |
-                        <a href="javascript:void(0)" id="uncheckAllApps">Uncheck All</a>
+                        <a href="javascript:void(0)" id="checkAllApps"><i class="glyphicon glyphicon-ok"></i> Check All</a> |
+                        <a href="javascript:void(0)" id="uncheckAllApps"><i class="glyphicon glyphicon-remove"></i> Uncheck All</a>
                     </form>
                     <hr />
                     <h4>[Extra] Want to install Project or Visio: </h4>
                     <form>
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" class="checkAllApps1" id="project">Project Pro</label>
+                            <div class="row">
+                                <div class="col-lg-6 project">
+                                    <label>
+                                        <input type="checkbox" value="" class="checkAllApps1" id="project">Project Pro</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group project1">
+                                        <select class="form-control" id="sel1">
+                                            <option value="en-us">Language</option>
+                                            <option value="ar-sa">Arabic</option>
+                                            <option value="zh-cn">Chinese (Simplified)</option>
+                                            <option value="zh-tw">Chinese</option>
+                                            <option value="cs-cz">Czech</option>
+                                            <option value="da-dk">Danish</option>
+                                            <option value="nl-nl">Dutch</option>
+                                            <option value="en-us">English</option>
+                                            <option value="fi-fi">Finnish</option>
+                                            <option value="fr-fr">French</option>
+                                            <option value="de-de">German</option>
+                                            <option value="el-gr">Greek</option>
+                                            <option value="he-il">Hebrew</option>
+                                            <option value="hu-hu">Hungarian</option>
+                                            <option value="it-it">Italian</option>
+                                            <option value="ja-jp">Japanese</option>
+                                            <option value="ko-kr">Korean</option>
+                                            <option value="nb-no">Norwegian</option>
+                                            <option value="pl-pl">Polish</option>
+                                            <option value="pt-br">Portuguese (Brazil)</option>
+                                            <option value="pt-pt">Portuguese</option>
+                                            <option value="ro-ro">Romanian</option>
+                                            <option value="ru-ru">Russian</option>
+                                            <option value="sk-sk">Slovak</option>
+                                            <option value="sl-si">Slovenian</option>
+                                            <option value="es-es">Spanish</option>
+                                            <option value="sv-se">Swedish</option>
+                                            <option value="tr-tr">Turkish</option>
+                                            <option value="uk-ua">Ukrainian</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" class="checkAllApps1" id="visio">Visio Pro</label>
+                            <div class="row">
+                                <div class="col-lg-6 visio">
+                                    <label>
+                                        <input type="checkbox" value="" class="checkAllApps1" id="visio">Visio Pro</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group visio1">
+                                        <select class="form-control" id="sel2">
+                                            <option value="en-us">Language</option>
+                                            <option value="ar-sa">Arabic</option>
+                                            <option value="zh-cn">Chinese (Simplified)</option>
+                                            <option value="zh-tw">Chinese</option>
+                                            <option value="cs-cz">Czech</option>
+                                            <option value="da-dk">Danish</option>
+                                            <option value="nl-nl">Dutch</option>
+                                            <option value="en-us">English</option>
+                                            <option value="fi-fi">Finnish</option>
+                                            <option value="fr-fr">French</option>
+                                            <option value="de-de">German</option>
+                                            <option value="el-gr">Greek</option>
+                                            <option value="he-il">Hebrew</option>
+                                            <option value="hu-hu">Hungarian</option>
+                                            <option value="it-it">Italian</option>
+                                            <option value="ja-jp">Japanese</option>
+                                            <option value="ko-kr">Korean</option>
+                                            <option value="nb-no">Norwegian</option>
+                                            <option value="pl-pl">Polish</option>
+                                            <option value="pt-br">Portuguese (Brazil)</option>
+                                            <option value="pt-pt">Portuguese</option>
+                                            <option value="ro-ro">Romanian</option>
+                                            <option value="ru-ru">Russian</option>
+                                            <option value="sk-sk">Slovak</option>
+                                            <option value="sl-si">Slovenian</option>
+                                            <option value="es-es">Spanish</option>
+                                            <option value="sv-se">Swedish</option>
+                                            <option value="tr-tr">Turkish</option>
+                                            <option value="uk-ua">Ukrainian</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a href="javascript:void(0)" id="checkAllApps1">Check All</a> |
-                        <a href="javascript:void(0)" id="uncheckAllApps1">Uncheck All</a>
+                        <a href="javascript:void(0)" id="checkAllApps1"><i class="glyphicon glyphicon-ok"></i> Check All</a> |
+                        <a href="javascript:void(0)" id="uncheckAllApps1"><i class="glyphicon glyphicon-remove"></i> Uncheck All</a>
                     </form>
                 </div>
                 <div class="col-lg-6">
+                    <h4>Choose your platform: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform" value="32" id="rad8" />32-bit</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform" value="64" checked="" id="rad2" />64-bit</label>
+                        </div>
+                    </form>
+                    <hr />
                     <h4>Choose your channel: </h4>
                     <form>
                         <div class="radio">
@@ -147,20 +270,6 @@
                         </div>
                     </form>
                     <hr />
-                    <h4>Get lastet build here: </h4>
-                    <ul>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=492350f6-3a01-4f97-b9c0-c7c6ddf67d60">Curent/RTM</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=5440fd1f-7ecb-4221-8110-145efaa6372f">Insider Fast Ring</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=64256afe-f5d9-4f86-8936-8840a6a4f5be">Insider Slow Ring</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=7ffbc6bf-bc32-4f92-8982-f9dd17fd3114">Business</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=b8f9b850-328d-4355-9145-c59439a0c4cf">Business Insider</a></li>
-                    </ul>
-                    <h4>Enter build: </h4>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="usr" required="" placeholder="To get link download for Method 2">
-                        </div>
-                    </form>
                     <h4>[Extra] Enter Product Key: </h4>
                     <form>
                         <div class="form-group">
@@ -173,6 +282,14 @@
                             <input type="text" class="form-control" id="key16Visio" placeholder="Office 2016 Visio Pro">
                         </div>
                     </form>
+                    <h4>Check lastest build here: </h4>
+                    <ul>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=492350f6-3a01-4f97-b9c0-c7c6ddf67d60">Curent/RTM</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=5440fd1f-7ecb-4221-8110-145efaa6372f">Insider Fast Ring</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=64256afe-f5d9-4f86-8936-8840a6a4f5be">Insider Slow Ring</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=7ffbc6bf-bc32-4f92-8982-f9dd17fd3114">Business</a></li>
+                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=b8f9b850-328d-4355-9145-c59439a0c4cf">Business Insider</a></li>
+                    </ul>
                 </div>
                 <br />
                 <button class="btn btn-primary" id="generator">Generator</button>
@@ -180,15 +297,10 @@
             </div>
             <div class="col-lg-6">
                 <h4>Configuration.xml</h4>
-                <textarea id="config" class="form-control" rows="10" readonly=""></textarea>
+                <textarea id="config" class="form-control" rows="27" readonly=""></textarea>
                 <br />
                 <button class="btn btn-success" id="copy-config" data-clipboard-target="#config">COPY</button>
                 <button class="btn btn-warning" onclick="saveTextAsFile()">Save</button>
-                <hr />
-                <h4>Link download</h4>
-                <textarea id="linkdown" class="form-control" rows="10" placeholder="For Method 2" readonly=""></textarea>
-                <br />
-                <button class="btn btn-success" id="copy-linkdown" data-clipboard-target="#linkdown">COPY</button>
                 <hr />
             </div>
         </div>
@@ -205,15 +317,12 @@
                            +---v32.cab
                            +---v32_build.cab
                            +---build
-                               +---fre.cab
                                +---i320.cab
-                               +---i321033.cab
+                               +---i32LCID.cab
                                +---s320.cab
-                               +---s321033.cab
-                               +---stream.x86.en-us.dat
-                               +---stream.x86.en-US.dat.cobra
+                               +---s321LCID.cab
+                               +---stream.x86.lang.dat
                                +---stream.x86.x-none.dat
-                               +---stream.x86.x-none.dat.cobra
             </pre>
             <br />
             <pre>For Windows 64-bit
@@ -226,60 +335,74 @@
                            +---v64.cab
                            +---v64_build.cab
                            +---build
-                               +---fre.cab
                                +---i640.cab
-                               +---i641033.cab
+                               +---i64LCID.cab
                                +---s640.cab
-                               +---s641033.cab
-                               +---stream.x64.en-us.dat
-                               +---stream.x64.en-US.dat.cobra
+                               +---s64LCID.cab
+                               +---stream.x64.lang.dat
                                +---stream.x64.x-none.dat
-                               +---stream.x64.x-none.dat.cobra
             </pre>
-            <h2 class="text-left"><b>I. Method 1: Automatic download and create folder via configuration.xml</b></h2> 1. Extract file
+            <h2 class="text-left"><b>I. Download, create folder and setup only 1 click (Recommended)</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download office deploymet tool</a>
+            <hr /> 2. Create .cmd/.bat file and save it same folder with Office deploymet tool
+            <pre class="brush:bash">:: Made by Hoang Hung
+@echo off
+title Install Office Click To Run
+color 0f
+pushd &quot;%~dp0&quot;
+&gt;nul 2&gt;&amp;1 &quot;%SYSTEMROOT%\system32\cacls.exe&quot; &quot;%SYSTEMROOT%\system32\config\system&quot;
+if &quot;%errorlevel%&quot; NEQ &quot;0&quot; (
+	echo: Set UAC = CreateObject^(&quot;Shell.Application&quot;^) &gt; &quot;%temp%\getadmin.vbs&quot;
+	echo: UAC.ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;
+	&quot;%temp%\getadmin.vbs&quot; &amp;	exit 
+)
+if exist &quot;%temp%\getadmin.vbs&quot; del /f /q &quot;%temp%\getadmin.vbs&quot;
+
+echo Step 1. Extract office deployment tool
+if not exist &quot;%~dp0setup.exe&quot; ( 
+	md temp
+	for /f %%A in (&#39;dir /b officedeploymenttool*.exe&#39;) do (
+		echo.&amp;echo Extracting %%A...&amp;echo.
+		%%A /extract:temp /quiet
+		)
+	move &quot;%~dp0\temp\setup.exe&quot; &quot;%~dp0&quot; &gt;nul 2&gt;&amp;1
+	rd &quot;%~dp0\temp&quot; /s /q
+) else (
+echo.&amp;echo Office deployment tool has extracted
+)
+
+echo =======================================================
+echo Step 2. Download file from &quot;configuration.xml&quot;
+if not exist &quot;%~dp0configuration.xml&quot; goto:exit
+echo.&amp;echo Downloading file, keep your connection...
+setup.exe /download configuration.xml
+echo.&amp;echo Download completed
+
+echo =======================================================
+echo Step 3. Install office from &quot;configuration.xml&quot;
+echo.&amp;echo Installing office, do not turn off your computer...
+setup.exe /configure configuration.xml
+echo.&amp;echo Install completed
+echo.&amp;echo Press any key to exit !
+pause &gt;nul
+
+:exit
+echo.&amp;echo configuration.xml not exist, please generator it and save to this folder
+echo.&amp;echo Press any key to exit !
+pause &gt;nul</pre>3. Put configuration.xml same folder with Office deploymet tool
+            <img src="images/5.png">
+            <hr />4. Run file .cmd/.bat and enjoy
             <br />
-            <img src="images/11.png">
-            <hr />2. Delete officedeploymenttool and configuration.xml you have extracted
-            <br /><img src="images/12.png">
-            <hr />3. Save "configuration.xml" which you have generated, open cmd and point directory to "setup.exe" file (example: cd %USERPROFILE%\Desktop), then paste <b>setup.exe /download configuration.xml</b>. <span style="color: red">Note: You must not close command prompt</span>
-            <br /><img src="images/13.png">
-            <hr />4. setup.exe will download automatically and create folder, when download complete you will see the command prompt down the line, and folder "office" automatically created
-            <br /><img src="images/14.png">
-            <hr />5. Finally paste <b>setup.exe /configure configuration.xml</b> to install office
-            <h2 class="text-left"><b>II. Method 2:  Manual create folder and download file</b></h2>
-            <h2 class="text-center">How to make Configuration.xml </h2>
-            <img src="images/8.png" style="width: 100%;height: 100%">
-            <hr />
-            <h2 class="text-center">How to download file with IDM</h2>
-            <img src="images/9.png" style="width: 100%;height: 100%">
-            <hr />
-            <img src="images/10.png">
-            <hr />
-            <h2 class="text-center">Instruction</h2> 1. Extract file
+            <img src="images/6.png">
+            <h2 class="text-left"><b>II. Download, create folder and setup via command prompt</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download</a> and Extract file
             <br />
             <img src="images/1.png">
             <hr />2. Delete officedeploymenttool and configuration.xml you have extracted
-            <br />
-            <img src="images/2.png">
-            <hr />3. Create configuration.xml which you have generated, setup.cmd and folder "office" same directory with "setup.exe"
-            <br />
-            <pre class="brush:bash">@echo off
-setup.exe /configure configuration.xml
-exit
-</pre>
-            <img src="images/3.png">
-            <hr />4. Create folder "data" in folder "office"
-            <br />
-            <img src="images/4.png">
-            <hr />5. Create folder "build" in folder "data" and move file you downloaded
-            <br />
-            <img src="images/5.png">
-            <hr />6. Move 9 files you downloaded to folder "build"
-            <br />
-            <img src="images/6.png">
-            <hr />7. Run file "setup.cmd" and wait setup complete
-            <br />
-            <img src="images/7.png">
+            <br /><img src="images/2.png">
+            <hr />3. Save "configuration.xml" which you have generated, open cmd and point directory to "setup.exe" file (example: cd %USERPROFILE%\Desktop), then paste <b>setup.exe /download configuration.xml</b>. <span style="color: red">Note: You must not close command prompt</span>
+            <br /><img src="images/3.png">
+            <hr />4. setup.exe will download automatically and create folder, when download complete you will see the command prompt down the line, and folder "office" automatically created
+            <br /><img src="images/4.png">
+            <hr />5. Finally paste <b>setup.exe /configure configuration.xml</b> to install office
         </div>
     </div>
     <footer class="footer-bottom">

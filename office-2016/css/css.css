@@ -94,3 +94,5 @@ pre,.form-control[readonly]{background-color:#fff}
 .syntaxhighlighter .color2,.syntaxhighlighter .color2 a{color:#ff1493!important}
 .syntaxhighlighter .color3,.syntaxhighlighter .color3 a{color:red!important}
 .syntaxhighlighter .keyword{font-weight:700!important}
+.visio,.project{position: relative;top:7px;}
+.visio1 .form-control,.project1 .form-control {padding: 6px 12px 6px 4px;}
