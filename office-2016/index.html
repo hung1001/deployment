@@ -345,7 +345,7 @@
 title Install Office Click To Run
 color 0f
 pushd &quot;%~dp0&quot;
-
+ 
 echo Step 1. Extract office deployment tool
 if not exist &quot;%~dp0setup.exe&quot; ( 
     md temp
@@ -358,23 +358,29 @@ if not exist &quot;%~dp0setup.exe&quot; (
 ) else (
 echo.&amp;echo Office deployment tool has extracted
 )
-
+ 
 echo =======================================================
 echo Step 2. Download file from &quot;configuration.xml&quot;
 if not exist &quot;%~dp0configuration.xml&quot; goto:exit
 echo.&amp;echo Downloading file, keep your connection...
 setup.exe /download configuration.xml
 echo.&amp;echo Download completed
-
+ 
 echo =======================================================
 echo Step 3. Install office from &quot;configuration.xml&quot;
 echo.&amp;echo Installing office, do not turn off your computer...
 setup.exe /configure configuration.xml
 echo.&amp;echo Install completed
+if not exist &quot;%~dp0Setup_Offline.cmd&quot; (
+	echo @echo off &gt; Setup_Offline.cmd
+	echo setup.exe /configure configuration.xml &gt;&gt; Setup_Offline.cmd
+	echo exit &gt;&gt; Setup_Offline.cmd
+)
 echo.&amp;echo Press any key to exit !
 pause &gt;nul
+del %0 /q /f
 exit
-
+ 
 :exit
 echo.&amp;echo configuration.xml not exist, please generator it and save to this folder
 echo.&amp;echo Press any key to exit !
