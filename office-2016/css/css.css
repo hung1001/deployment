@@ -1,6 +1,6 @@
-.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{background:rgb(20,99,167,.7);transition:.3s}
+.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{background:#4f4f4f;transition:.3s}
 .syntaxhighlighter .toolbar{display:none}
-.navbar-default{background:#337ab7}
+.navbar-default{background:#0c0c0c}
 .navbar-brand{text-transform:uppercase;font-weight:bold}
 .navbar-brand,.navbar-default .navbar-nav>li>a{color:#fff!important}
 pre,.form-control[readonly]{background-color:#fff}
@@ -16,7 +16,7 @@ pre,.form-control[readonly]{background-color:#fff}
 ::-webkit-scrollbar-track{background-color:#fff;border-left:1px solid #e1e1e1;border-right:1px solid #e1e1e1}
 ::-webkit-scrollbar-thumb:active{background:#aaa;-webkit-box-shadow:inset 1px 1px 2px rgba(0,0,0,0.3)}
 ::-webkit-scrollbar{height:9px;width:9px}
-::-webkit-scrollbar-thumb{background:#337ab7}
+::-webkit-scrollbar-thumb{background:#0c0c0c}
 .syntaxhighlighter a,.syntaxhighlighter div,.syntaxhighlighter code,.syntaxhighlighter table,.syntaxhighlighter table td,.syntaxhighlighter table tr,.syntaxhighlighter table tbody,.syntaxhighlighter table thead,.syntaxhighlighter table caption,.syntaxhighlighter textarea{-moz-border-radius:0!important;-webkit-border-radius:0!important;background:none!important;border:0!important;bottom:auto!important;float:none!important;height:auto!important;left:auto!important;line-height:1.1em!important;margin:0!important;outline:0!important;overflow:visible!important;padding:0!important;position:static!important;right:auto!important;text-align:left!important;top:auto!important;vertical-align:baseline!important;width:auto!important;box-sizing:content-box!important;font-family:Consolas,"Bitstream Vera Sans Mono","Courier New",Courier,monospace!important;font-weight:400!important;font-style:normal!important;font-size:1em!important;min-height:inherit!important;min-height:auto!important}
 .syntaxhighlighter{width:100%!important;margin:1em 0!important;position:relative!important;overflow:auto!important;font-size:1em!important}
 .syntaxhighlighter.source{overflow:hidden!important}

@@ -3,17 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Click To Run</title>
+    <title>Office Configuration</title>
     <script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/clipboard.min.js"></script>
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/css.css">
-    <link rel="icon" type="image/x-icon" href="../lib/favicon.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="javascript:void(0)">OFFICE 2016 CONFIGURATION</a>
+                <a class="navbar-brand" href="javascript:void(0)">OFFICE C2R CONFIGURATION</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </nav>
-    <div style="clear: both;margin: 6em 0"></div>
+    <div style="clear: both;margin: 2em 0"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -250,23 +250,19 @@
                     <form>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="channel" checked="" value="Current" id="rad3">Curent/RTM</label>
+                                <input type="radio" name="channel" checked="" value="Monthly" id="rad3"><a href="#monthly-channel" title="Current Channel">Monthly Channel</a></label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="channel" value="InsiderFast" id="rad4">Insider Fast Ring</label>
+                                <input type="radio" name="channel" value="Insiders" id="rad4"><a href="#monthly-channel-targeted" title="First Release for Current Channel">Monthly Channel (Targeted)</a> </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="channel" value="FirstReleaseCurrent" id="rad5">Insider Slow Ring</label>
+                                <input type="radio" name="channel" value="Broad" id="rad5"><a href="#semi-annual-channel" title="Deferred Channel">Semi-Annual Channel</a></label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="channel" value="Deferred" id="rad6">Business</label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="channel" value="FirstReleaseDeferred" id="rad7">Business Insider</label>
+                                <input type="radio" name="channel" value="Targeted" id="rad6"><a href="#semi-annual-channel-targeted" title="First Release for Deferred Channel">Semi-Annual Channel (Targeted)</a> </label>
                         </div>
                     </form>
                     <hr />
@@ -282,14 +278,6 @@
                             <input type="text" class="form-control" id="key16Visio" placeholder="Office 2016 Visio Pro">
                         </div>
                     </form>
-                    <h4>Check lastest build here: </h4>
-                    <ul>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=492350f6-3a01-4f97-b9c0-c7c6ddf67d60">Curent/RTM</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=5440fd1f-7ecb-4221-8110-145efaa6372f">Insider Fast Ring</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=64256afe-f5d9-4f86-8936-8840a6a4f5be">Insider Slow Ring</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=7ffbc6bf-bc32-4f92-8982-f9dd17fd3114">Business</a></li>
-                        <li><a target="blank" href="http://tools.thecollectionbook.info/latest/?guid=b8f9b850-328d-4355-9145-c59439a0c4cf">Business Insider</a></li>
-                    </ul>
                 </div>
                 <br />
                 <button class="btn btn-primary" id="generator">Generator</button>
@@ -297,7 +285,7 @@
             </div>
             <div class="col-lg-6">
                 <h4>Configuration.xml</h4>
-                <textarea id="config" class="form-control" rows="27" readonly=""></textarea>
+                <textarea id="config" class="form-control" rows="20" readonly=""></textarea>
                 <br />
                 <button class="btn btn-success" id="copy-config" data-clipboard-target="#config">COPY</button>
                 <button class="btn btn-warning" onclick="saveTextAsFile()">Save</button>
@@ -344,28 +332,28 @@
             </pre>
             <h2 class="text-left"><b>I. Download, create folder and setup only 1 click (Recommended)</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download office deploymet tool</a>
             <hr /> 2. Create .cmd/.bat file and save it same folder with Office deploymet tool
-            <pre class="brush:bash">:: Made by Hoang Hung
+            <pre class="brush:bash" id="cmd">:: Made by Hoang Hung
 @echo off
 title Install Office Click To Run
 color 0f
 pushd &quot;%~dp0&quot;
 &gt;nul 2&gt;&amp;1 &quot;%SYSTEMROOT%\system32\cacls.exe&quot; &quot;%SYSTEMROOT%\system32\config\system&quot;
 if &quot;%errorlevel%&quot; NEQ &quot;0&quot; (
-	echo: Set UAC = CreateObject^(&quot;Shell.Application&quot;^) &gt; &quot;%temp%\getadmin.vbs&quot;
-	echo: UAC.ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;
-	&quot;%temp%\getadmin.vbs&quot; &amp;	exit 
+    echo: Set UAC = CreateObject^(&quot;Shell.Application&quot;^) &gt; &quot;%temp%\getadmin.vbs&quot;
+    echo: UAC.ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;
+    &quot;%temp%\getadmin.vbs&quot; &amp;   exit 
 )
 if exist &quot;%temp%\getadmin.vbs&quot; del /f /q &quot;%temp%\getadmin.vbs&quot;
 
 echo Step 1. Extract office deployment tool
 if not exist &quot;%~dp0setup.exe&quot; ( 
-	md temp
-	for /f %%A in (&#39;dir /b officedeploymenttool*.exe&#39;) do (
-		echo.&amp;echo Extracting %%A...&amp;echo.
-		%%A /extract:temp /quiet
-		)
-	move &quot;%~dp0\temp\setup.exe&quot; &quot;%~dp0&quot; &gt;nul 2&gt;&amp;1
-	rd &quot;%~dp0\temp&quot; /s /q
+    md temp
+    for /f %%A in (&#39;dir /b officedeploymenttool*.exe&#39;) do (
+        echo.&amp;echo Extracting %%A...&amp;echo.
+        %%A /extract:temp /quiet
+        )
+    move &quot;%~dp0\temp\setup.exe&quot; &quot;%~dp0&quot; &gt;nul 2&gt;&amp;1
+    rd &quot;%~dp0\temp&quot; /s /q
 ) else (
 echo.&amp;echo Office deployment tool has extracted
 )
@@ -384,11 +372,12 @@ setup.exe /configure configuration.xml
 echo.&amp;echo Install completed
 echo.&amp;echo Press any key to exit !
 pause &gt;nul
+exit
 
 :exit
 echo.&amp;echo configuration.xml not exist, please generator it and save to this folder
 echo.&amp;echo Press any key to exit !
-pause &gt;nul</pre>3. Put configuration.xml same folder with Office deploymet tool
+pause &gt;nul</pre> 3. Put configuration.xml same folder with Office deploymet tool
             <img src="images/5.png">
             <hr />4. Run file .cmd/.bat and enjoy
             <br />
@@ -403,6 +392,34 @@ pause &gt;nul</pre>3. Put configuration.xml same folder with Office deploymet to
             <hr />4. setup.exe will download automatically and create folder, when download complete you will see the command prompt down the line, and folder "office" automatically created
             <br /><img src="images/4.png">
             <hr />5. Finally paste <b>setup.exe /configure configuration.xml</b> to install office
+            <hr />
+            <h2 class="text-left"><b>III. Channel</b></h2>
+            <br />
+            <h3 id="monthly-channel">1. Monthly Channel</h3>
+            <p>Monthly Channel might be the right choice for your organization in the following situations:</p>
+            <ul>
+                <li>
+                    <p>You want to provide your users with the newest features of Office as soon as those features are available</p>
+                </li>
+                <li>
+                    <p>You don&#39;t have many line-of-business applications, add-ins, or macros that you need to test to determine if they work with an updated version of Office.</p>
+                </li>
+            </ul>
+            <p>A Monthly Channel with new features is expected to be released each month, although there is no set schedule for when a feature release occurs. In addition to new or updated features, the release might also contain non-security updates, such as updates that provide stability or performance improvements for Office. Security updates for Monthly Channel are usually released on the second Tuesday of the month. At any other time, if there is a critical non-security issue that needs to be fixed, we will provide a separate Monthly Channel release that fixes the issue.</p>
+            <p>Monthly Channel releases are cumulative. The most current Monthly Channel release contains all the features, security updates, and non-security updates from the previous Monthly Channel releases.</p>
+            <p>A Monthly Channel release is supported only until the next Monthly Channel release is available. No new security updates are provided for previous Monthly Channel releases.</p><hr />
+            <h3 id="monthly-channel-targeted">2. Monthly Channel (Targeted)</h3>
+            <p>This update channel provides an early look at the upcoming Monthly Channel release. It is a supported update channel, and usually is available at least one week ahead of time when it's a Monthly Channel release that contains new features.</p><hr />
+            <h3 id="semi-annual-channel">3. Semi-Annual Channel</h3>
+            <p>If your organization doesn&#39;t want to deploy the latest features of Office right away or you have a significant number of line-of-business applications, add-ins, or macros that you need to test with Office, then Semi-Annual Channel might be the better choice for your organization. That&#39;s because new features are added to Semi-Annual Channel only twice a year, instead of every month. Semi-Annual Channel is the default update channel for Office 365 ProPlus.</p>
+            <p>A Semi-Annual Channel with new features is expected to be released twice a year, in January and July. New features aren&#39;t added to Semi-Annual Channel at any other time. The features that are included in Semi-Annual Channel are features that have been released previously in Monthly Channel.</p>
+            <p>In the four months prior to a new Semi-Annual Channel feature release, Microsoft provides builds of the upcoming release so that pilot users and application compatibility testers in your organization can work with the upcoming release. These builds are provided through the Semi-Annual Channel (Targeted) update channel.</p>
+            <p>After the January and July releases of Semi-Annual Channel, additional security updates, if needed, can also be added to Semi-Annual Channel. A release of Semi-Annual Channel with these updates usually occurs on the second Tuesday of the month. If there is a critical non-security issue that needs to be fixed in Semi-Annual Channel, that non-security update will also be included in a Semi-Annual Channel release.</p><hr />
+            <h3 id="semi-annual-channel-targeted">4. Semi-Annual Channel (Targeted)</h3>
+            <p>To help your organization prepare for a Semi-Annual Channel release, Microsoft provides Semi-Annual Channel (Targeted). The primary purpose of this update channel is to give pilot users and application compatibility testers in your organization a chance to work with the upcoming Semi-Annual Channel release. During this time, which is about four months, you might identify possible issues that you need to fix with your line-of-business applications, add-ins, or macros or that you want Microsoft to fix.</p>
+            <p>A Semi-Annual Channel (Targeted) with new features is expected to be released twice a year, in March and September. New features aren&#39;t added to Semi-Annual Channel (Targeted) at any other time. The features that are included in Semi-Annual Channel (Targeted) are features that have been released previously in Monthly Channel.</p>
+            <p>The March and September feature releases for Semi-Annual Channel (Targeted) also include security and non-security updates that have been released previously in Monthly Channel. After the March and September releases, additional security and non-security updates, if needed, can also be added to Semi-Annual Channel (Targeted). A release of Semi-Annual Channel (Targeted) with these updates usually occurs on the second Tuesday of the month.</p>
+            <p>Even though this update channel is primarily designed for your testing, it&#39;s a fully supported version of Office 365 ProPlus. </p>
         </div>
     </div>
     <footer class="footer-bottom">
