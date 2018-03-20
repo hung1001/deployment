@@ -345,13 +345,6 @@
 title Install Office Click To Run
 color 0f
 pushd &quot;%~dp0&quot;
-&gt;nul 2&gt;&amp;1 &quot;%SYSTEMROOT%\system32\cacls.exe&quot; &quot;%SYSTEMROOT%\system32\config\system&quot;
-if &quot;%errorlevel%&quot; NEQ &quot;0&quot; (
-    echo: Set UAC = CreateObject^(&quot;Shell.Application&quot;^) &gt; &quot;%temp%\getadmin.vbs&quot;
-    echo: UAC.ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;
-    &quot;%temp%\getadmin.vbs&quot; &amp;   exit 
-)
-if exist &quot;%temp%\getadmin.vbs&quot; del /f /q &quot;%temp%\getadmin.vbs&quot;
 
 echo Step 1. Extract office deployment tool
 if not exist &quot;%~dp0setup.exe&quot; ( 
