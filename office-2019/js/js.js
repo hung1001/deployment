@@ -240,7 +240,7 @@ $(document).ready(function() {
                             if ($('#key19Visio').val().length > 0) {
                                 result += '        <Product ID="VisioPro2019Volume" PIDKEY="' + key3 + '">\n';
 
-                                $('#checkboxes-2 input[type=checkbox]').each(function() {
+                                $('#checkboxes-3 input[type=checkbox]').each(function() {
                                     if (this.checked) {
                                         result += '            <Language ID="' + $(this).val() + '"/>\n';
                                         flag_3 = true
