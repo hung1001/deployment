@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Office Configuration</title>
+    <title>Office Configuration Generator</title>
     <script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../lib/clipboard.min.js"></script>
@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="javascript:void(0)">OFFICE C2R CONFIGURATION</a>
+                <a class="navbar-brand" href="javascript:void(0)">C2R CONFIGURATION</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -41,20 +41,30 @@
             </div>
         </div>
     </nav>
-    <div style="clear: both;margin: 2em 0"></div>
+    <div style="margin: 2em 0 0"></div>
     <div class="container">
-        <div class="row">
+        <!-- Pro Plus Product  -->
+        <div class="row full-product">
+            <h3 class="text-center"><b>Full Product</b></h3>
             <div class="col-lg-6">
                 <div class="col-lg-6">
                     <h4>Choose your edition: </h4>
                     <form>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="edition" value="ProPlus2019Retail" checked="" />Office 2019 Pro Plus Retail</label>
+                                <input type="radio" name="edition" value="ProPlus2019Retail" checked="" id="rad1" />Office 2019 Pro Plus Retail</label>
                         </div>
                         <div class="radio">
                             <label>
                                 <input type="radio" name="edition" value="ProPlus2019Volume" />Office 2019 Pro Plus Volume</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="edition" value="Standard2019Retail" />Office 2019 Standard</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="edition" value="Professional2019Retail" />Office 2019 Professional</label>
                         </div>
                         <div class="form-group">
                             <div class="multiselect">
@@ -203,6 +213,19 @@
                         <a href="javascript:void(0)" id="uncheckAllApps"><i class="glyphicon glyphicon-remove"></i> Uncheck All</a>
                     </form>
                     <hr />
+                    <h4>Choose your platform: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform" value="32" id="rad8" />32-bit</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform" value="64" checked="" id="rad2" />64-bit</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
                     <h4>[Extra] Want to install Project or Visio: </h4>
                     <form>
                         <div class="checkbox">
@@ -364,19 +387,6 @@
                         <a href="javascript:void(0)" id="checkAllApps1"><i class="glyphicon glyphicon-ok"></i> Check All</a> |
                         <a href="javascript:void(0)" id="uncheckAllApps1"><i class="glyphicon glyphicon-remove"></i> Uncheck All</a>
                     </form>
-                </div>
-                <div class="col-lg-6">
-                    <h4>Choose your platform: </h4>
-                    <form>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="platform" value="32" id="rad8" />32-bit</label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="platform" value="64" checked="" id="rad2" />64-bit</label>
-                        </div>
-                    </form>
                     <hr />
                     <h4>Choose your channel: </h4>
                     <form>
@@ -410,25 +420,249 @@
                             <input type="text" class="form-control" id="key19Visio" placeholder="Office 2019 Visio Pro">
                         </div>
                     </form>
+                    <button class="btn btn-primary" id="generator">Generator</button>
+                    <button class="btn btn-danger" id="reset">Reset</button>
                 </div>
-                <br />
-                <button class="btn btn-primary" id="generator">Generator</button>
-                <button class="btn btn-danger" id="reset">Reset</button>
             </div>
             <div class="col-lg-6">
                 <h4>Configuration.xml</h4>
                 <textarea id="config" class="form-control" rows="20" readonly=""></textarea>
                 <br />
                 <button class="btn btn-success" id="copy-config" data-clipboard-target="#config">COPY</button>
-                <button class="btn btn-warning" onclick="saveTextAsFile()">Save</button>
+                <button class="btn btn-warning" onclick="saveTextAsFile('config')">Save</button>
                 <hr />
             </div>
         </div>
         <hr />
-        <div class="row">
-            <h2 class="text-left"><b>I. Download, create folder and setup only 1 click (Recommended)</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download office deploymet tool</a>
-            <hr /> 2. Create .cmd/.bat file and save it same folder with Office deploymet tool
-            <pre class="brush:bash" id="cmd">:: Made by Hoang Hung
+        <!-- Single Product -->
+        <div class="row single-product">
+            <h3 class="text-center"><b>Single Product</b></h3>
+            <div class="col-lg-6">
+                <div class="col-lg-6">
+                    <h4>Choose your edition: </h4>
+                    <div id="checkboxes-4">
+                        <div class="checkbox">
+                            <input type="checkbox" value="Word2019Retail" id="19Word" /><span class="text">Word</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="Excel2019Retail" id="19Excel" /><span class="text">Excel</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="Access2019Retail" id="19Access" /><span class="text">Access</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="OutLook2019Retail" id="19Outlook" /><span class="text">Outlook</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="OneNote2019Retail" id="19OneNote" /><span class="text">OneNote</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="PowerPoint2019Retail" id="19PowerPoint" /><span class="text">PowerPoint</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="Publisher2019Retail" id="19Publisher" /><span class="text">Publisher</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="ProjectPro2019Retail" id="19ProjectPro" /><span class="text">ProjectPro</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="VisioPro2019Retail" id="19VisioPro" /><span class="text">VisioPro</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="ProjectStd2019Retail" id="19ProjectStd" /><span class="text">ProjectStd</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" value="VisioStd2019Retail" id="19VisioStd" /><span class="text">VisioStd</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="multiselect">
+                            <div class="selectBox" onclick="showCheckboxes('checkboxes-5')">
+                                <select class="form-control">
+                                    <option>Language</option>
+                                </select>
+                                <div class="overSelect"></div>
+                            </div>
+                            <div id="checkboxes-5">
+                                <div class="checkbox">
+                                    <input type="checkbox" value="ar-sa" /><span class="text">Arabic</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="bg-bg" /><span class="text">Bulgarian</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="zh-cn" /><span class="text">Chinese (Simplified)</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="zh-tw" /><span class="text">Chinese</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="hr-hr" /><span class="text">Croatian</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="cs-cz" /><span class="text">Czech</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="da-dk" /><span class="text">Danish</span>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="nl-nl" /><span class="text">Dutch</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="en-us" /><span class="text">English</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="et-ee" /><span class="text">Estonian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="fi-fi" /><span class="text">Finnish</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="fr-fr" /><span class="text">French</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="de-de" /><span class="text">German</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="el-gr" /><span class="text">Greek</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="he-il" /><span class="text">Hebrew</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="hi-in" /><span class="text">Hindi</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="hu-hu" /><span class="text">Hungarian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="id-id" /><span class="text">Indonesian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="it-it" /><span class="text">Italian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="ja-jp" /><span class="text">Japanese</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="kk-kz" /><span class="text">Kazakh</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="ko-kr" /><span class="text">Korean</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="lv-lv" /><span class="text">Latvian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="lt-lt" /><span class="text">Lithuanian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="ms-my" /><span class="text">Malay</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="nb-no" /><span class="text">Norwegian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="pl-pl" /><span class="text">Polish</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="pt-br" /><span class="text">Portuguese (Brazil)</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="pt-pt" /><span class="text">Portuguese</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="ro-ro" /><span class="text">Romanian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="ru-ru" /><span class="text">Russian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="sr-latn-rs" /><span class="text">Serbian (Latin)</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="sk-sk" /><span class="text">Slovak</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="sl-si" /><span class="text">Slovenian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="es-es" /><span class="text">Spanish</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="sv-se" /><span class="text">Swedish</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="th-th" /><span class="text">Thai</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="tr-tr" /><span class="text">Turkish</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="uk-ua" /><span class="text">Ukrainian</span></div>
+                                <div class="checkbox">
+                                    <input type="checkbox" value="vi-vn" /><span class="text">Vietnamese</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <h4>Choose your platform: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform-2" value="32" id="rad81" />32-bit</label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="platform-2" value="64" checked="" id="rad21" />64-bit</label>
+                        </div>
+                    </form>
+                    <hr />
+                    <h4>Choose your channel: </h4>
+                    <form>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel-2" checked="" value="Monthly" id="rad31"><a href="#monthly-channel" title="Current Channel">Monthly Channel</a></label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel-2" value="Insiders" id="rad41"><a href="#monthly-channel-targeted" title="First Release for Current Channel">Monthly Channel (Targeted)</a> </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel-2" value="Broad" id="rad51"><a href="#semi-annual-channel" title="Deferred Channel">Semi-Annual Channel</a></label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="channel" value="Targeted" id="rad61"><a href="#semi-annual-channel-targeted" title="First Release for Deferred Channel">Semi-Annual Channel (Targeted)</a> </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <h4>[Extra] Enter Product Key: </h4>
+                    <form id="key-group">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19Word" placeholder="Office 2019 Word">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19Excel" placeholder="Office 2019 Excel">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19Access" placeholder="Office 2019 Access">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19Outlook" placeholder="Office 2019 Outlook">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19OneNote" placeholder="Office 2019 OneNote">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19PowerPoint" placeholder="Office 2019 PowerPoint">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19Publisher" placeholder="Office 2019 Publisher">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19ProjectPro" placeholder="Office 2019 ProjectPro">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19VisioPro" placeholder="Office 2019 VisioPro">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19ProjectStd" placeholder="Office 2019 ProjectStd">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19VisioStd" placeholder="Office 2019 VisioStd">
+                        </div>
+                    </form>
+                    <button class="btn btn-primary" id="generator-2">Generator</button>
+                    <button class="btn btn-danger" id="reset-2">Reset</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h4>Configuration.xml</h4>
+                <textarea id="config-2" class="form-control" rows="20" readonly=""></textarea>
+                <br />
+                <button class="btn btn-success" id="copy-config-2" data-clipboard-target="#config-2">COPY</button>
+                <button class="btn btn-warning" onclick="saveTextAsFile('config-2')">Save</button>
+                <hr />
+            </div>
+        </div>
+        <hr />
+        <div class="row guide">
+            <div class="col-lg-12">
+                <h2 class="text-left"><b>I. Download, create folder and setup only 1 click (Recommended)</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download office deploymet tool</a>
+                <hr /> 2. Create .cmd/.bat file and save it same folder with Office deploymet tool
+                <pre class="brush:bash" id="cmd">:: Made by Hoang Hung
 @echo off
 title Install Office Click To Run
 color 0f
@@ -473,40 +707,41 @@ exit
 echo.&amp;echo configuration.xml not exist, please generator it and save to this folder
 echo.&amp;echo Press any key to exit !
 pause &gt;nul</pre> 3. Put configuration.xml same folder with Office deploymet tool
-            <img src="images/5.png">
-            <hr />4. Run file .cmd/.bat and enjoy
-            <br />
-            <img src="images/6.png">
-            <h2 class="text-left"><b>II. Channel</b></h2>
-            <br />
-            <h3 id="monthly-channel">1. Monthly Channel</h3>
-            <p>Monthly Channel might be the right choice for your organization in the following situations:</p>
-            <ul>
-                <li>
-                    <p>You want to provide your users with the newest features of Office as soon as those features are available</p>
-                </li>
-                <li>
-                    <p>You don&#39;t have many line-of-business applications, add-ins, or macros that you need to test to determine if they work with an updated version of Office.</p>
-                </li>
-            </ul>
-            <p>A Monthly Channel with new features is expected to be released each month, although there is no set schedule for when a feature release occurs. In addition to new or updated features, the release might also contain non-security updates, such as updates that provide stability or performance improvements for Office. Security updates for Monthly Channel are usually released on the second Tuesday of the month. At any other time, if there is a critical non-security issue that needs to be fixed, we will provide a separate Monthly Channel release that fixes the issue.</p>
-            <p>Monthly Channel releases are cumulative. The most current Monthly Channel release contains all the features, security updates, and non-security updates from the previous Monthly Channel releases.</p>
-            <p>A Monthly Channel release is supported only until the next Monthly Channel release is available. No new security updates are provided for previous Monthly Channel releases.</p>
-            <hr />
-            <h3 id="monthly-channel-targeted">2. Monthly Channel (Targeted)</h3>
-            <p>This update channel provides an early look at the upcoming Monthly Channel release. It is a supported update channel, and usually is available at least one week ahead of time when it's a Monthly Channel release that contains new features.</p>
-            <hr />
-            <h3 id="semi-annual-channel">3. Semi-Annual Channel</h3>
-            <p>If your organization doesn&#39;t want to deploy the latest features of Office right away or you have a significant number of line-of-business applications, add-ins, or macros that you need to test with Office, then Semi-Annual Channel might be the better choice for your organization. That&#39;s because new features are added to Semi-Annual Channel only twice a year, instead of every month. Semi-Annual Channel is the default update channel for Office 365 ProPlus.</p>
-            <p>A Semi-Annual Channel with new features is expected to be released twice a year, in January and July. New features aren&#39;t added to Semi-Annual Channel at any other time. The features that are included in Semi-Annual Channel are features that have been released previously in Monthly Channel.</p>
-            <p>In the four months prior to a new Semi-Annual Channel feature release, Microsoft provides builds of the upcoming release so that pilot users and application compatibility testers in your organization can work with the upcoming release. These builds are provided through the Semi-Annual Channel (Targeted) update channel.</p>
-            <p>After the January and July releases of Semi-Annual Channel, additional security updates, if needed, can also be added to Semi-Annual Channel. A release of Semi-Annual Channel with these updates usually occurs on the second Tuesday of the month. If there is a critical non-security issue that needs to be fixed in Semi-Annual Channel, that non-security update will also be included in a Semi-Annual Channel release.</p>
-            <hr />
-            <h3 id="semi-annual-channel-targeted">4. Semi-Annual Channel (Targeted)</h3>
-            <p>To help your organization prepare for a Semi-Annual Channel release, Microsoft provides Semi-Annual Channel (Targeted). The primary purpose of this update channel is to give pilot users and application compatibility testers in your organization a chance to work with the upcoming Semi-Annual Channel release. During this time, which is about four months, you might identify possible issues that you need to fix with your line-of-business applications, add-ins, or macros or that you want Microsoft to fix.</p>
-            <p>A Semi-Annual Channel (Targeted) with new features is expected to be released twice a year, in March and September. New features aren&#39;t added to Semi-Annual Channel (Targeted) at any other time. The features that are included in Semi-Annual Channel (Targeted) are features that have been released previously in Monthly Channel.</p>
-            <p>The March and September feature releases for Semi-Annual Channel (Targeted) also include security and non-security updates that have been released previously in Monthly Channel. After the March and September releases, additional security and non-security updates, if needed, can also be added to Semi-Annual Channel (Targeted). A release of Semi-Annual Channel (Targeted) with these updates usually occurs on the second Tuesday of the month.</p>
-            <p>Even though this update channel is primarily designed for your testing, it&#39;s a fully supported version of Office 365 ProPlus. </p>
+                <img src="images/5.png">
+                <hr />4. Run file .cmd/.bat and enjoy
+                <br />
+                <img src="images/6.png">
+                <h2 class="text-left"><b>II. Channel</b></h2>
+                <br />
+                <h3 id="monthly-channel">1. Monthly Channel</h3>
+                <p>Monthly Channel might be the right choice for your organization in the following situations:</p>
+                <ul>
+                    <li>
+                        <p>You want to provide your users with the newest features of Office as soon as those features are available</p>
+                    </li>
+                    <li>
+                        <p>You don&#39;t have many line-of-business applications, add-ins, or macros that you need to test to determine if they work with an updated version of Office.</p>
+                    </li>
+                </ul>
+                <p>A Monthly Channel with new features is expected to be released each month, although there is no set schedule for when a feature release occurs. In addition to new or updated features, the release might also contain non-security updates, such as updates that provide stability or performance improvements for Office. Security updates for Monthly Channel are usually released on the second Tuesday of the month. At any other time, if there is a critical non-security issue that needs to be fixed, we will provide a separate Monthly Channel release that fixes the issue.</p>
+                <p>Monthly Channel releases are cumulative. The most current Monthly Channel release contains all the features, security updates, and non-security updates from the previous Monthly Channel releases.</p>
+                <p>A Monthly Channel release is supported only until the next Monthly Channel release is available. No new security updates are provided for previous Monthly Channel releases.</p>
+                <hr />
+                <h3 id="monthly-channel-targeted">2. Monthly Channel (Targeted)</h3>
+                <p>This update channel provides an early look at the upcoming Monthly Channel release. It is a supported update channel, and usually is available at least one week ahead of time when it's a Monthly Channel release that contains new features.</p>
+                <hr />
+                <h3 id="semi-annual-channel">3. Semi-Annual Channel</h3>
+                <p>If your organization doesn&#39;t want to deploy the latest features of Office right away or you have a significant number of line-of-business applications, add-ins, or macros that you need to test with Office, then Semi-Annual Channel might be the better choice for your organization. That&#39;s because new features are added to Semi-Annual Channel only twice a year, instead of every month. Semi-Annual Channel is the default update channel for Office 365 ProPlus.</p>
+                <p>A Semi-Annual Channel with new features is expected to be released twice a year, in January and July. New features aren&#39;t added to Semi-Annual Channel at any other time. The features that are included in Semi-Annual Channel are features that have been released previously in Monthly Channel.</p>
+                <p>In the four months prior to a new Semi-Annual Channel feature release, Microsoft provides builds of the upcoming release so that pilot users and application compatibility testers in your organization can work with the upcoming release. These builds are provided through the Semi-Annual Channel (Targeted) update channel.</p>
+                <p>After the January and July releases of Semi-Annual Channel, additional security updates, if needed, can also be added to Semi-Annual Channel. A release of Semi-Annual Channel with these updates usually occurs on the second Tuesday of the month. If there is a critical non-security issue that needs to be fixed in Semi-Annual Channel, that non-security update will also be included in a Semi-Annual Channel release.</p>
+                <hr />
+                <h3 id="semi-annual-channel-targeted">4. Semi-Annual Channel (Targeted)</h3>
+                <p>To help your organization prepare for a Semi-Annual Channel release, Microsoft provides Semi-Annual Channel (Targeted). The primary purpose of this update channel is to give pilot users and application compatibility testers in your organization a chance to work with the upcoming Semi-Annual Channel release. During this time, which is about four months, you might identify possible issues that you need to fix with your line-of-business applications, add-ins, or macros or that you want Microsoft to fix.</p>
+                <p>A Semi-Annual Channel (Targeted) with new features is expected to be released twice a year, in March and September. New features aren&#39;t added to Semi-Annual Channel (Targeted) at any other time. The features that are included in Semi-Annual Channel (Targeted) are features that have been released previously in Monthly Channel.</p>
+                <p>The March and September feature releases for Semi-Annual Channel (Targeted) also include security and non-security updates that have been released previously in Monthly Channel. After the March and September releases, additional security and non-security updates, if needed, can also be added to Semi-Annual Channel (Targeted). A release of Semi-Annual Channel (Targeted) with these updates usually occurs on the second Tuesday of the month.</p>
+                <p>Even though this update channel is primarily designed for your testing, it&#39;s a fully supported version of Office 365 ProPlus. </p>
+            </div>
         </div>
     </div>
     <footer class="footer-bottom">

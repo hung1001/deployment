@@ -1,19 +1,36 @@
+body {
+    background: #f2f2f2
+}
+
+.full-product,
+.single-product,
+.guide {
+    background: #fff;
+    border-radius: 8px;
+    padding-bottom: 20px;
+}
+
 #checkboxes-1 .checkbox input[type=checkbox],
 #checkboxes-2 .checkbox input[type=checkbox],
-#checkboxes-3 .checkbox input[type=checkbox] {
+#checkboxes-3 .checkbox input[type=checkbox],
+#checkboxes-4 .checkbox input[type=checkbox],
+#checkboxes-5 .checkbox input[type=checkbox] {
     margin: 0;
     top: 3px;
 }
 
 #checkboxes-1 .checkbox span.text,
 #checkboxes-2 .checkbox span.text,
-#checkboxes-3 .checkbox span.text {
+#checkboxes-3 .checkbox span.text,
+#checkboxes-4 .checkbox span.text,
+#checkboxes-5 .checkbox span.text {
     margin-left: 20px;
 }
 
 #checkboxes-1,
 #checkboxes-2,
-#checkboxes-3 {
+#checkboxes-3,
+#checkboxes-5 {
     width: 100%;
     padding: 0 0 0 10px;
     z-index: 1000;
@@ -24,6 +41,10 @@
     top: 100%;
     max-height: 385px;
     overflow: auto
+}
+
+.selectBox {
+    cursor: pointer
 }
 
 .selectBox,
