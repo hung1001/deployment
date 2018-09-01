@@ -79,7 +79,9 @@ $(document).ready(function() {
                 radios2 = document.getElementsByName("channel"),
                 key1 = document.getElementById("key19Pro").value,
                 key2 = document.getElementById("key19Project").value,
-                key3 = document.getElementById("key19Visio").value;
+                key3 = document.getElementById("key19Visio").value,
+                key4 = document.getElementById("key19Std").value,
+                key5 = document.getElementById("key19Profesional").value;
 
             var flag_1 = false;
 
@@ -97,8 +99,14 @@ $(document).ready(function() {
 
             for (var i = 0; i < radios.length; i++) {
                 if (radios[i].checked) {
-                    if ($('#key19Pro').val().length > 0) {
+                    if ($('#key19Pro').val().length > 0 && (radios[i].value == "ProPlus2019Retail" || radios[i].value == "ProPlus2019Volume")) {
                         result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key1 + '">\n';
+                        break;
+                    } else if ($('#key19Std').val().length > 0 && radios[i].value == "Standard2019Retail") {
+                        result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key4 + '">\n';
+                        break;
+                    } else if ($('#key19Profesional').val().length > 0 && radios[i].value == "Professional2019Retail") {
+                        result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key5 + '">\n';
                         break;
                     } else {
                         result += '        <Product ID="' + radios[i].value + '">\n';

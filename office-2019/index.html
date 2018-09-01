@@ -414,20 +414,26 @@
                             <input type="text" class="form-control" id="key19Pro" placeholder="Office 2019 Pro Plus">
                         </div>
                         <div class="form-group">
+                            <input type="text" class="form-control" id="key19Std" placeholder="Office 2019 Standard">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="key19Profesional" placeholder="Office 2019 Profesional">
+                        </div>
+                        <div class="form-group">
                             <input type="text" class="form-control" id="key19Project" placeholder="Office 2019 Project Pro">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" id="key19Visio" placeholder="Office 2019 Visio Pro">
                         </div>
                     </form>
-                    <button class="btn btn-primary" id="generator">Generator</button>
-                    <button class="btn btn-danger" id="reset">Reset</button>
                 </div>
             </div>
             <div class="col-lg-6">
                 <h4>Configuration.xml</h4>
                 <textarea id="config" class="form-control" rows="20" readonly=""></textarea>
                 <br />
+                <button class="btn btn-primary" id="generator">Generator</button>
+                <button class="btn btn-danger" id="reset">Reset</button>
                 <button class="btn btn-success" id="copy-config" data-clipboard-target="#config">COPY</button>
                 <button class="btn btn-warning" onclick="saveTextAsFile('config')">Save</button>
                 <hr />
@@ -644,14 +650,14 @@
                             <input type="text" class="form-control" id="key19VisioStd" placeholder="Office 2019 VisioStd">
                         </div>
                     </form>
-                    <button class="btn btn-primary" id="generator-2">Generator</button>
-                    <button class="btn btn-danger" id="reset-2">Reset</button>
                 </div>
             </div>
             <div class="col-lg-6">
                 <h4>Configuration.xml</h4>
                 <textarea id="config-2" class="form-control" rows="20" readonly=""></textarea>
                 <br />
+                <button class="btn btn-primary" id="generator-2">Generator</button>
+                <button class="btn btn-danger" id="reset-2">Reset</button>
                 <button class="btn btn-success" id="copy-config-2" data-clipboard-target="#config-2">COPY</button>
                 <button class="btn btn-warning" onclick="saveTextAsFile('config-2')">Save</button>
                 <hr />
