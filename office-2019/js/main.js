@@ -87,14 +87,17 @@ $(document).ready(function() {
 
             for (var i = 0; i < radios1.length; i++) {
                 for (var j = 0; j < radios2.length; j++) {
-                    if (radios1[i].checked) {
-                        if (radios2[j].checked) {
-                            result += '<Configuration>\n    <Add OfficeClientEdition="' + radios1[i].value + '" Channel="' + radios2[j].value + '">\n';
+                    for (var k = 0; k < radios.length; k++) {
+                        if (radios1[i].checked && radios2[j].checked && radios[k].checked) {
+                            if (radios[k].value == "ProPlus2019Volume") {
+                                result += '<Configuration>\n    <Add OfficeClientEdition="' + radios1[i].value + '">\n';
+                            } else {
+                                result += '<Configuration>\n    <Add OfficeClientEdition="' + radios1[i].value + '" Channel="' + radios2[j].value + '">\n';
+                            }
                             break;
                         }
                     }
                 }
-
             }
 
             for (var i = 0; i < radios.length; i++) {
@@ -199,7 +202,14 @@ $(document).ready(function() {
 
             }
 
-            result += '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n</Configuration>';
+            result += '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n';
+            for (var j = 0; j < radios2.length; j++) {
+                if (radios2[j].checked) {
+                    result += '    <Updates Enabled="TRUE" Channel="' + radios2[j].value + '" />\n';
+                    break;
+                }
+            }
+            result += '</Configuration>';
             $("#config").val(result);
             result = '';
         }
@@ -281,7 +291,14 @@ $(document).ready(function() {
             n("19ProjectStd", "key19ProjectStd")
             n("19VisioStd", "key19VisioStd")
 
-            result_2 += '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n</Configuration>';
+            result_2 += '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n';
+            for (var j = 0; j < rd2.length; j++) {
+                if (rd2[j].checked) {
+                    result_2 += '    <Updates Enabled="TRUE" Channel="' + rd2[j].value + '" />\n';
+                    break;
+                }
+            }
+            result_2 += '</Configuration>';
             $("#config-2").val(result_2);
             result_2 = '';
         }
