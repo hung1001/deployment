@@ -1,0 +1,38 @@
+Win 8.1 RTM CoreARM Volume GVLK (1)
+XYTND-K6QKT-K2MRH-66RTM-43JKP  
+
+Win 8.1 RTM CoreConnectedCountrySpecific Volume GVLK (1)
+R962J-37N87-9VVK2-WJ74P-XTMHR  
+
+Win 8.1 RTM CoreConnected Volume GVLK (1)
+3PY8R-QHNP9-W7XQD-G6DPH-3J2C9  
+
+Win 8.1 RTM CoreN Volume GVLK (1)
+7B9N3-D94CG-YTVHR-QBPX3-RJP64  
+
+Win 8.1 RTM CoreSingleLanguage Volume GVLK (1)
+BB6NG-PQ82V-VRDPW-8XVD2-V8P66  
+
+Win 8.1 RTM Core Volume GVLK (1)
+M9Q9P-WNJJT-6PXPY-DWX8H-6XWKK  
+
+Win 8.1 RTM EnterpriseN Volume GVLK (1)
+TT4HM-HN7YT-62K67-RGRQJ-JFFXW  
+
+Win 8.1 RTM Enterprise Volume GVLK (1)
+MHF9N-XY6XB-WVXMC-BTDCT-MKKG7  
+
+Win 8.1 RTM ProfessionalN Volume GVLK (1)
+HMCNV-VVBFX-7HMBH-CTY9B-B4FXY  
+
+Win 8.1 RTM ProfessionalWMC Volume GVLK (1)
+789NJ-TQK6T-6XTH8-J39CJ-J8D3P  
+
+Win 8.1 RTM Professional Volume GVLK (1)
+GCRJD-8NW9H-F2CDX-CCM8D-9D6T9
+
+Win Embedded Industry 8.1 RTM EmbeddedIndustryE Volume GVLK (1)
+FNFKF-PWTVT-9RC8H-32HB2-JB34X  
+
+Win Embedded Industry 8.1 RTM EmbeddedIndustry Volume GVLK (1)
+NMMPB-38DD4-R2823-62W8D-VXKJB

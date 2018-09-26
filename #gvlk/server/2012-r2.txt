@@ -1,0 +1,8 @@
+Server 2012 R2 RTM ServerDatacenter Volume GVLK (1)
+W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9  
+
+Server 2012 R2 RTM ServerStandard Volume GVLK (1)
+D2N9P-3P6X9-2R39C-7RTCD-MDVJX 
+
+Server Essentials 2012 R2 RTM ServerSolution Volume GVLK (1)
+KNC87-3J2TX-XB4WP-VCPJV-M4FWM 
