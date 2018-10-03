@@ -1,0 +1,8 @@
+Server 2019 RTM ServerDatacenter Volume GVLK (1)
+WMDGN-G9PQG-XVVXX-R3X43-63DFG
+
+Server 2019 RTM ServerStandard Volume GVLK (1)
+N69G4-B89J2-4G8F4-WWYCC-J464C
+
+Server 2019 RTM ServerEssentials Volume GVLK (1)
+WVDHN-86M7X-466P6-VHXV7-YY726
