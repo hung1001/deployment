@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Office Configuration</title>
-    <script type="text/javascript" src="../lib/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../lib/clipboard.min.js"></script>
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/css.css">
+    <title>Office 2016 Configuration</title>
+    <link rel="stylesheet" type="text/css" href="//hhcdn.github.io/bootstrap/3/css/bootstrap.min.css">
+    <script src="//hhcdn.github.io/jquery/dist/jquery.min.js"></script>
+    <script src="//hhcdn.github.io/clipboardjs/dist/clipboard.min.js"></script>
+    <script src="//hhcdn.github.io/bootstrap/3/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <script src="js/analytics.js?id=UA-113310556-1" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="../assests/analytics.js?id=UA-113310556-1"></script>
     <script type="text/javascript">
     window.dataLayer = window.dataLayer || [];
 
@@ -54,56 +54,106 @@
                         </div>
                         <div class="radio">
                             <label>
-                                <input type="radio" name="edition" value="ProPlus2019Retail" />Office 2019 Pro Plus</label>
-                        </div>
-                        <div class="radio">
-                            <label>
                                 <input type="radio" name="edition" value="O365ProPlusRetail" checked="" id="rad1" />Office 365 Pro Plus</label>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" id="sel">
-                                <option value="en-us">Choose your language</option>
-                                <option value="ar-sa">Arabic</option>
-                                <option value="bg-bg">Bulgarian</option>
-                                <option value="zh-cn">Chinese (Simplified)</option>
-                                <option value="zh-tw">Chinese</option>
-                                <option value="hr-hr">Croatian</option>
-                                <option value="cs-cz">Czech</option>
-                                <option value="da-dk">Danish</option>
-                                <option value="nl-nl">Dutch</option>
-                                <option value="en-us">English</option>
-                                <option value="et-ee">Estonian</option>
-                                <option value="fi-fi">Finnish</option>
-                                <option value="fr-fr">French</option>
-                                <option value="de-de">German</option>
-                                <option value="el-gr">Greek</option>
-                                <option value="he-il">Hebrew</option>
-                                <option value="hi-in">Hindi</option>
-                                <option value="hu-hu">Hungarian</option>
-                                <option value="id-id">Indonesian</option>
-                                <option value="it-it">Italian</option>
-                                <option value="ja-jp">Japanese</option>
-                                <option value="kk-kz">Kazakh</option>
-                                <option value="ko-kr">Korean</option>
-                                <option value="lv-lv">Latvian</option>
-                                <option value="lt-lt">Lithuanian</option>
-                                <option value="ms-my">Malay</option>
-                                <option value="nb-no">Norwegian</option>
-                                <option value="pl-pl">Polish</option>
-                                <option value="pt-br">Portuguese (Brazil)</option>
-                                <option value="pt-pt">Portuguese</option>
-                                <option value="ro-ro">Romanian</option>
-                                <option value="ru-ru">Russian</option>
-                                <option value="sr-latn-rs">Serbian (Latin)</option>
-                                <option value="sk-sk">Slovak</option>
-                                <option value="sl-si">Slovenian</option>
-                                <option value="es-es">Spanish</option>
-                                <option value="sv-se">Swedish</option>
-                                <option value="th-th">Thai</option>
-                                <option value="tr-tr">Turkish</option>
-                                <option value="uk-ua">Ukrainian</option>
-                                <option value="vi-vn">Vietnamese</option>
-                            </select>
+                            <div class="multiselect">
+                                <div class="selectBox" onclick="showCheckboxes('checkboxes-1')">
+                                    <select class="form-control">
+                                        <option>Language</option>
+                                    </select>
+                                    <div class="overSelect"></div>
+                                </div>
+                                <div id="checkboxes-1">
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="ar-sa"><span class="text">Arabic</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="bg-bg"><span class="text">Bulgarian</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="zh-cn"><span class="text">Chinese (Simplified)</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="zh-tw"><span class="text">Chinese</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="hr-hr"><span class="text">Croatian</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="cs-cz"><span class="text">Czech</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="da-dk"><span class="text">Danish</span>
+                                    </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="nl-nl"><span class="text">Dutch</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="en-us"><span class="text">English</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="et-ee"><span class="text">Estonian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="fi-fi"><span class="text">Finnish</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="fr-fr"><span class="text">French</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="de-de"><span class="text">German</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="el-gr"><span class="text">Greek</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="he-il"><span class="text">Hebrew</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="hi-in"><span class="text">Hindi</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="hu-hu"><span class="text">Hungarian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="id-id"><span class="text">Indonesian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="it-it"><span class="text">Italian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="ja-jp"><span class="text">Japanese</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="kk-kz"><span class="text">Kazakh</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="ko-kr"><span class="text">Korean</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="lv-lv"><span class="text">Latvian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="lt-lt"><span class="text">Lithuanian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="ms-my"><span class="text">Malay</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="nb-no"><span class="text">Norwegian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="pl-pl"><span class="text">Polish</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="pt-br"><span class="text">Portuguese (Brazil)</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="pt-pt"><span class="text">Portuguese</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="ro-ro"><span class="text">Romanian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="ru-ru"><span class="text">Russian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="sr-latn-rs"><span class="text">Serbian (Latin)</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="sk-sk"><span class="text">Slovak</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="sl-si"><span class="text">Slovenian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="es-es"><span class="text">Spanish</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="sv-se"><span class="text">Swedish</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="th-th"><span class="text">Thai</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="tr-tr"><span class="text">Turkish</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="uk-ua"><span class="text">Ukrainian</span></div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" value="vi-vn"><span class="text">Vietnamese</span></div>
+                                </div>
+                            </div>
                         </div>
                     </form>
                     <hr />
@@ -157,86 +207,156 @@
                     <form>
                         <div class="checkbox">
                             <div class="row">
-                                <div class="col-lg-6 project">
+                                <div class="col-lg-4 project">
                                     <label>
-                                        <input type="checkbox" value="" class="checkAllApps1" id="project">Project Pro</label>
+                                        <input type="checkbox" value="" class="checkAllApps1" id="project">Project</label>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <div class="form-group project1">
-                                        <select class="form-control" id="sel1">
-                                            <option value="en-us">Language</option>
-                                            <option value="ar-sa">Arabic</option>
-                                            <option value="zh-cn">Chinese (Simplified)</option>
-                                            <option value="zh-tw">Chinese</option>
-                                            <option value="cs-cz">Czech</option>
-                                            <option value="da-dk">Danish</option>
-                                            <option value="nl-nl">Dutch</option>
-                                            <option value="en-us">English</option>
-                                            <option value="fi-fi">Finnish</option>
-                                            <option value="fr-fr">French</option>
-                                            <option value="de-de">German</option>
-                                            <option value="el-gr">Greek</option>
-                                            <option value="he-il">Hebrew</option>
-                                            <option value="hu-hu">Hungarian</option>
-                                            <option value="it-it">Italian</option>
-                                            <option value="ja-jp">Japanese</option>
-                                            <option value="ko-kr">Korean</option>
-                                            <option value="nb-no">Norwegian</option>
-                                            <option value="pl-pl">Polish</option>
-                                            <option value="pt-br">Portuguese (Brazil)</option>
-                                            <option value="pt-pt">Portuguese</option>
-                                            <option value="ro-ro">Romanian</option>
-                                            <option value="ru-ru">Russian</option>
-                                            <option value="sk-sk">Slovak</option>
-                                            <option value="sl-si">Slovenian</option>
-                                            <option value="es-es">Spanish</option>
-                                            <option value="sv-se">Swedish</option>
-                                            <option value="tr-tr">Turkish</option>
-                                            <option value="uk-ua">Ukrainian</option>
-                                        </select>
+                                        <div class="multiselect">
+                                            <div class="selectBox" onclick="showCheckboxes('checkboxes-2')">
+                                                <select class="form-control">
+                                                    <option>Language</option>
+                                                </select>
+                                                <div class="overSelect"></div>
+                                            </div>
+                                            <div id="checkboxes-2">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ar-sa"><span class="text">Arabic</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="zh-cn"><span class="text">Chinese (Simplified)</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="zh-tw"><span class="text">Chinese</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="cs-cz"><span class="text">Czech</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="da-dk"><span class="text">Danish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="nl-nl"><span class="text">Dutch</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="en-us"><span class="text">English</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="fi-fi"><span class="text">Finnish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="fr-fr"><span class="text">French</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="de-de"><span class="text">German</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="el-gr"><span class="text">Greek</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="he-il"><span class="text">Hebrew</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="hu-hu"><span class="text">Hungarian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="it-it"><span class="text">Italian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ja-jp"><span class="text">Japanese</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ko-kr"><span class="text">Korean</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="nb-no"><span class="text">Norwegian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="pl-pl"><span class="text">Polish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="pt-br"><span class="text">Portuguese (Brazil)</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="pt-pt"><span class="text">Portuguese</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ro-ro"><span class="text">Romanian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ru-ru"><span class="text">Russian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="sk-sk"><span class="text">Slovak</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="sl-si"><span class="text">Slovenian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="es-es"><span class="text">Spanish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="sv-se"><span class="text">Swedish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="tr-tr"><span class="text">Turkish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="uk-ua"><span class="text">Ukrainian</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="checkbox">
                             <div class="row">
-                                <div class="col-lg-6 visio">
+                                <div class="col-lg-4 visio">
                                     <label>
-                                        <input type="checkbox" value="" class="checkAllApps1" id="visio">Visio Pro</label>
+                                        <input type="checkbox" value="" class="checkAllApps1" id="visio">Visio</label>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <div class="form-group visio1">
-                                        <select class="form-control" id="sel2">
-                                            <option value="en-us">Language</option>
-                                            <option value="ar-sa">Arabic</option>
-                                            <option value="zh-cn">Chinese (Simplified)</option>
-                                            <option value="zh-tw">Chinese</option>
-                                            <option value="cs-cz">Czech</option>
-                                            <option value="da-dk">Danish</option>
-                                            <option value="nl-nl">Dutch</option>
-                                            <option value="en-us">English</option>
-                                            <option value="fi-fi">Finnish</option>
-                                            <option value="fr-fr">French</option>
-                                            <option value="de-de">German</option>
-                                            <option value="el-gr">Greek</option>
-                                            <option value="he-il">Hebrew</option>
-                                            <option value="hu-hu">Hungarian</option>
-                                            <option value="it-it">Italian</option>
-                                            <option value="ja-jp">Japanese</option>
-                                            <option value="ko-kr">Korean</option>
-                                            <option value="nb-no">Norwegian</option>
-                                            <option value="pl-pl">Polish</option>
-                                            <option value="pt-br">Portuguese (Brazil)</option>
-                                            <option value="pt-pt">Portuguese</option>
-                                            <option value="ro-ro">Romanian</option>
-                                            <option value="ru-ru">Russian</option>
-                                            <option value="sk-sk">Slovak</option>
-                                            <option value="sl-si">Slovenian</option>
-                                            <option value="es-es">Spanish</option>
-                                            <option value="sv-se">Swedish</option>
-                                            <option value="tr-tr">Turkish</option>
-                                            <option value="uk-ua">Ukrainian</option>
-                                        </select>
+                                        <div class="multiselect">
+                                            <div class="selectBox" onclick="showCheckboxes('checkboxes-3')">
+                                                <select class="form-control">
+                                                    <option>Language</option>
+                                                </select>
+                                                <div class="overSelect"></div>
+                                            </div>
+                                            <div id="checkboxes-3">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ar-sa"><span class="text">Arabic</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="zh-cn"><span class="text">Chinese (Simplified)</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="zh-tw"><span class="text">Chinese</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="cs-cz"><span class="text">Czech</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="da-dk"><span class="text">Danish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="nl-nl"><span class="text">Dutch</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="en-us"><span class="text">English</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="fi-fi"><span class="text">Finnish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="fr-fr"><span class="text">French</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="de-de"><span class="text">German</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="el-gr"><span class="text">Greek</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="he-il"><span class="text">Hebrew</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="hu-hu"><span class="text">Hungarian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="it-it"><span class="text">Italian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ja-jp"><span class="text">Japanese</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ko-kr"><span class="text">Korean</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="nb-no"><span class="text">Norwegian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="pl-pl"><span class="text">Polish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="pt-br"><span class="text">Portuguese (Brazil)</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="pt-pt"><span class="text">Portuguese</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ro-ro"><span class="text">Romanian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="ru-ru"><span class="text">Russian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="sk-sk"><span class="text">Slovak</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="sl-si"><span class="text">Slovenian</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="es-es"><span class="text">Spanish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="sv-se"><span class="text">Swedish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="tr-tr"><span class="text">Turkish</span></div>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" value="uk-ua"><span class="text">Ukrainian</span></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -281,13 +401,13 @@
                     <h4>[Extra] Enter Product Key: </h4>
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="key16Pro" placeholder="Office 2016/2019 Pro Plus">
+                            <input type="text" class="form-control" id="key16Pro" placeholder="Office 2016 Pro Plus">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="key16Project" placeholder="Office 2016/2019 Project Pro">
+                            <input type="text" class="form-control" id="key16Project" placeholder="Office 2016 Project Pro">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="key16Visio" placeholder="Office 2016/2019 Visio Pro">
+                            <input type="text" class="form-control" id="key16Visio" placeholder="Office 2016 Visio Pro">
                         </div>
                     </form>
                 </div>
@@ -306,7 +426,7 @@
         </div>
         <hr />
         <div class="row text-center">
-            <iframe width="800" height="400" src="https://www.youtube.com/embed/oNcGcO7ThDs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/oNcGcO7ThDs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
         </div>
         <hr />
         <div class="row">
@@ -450,8 +570,10 @@ pause &gt;nul</pre> 3. Put configuration.xml same folder with Office deploymet t
         </div>
         <hr />
     </footer>
-    <a class='waves-effect waves-light ripple' href='#' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
-    <script type="text/javascript" src="js/js.js"></script>
+    <a class='waves-effect waves-light ripple' id='BackToTop'><i class="glyphicon glyphicon-chevron-up"></i></a>
+    <script src="../lib/syntax/scripts/shCore.min.js"></script>
+    <script src="../lib/syntax/scripts/shBrushBash.min.js"></script>
+    <script src="js/js.js"></script>
 </body>
 
 </html>

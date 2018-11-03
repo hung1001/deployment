@@ -1,0 +1,31 @@
+@echo off
+color 0f
+title Auto activate Office 2016 Retail
+echo.&echo Processing...&echo.
+for /f "tokens=2*" %%a in ('"reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun" /v InstallPath" 2^>nul') do (set "path=%%b\Office16\OSPP.VBS"&set "lic=%%b\root\Licenses16")
+cscript //nologo "%path%" /sethst:kms.lotro.cc >nul 2>&1
+if not exist "%lic%\*.xrm-ms" (echo Please re-install Offfice 2016 Retail&pause&exit)
+cscript //nologo "%path%" /inpkey:BN346-KPVRG-HHQG3-6YDPV-8HV7H >nul 2>&1
+cscript //nologo "%path%" /inpkey:NBMXG-XG8XX-J9PR6-WRHGH-JQKY7 >nul 2>&1
+cscript //nologo "%path%" /inpkey:NQ38H-GKVJH-FXKYG-3GRQX-66PQD >nul 2>&1
+for /f "tokens=5 delims=,_ " %%c in ('cscript //nologo "%path%" /dstatus ^| find "NAME"') do (set version=%%c&call:check)
+cls&cscript //nologo "%path%" /act
+cls&cscript //nologo "%path%" /dstatus
+pause
+:check
+if "%version%" EQU "Office16ProjectProR" (
+for /f %%x in ('dir /b "%lic%\ProjectProVL_KMS*.xrm-ms"') do cscript //nologo "%path%" /inslic:"%lic%\%%x"
+cscript //nologo "%path%" /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT
+cscript //nologo "%path%" /unpkey:66PQD >nul 2>&1
+)
+if "%version%" EQU "Office16VisioProR" (
+for /f %%x in ('dir /b "%lic%\VisioProVL_KMS*.xrm-ms"') do cscript //nologo "%path%" /inslic:"%lic%\%%x"
+cscript //nologo "%path%" /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK
+cscript //nologo "%path%" /unpkey:JQKY7 >nul 2>&1
+)
+if "%version%" EQU "Office16ProPlusR" (
+for /f %%x in ('dir /b "%lic%\ProPlusVL_KMS*.xrm-ms"') do cscript //nologo "%path%" /inslic:"%lic%\%%x"
+cscript //nologo "%path%" /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
+cscript //nologo "%path%" /unpkey:8HV7H >nul 2>&1
+)
+goto:eof

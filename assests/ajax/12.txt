@@ -1,0 +1,25 @@
+:: Author - Hoang Hung
+@echo off
+Title Remove Office Product Key
+color 0f
+::----------------------------------------------------------
+:: Update version here
+set ver=(4,5,6)
+::----------------------------------------------------------
+:main
+cls
+echo ========================================================
+echo Checking license...
+echo ========================================================&echo.
+for %%a in %ver% do (
+if exist "%ProgramFiles%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus)
+if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus))
+echo.&echo ========================================================
+set /p key=Enter last 5 characters of installed product key: 
+echo ========================================================
+echo Removing product key %key%
+echo.&cscript //nologo OSPP.VBS /unpkey:%key%
+echo.&echo ========================================================
+CHOICE /C YN /M "Do you want to continue: "
+IF %ERRORLEVEL%==1 GOTO:main
+IF %ERRORLEVEL%==2 GOTO:EOF

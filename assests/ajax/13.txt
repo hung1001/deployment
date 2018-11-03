@@ -1,0 +1,40 @@
+@echo off
+color a
+mode con cols=60 lines=25
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+  echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+  echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+  "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+title Change Product Key Office 2007
+echo ===========================================================
+echo:
+echo:
+echo                [1] 32-bit versions
+echo:
+echo:
+echo                [2] 64-bit versions
+echo:
+echo:
+echo ===========================================================
+echo:
+CHOICE /C 12 /M "Choice: "
+if %errorlevel% == 2 goto:2
+if %errorlevel% == 1 goto:1
+goto:eof
+
+:1
+reg delete HKLM\Software\Microsoft\Office\12.0\Registration /v DigitalProductID /f >nul 2>&1
+reg delete HKLM\Software\Microsoft\Office\12.0\Registration /v ProductID /f >nul 2>&1
+start winword
+exit
+
+:2
+reg delete HKLM\SOFTWARE\Wow6432Node\Microsoft\Office\12.0\Registration /v DigitalProductID /f >nul 2>&1
+reg delete HKLM\SOFTWARE\Wow6432Node\Microsoft\Office\12.0\Registration /v ProductID /f >nul 2>&1
+start winword
+exit

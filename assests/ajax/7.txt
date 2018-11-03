@@ -1,0 +1,32 @@
+:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
+
+@echo off
+ 
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+ echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+ echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+ "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+ 
+title Remove Internet Explorer
+ 
+if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arch=amd64) else (set arch=x86)
+ 
+for /f "tokens=10 delims=\ " %%a in ('reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages" ^| find /i "Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~"') do (set pack=%%a)
+for /f "tokens=7-10 delims=-~." %%b in ("%pack%") do (set vers=%%b.%%c.%%d.%%e)
+ 
+set packremove=(Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~%vers%,Microsoft-Windows-InternetExplorer-Optional-Package~31bf3856ad364e35~%arch%~~%vers%)
+ 
+for /d %%b in %packremove% do (
+echo ========================================================================
+echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f
+echo.
+echo ========================================================================
+echo Removing package %%b...
+dism /online /remove-package /packagename:%%b /NoRestart
+)
+echo ========================================================================
+pause

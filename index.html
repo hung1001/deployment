@@ -5,14 +5,14 @@
     <title>Deployment in hung1001</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content='https://hung1001.github.io/image/1.jpg' property='og:image' />
-    <link rel="stylesheet" type="text/css" href="./lib/css.css">
-    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.min.css">
-    <link rel="icon" type="image/x-icon" href="./lib/favicon.png">
-    <script src="./lib/jquery-3.3.1.min.js"></script>
-    <script src="./lib/SmoothScroll.min.js"></script>
-    <script src="./lib/clipboard.min.js"></script>
-    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <meta content='https://hung1001.github.io/assests/images/1.jpg' property='og:image' />
+    <link rel="stylesheet" type="text/css" href="assests/css.css">
+    <link rel="stylesheet" type="text/css" href="//hhcdn.github.io/bootstrap/3/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="assests/favicon.png">
+    <script src="//hhcdn.github.io/jquery/dist/jquery.min.js"></script>
+    <script src="lib/SmoothScroll.min.js"></script>
+    <script src="//hhcdn.github.io/clipboardjs/dist/clipboard.min.js"></script>
+    <script src="//hhcdn.github.io/bootstrap/3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -21,610 +21,57 @@
             <div class="col-sm-2 sidenav">
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="https://hung1001.github.io">Home<span class="float-right"><i class="glyphicon glyphicon-home"></i></span></a></li>
-                    <li id="nav2" onclick="target('li1')"><a>Auto change file name<span class="float-right"><i class="glyphicon glyphicon-refresh"></i></span></a></li>
-                    <li id="nav2" onclick="target('li2')"><a>Get IID Office<span class="float-right"><i class="glyphicon glyphicon-bookmark"></i></span></a></li>
-                    <li id="nav3" onclick="target('li3')"><a>Install key &amp; Get IID Office<span class="float-right"><i class="glyphicon glyphicon-asterisk"></i></span></a></li>
-                    <li id="nav4" onclick="target('li4')"><a>Auto activate Office VL<span class="float-right"><i class="glyphicon glyphicon-move"></i></span></a></li>
-                    <li id="nav5" onclick="target('li5')"><a>Get IID Windows<span class="float-right"><i class="glyphicon glyphicon-education"></i></span></a></li>
-                    <li id="nav6" onclick="target('li6')"><a>Remove Windows Defender<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
-                    <li id="nav7" onclick="target('li7')"><a>Remove Internet Explorer<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
-                    <li id="nav8" onclick="target('li8')"><a>Remove Contact Support<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
-                    <li id="nav9" onclick="target('li9')"><a>Auto checking License Office<span class="float-right"><i class="glyphicon glyphicon-signal"></i></span></a></li>
-                    <li id="nav10" onclick="target('li10')"><a>Auto activate Office 2016 Retail<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
-                    <li id="nav11" onclick="target('li11')"><a>Auto activate Office 2016 VL<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
-                    <li id="nav12" onclick="target('li12')"><a>Remove Office Product Key<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
-                    <li id="nav13" onclick="target('li13')"><a>Change Product Key Office 2007<span class="float-right"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
-                    <li id="nav14" onclick="target('li14')"><a>Edit hosts and get Confirmation<span class="float-right"><i class="glyphicon glyphicon-pushpin"></i></span></a></li>
+                    <li id="nav1" onclick='getText("1")'><a>Auto change file name<span class="float-right"><i class="glyphicon glyphicon-refresh"></i></span></a></li>
+                    <li id="nav2" onclick='getText("2")'><a>Get IID Office<span class="float-right"><i class="glyphicon glyphicon-bookmark"></i></span></a></li>
+                    <li id="nav3" onclick='getText("3")'><a>Install key & Get IID Office<span class="float-right"><i class="glyphicon glyphicon-asterisk"></i></span></a></li>
+                    <li id="nav4" onclick="getText('4')"><a>Auto activate Office VL<span class="float-right"><i class="glyphicon glyphicon-move"></i></span></a></li>
+                    <li id="nav5" onclick="getText('5')"><a>Get IID Windows<span class="float-right"><i class="glyphicon glyphicon-education"></i></span></a></li>
+                    <li id="nav6" onclick="getText('6')"><a>Remove Windows Defender<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
+                    <li id="nav7" onclick="getText('7')"><a>Remove Internet Explorer<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
+                    <li id="nav8" onclick="getText('8')"><a>Remove Contact Support<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
+                    <li id="nav9" onclick="getText('9')"><a>Auto checking License Office<span class="float-right"><i class="glyphicon glyphicon-signal"></i></span></a></li>
+                    <li id="nav10" onclick="getText('10')"><a>Auto activate Office 2016 Retail<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
+                    <li id="nav11" onclick="getText('11')"><a>Auto activate Office 2016 VL<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
+                    <li id="nav12" onclick="getText('12')"><a>Remove Office Product Key<span class="float-right"><i class="glyphicon glyphicon-remove"></i></span></a></li>
+                    <li id="nav13" onclick="getText('13')"><a>Change Product Key Office 2007<span class="float-right"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
+                    <li id="nav14" onclick="getText('14')"><a>Edit hosts and get Confirmation<span class="float-right"><i class="glyphicon glyphicon-pushpin"></i></span></a></li>
+                    <li id="nav15" onclick="getText('15')"><a>Auto activate Office 2019<span class="float-right"><i class="glyphicon glyphicon-tag"></i></span></a></li>
                 </ul>
             </div>
             <div class="col-sm-10">
                 <div class="row">
-                    <div class="col-sm-2" style="margin-top: 25px"><span><div class="fb-like" data-href="https://hung1001.github.io/deployment/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div></span></div>
+                    <div class="col-sm-2" style="margin-top: 25px"><span><div class="fb-like" data-href="https://hung1001.github.io/deployment/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div></span></div>
                     <div class="col-sm-10"><span><h3 class="text-right">Your code / Environment : <a href="https://msdn.microsoft.com/en-us/library/cc722477.aspx" target="_blank">Command Script</a></h3></span></div>
                 </div>
                 <pre id="code" class="bash"></pre>
                 <div class="row" style="margin-left: 0;margin-right: 0">
-                  <div style="float: left;">
-                    <button type="button" class="btn btn-primary" id="btnCopy" data-clipboard-target="#code">COPY</button>
-                  </div>
-                  <div style="float: right;">
-                    <a href="windows.html"><i class="glyphicon glyphicon-folder-open" style="margin-right: 5px"></i>Windows command library </a> | 
-                    <a href="office.html"><i class="glyphicon glyphicon-folder-open" style="margin-right: 5px"></i>Office command library</a>
-                  </div>
-                </div>           
-                <hr /> 
-                <div class="row" style="margin-left: 0">
-                  Note: With <b>@echo off</b> you need create <b>.bat/.cmd</b> file and run it with <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms717801(v=vs.85).aspx">Administrator Privileges</a>
+                    <div style="float: left;">
+                        <button type="button" class="btn btn-primary" id="btnCopy" data-clipboard-target="#code">COPY</button>
+                        <button type="button" class="btn btn-danger" id="clear">CLEAR</button>
+                    </div>
+                    <div style="float: right;">
+                        <a href="lib/windows.html" target="blank"><i class="glyphicon glyphicon-folder-open" style="margin:0 5px"></i> Windows command library </a> |
+                        <a href="lib/office.html" target="blank"><i class="glyphicon glyphicon-folder-open" style="margin:0 5px"></i> Office command library</a>
+                    </div>
                 </div>
-                <div id="hidden">
-                    <pre id="li1">:: Author - Hung Hoang
-@echo off
-pushd %~dp0
-set /a var=0
-setlocal enabledelayedexpansion
-for /f %%a in ('dir /b *.phan_mo_rong') do (
- set /a var+=1
- ren "%%a " "[ten_tuy_thich]!var!.phan_mo_rong "
-)
-exit /b</pre>
-                    <pre id="li2">:: Made by Hoang Hung
-:: Homepage: https://hung1001nd.blogspot.com
-@echo off
-color 0f
-pushd "%~dp0"
-title Get IID Office 2010-2013-2016
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
- echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
- echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
- "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
- 
-setLocal EnableDelayedExpansion
-set ver=(4,5,6)
-for /d %%a in %ver% do call:path "%%a"
-start %~dp0id.txt
-timeout 2 >nul 
-del /f %~dp0id.txt
-exit
- 
-:path
-if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files\Microsoft Office\Office1%~1"
- call:getID "%~1"
-)
- 
-if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
- call:getID "%~1"
-)
-goto:eof
- 
-:getID
-for /f "tokens=4-8 delims=:, " %%b in ('cscript //nologo ospp.vbs /dinstid ^| findstr /i "Installation ID"') do (
- set id=%%f
- if %~1 EQU 4 (
-  set id1=!id:~0,6!& set id2=!id:~6,6!& set id3=!id:~12,6!& set id4=!id:~18,6!& set id5=!id:~24,6!& set id6=!id:~30,6!& set id7=!id:~36,6!& set id8=!id:~42,6!& set id9=!id:~48,6!
-  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt 
- ) else (
-  set id1=!id:~0,7!& set id2=!id:~7,7!& set id3=!id:~14,7!& set id4=!id:~21,7!& set id5=!id:~28,7!& set id6=!id:~35,7!& set id7=!id:~42,7!& set id8=!id:~49,7!& set id9=!id:~56,7!
-  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt
- )
-)
-exit /b</pre><pre class="li3 ">:: Made by Hoang Hung
-:: Homepage: https://hung1001nd.blogspot.com
-@echo off
-color 0f
- 
-:: ########## Paste key here ########## 
-:: 1 key
-set keyoff14=(Key1)
-:: 2 key
-set keyoff15=(Key1,Key2)
-:: 3 key
-set keyoff16=(Key1,Key2,Key3)
-:: ########## Paste key here ########## 
- 
-pushd "%~dp0 "
-title Install key ^& Get IID Office 2010-2013-2016
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe " "%SYSTEMROOT%\system32\config\system "
-if "%errorlevel% " NEQ "0 " (
- echo: Set UAC = CreateObject^("Shell.Application "^) > "%temp%\getadmin.vbs "
- echo: UAC.ShellExecute "%~s0 ", " ", " ", "runas ", 1 >> "%temp%\getadmin.vbs "
- "%temp%\getadmin.vbs " & exit 
-)
-if exist "%temp%\getadmin.vbs " del /f /q "%temp%\getadmin.vbs "
- 
-setLocal EnableDelayedExpansion
-set ver=(4,5,6)
-for /d %%a in %ver% do call:path "%%a "
-start %~dp0id.txt
-timeout 2 >nul 
-del /f %~dp0id.txt
-exit
- 
-:path
-if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs " (
- cd /d "C:\Program Files\Microsoft Office\Office1%~1 "
- call:getID "%~1 "
-)
-if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs " (
- cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1 "
- call:getID "%~1 "
-)
-goto:eof
- 
-:getID
-if %~1 equ 4 (
-  for /d %%c in %keyoff14% do (
-   echo Installing key %%c...
-   cscript //nologo ospp.vbs /inpkey:%%c | find "key "
-  )
- )
-if %~1 equ 5 (
-  for /d %%c in %keyoff15% do (
-   echo Installing key %%c...
-   cscript //nologo ospp.vbs /inpkey:%%c | find "key "
-  )
- )
-if %~1 equ 6 (
-  for /d %%c in %keyoff16% do (
-   echo Installing key %%c...
-   cscript //nologo ospp.vbs /inpkey:%%c | find "key "
-  )
- )
-for /f "tokens=4-8 delims=:, " %%b in ('cscript //nologo ospp.vbs /dinstid ^| findstr /i "Installation ID "') do (
- set id=%%f
- if %~1 EQU 4 (
-  set id1=!id:~0,6!& set id2=!id:~6,6!& set id3=!id:~12,6!& set id4=!id:~18,6!& set id5=!id:~24,6!& set id6=!id:~30,6!& set id7=!id:~36,6!& set id8=!id:~42,6!& set id9=!id:~48,6!
-  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt 
- ) else (
-  set id1=!id:~0,7!& set id2=!id:~7,7!& set id3=!id:~14,7!& set id4=!id:~21,7!& set id5=!id:~28,7!& set id6=!id:~35,7!& set id7=!id:~42,7!& set id8=!id:~49,7!& set id9=!id:~56,7!
-  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt
- )
-)
-exit /b</pre><pre id="li3">:: Made by Hoang Hung
-:: Homepage: https://hung1001nd.blogspot.com
-@echo off
-color 0f
- 
-:: ########## Paste key here ########## 
-:: 1 key
-set keyoff14=(Key1)
-:: 2 key
-set keyoff15=(Key1,Key2)
-:: 3 key
-set keyoff16=(Key1,Key2,Key3)
-:: ########## Paste key here ########## 
- 
-pushd "%~dp0"
-title Install key ^& Get IID Office 2010-2013-2016
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
- echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
- echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
- "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
- 
-setLocal EnableDelayedExpansion
-set ver=(4,5,6)
-for /d %%a in %ver% do call:path "%%a"
-start %~dp0id.txt
-timeout 2 >nul 
-del /f %~dp0id.txt
-exit
- 
-:path
-if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files\Microsoft Office\Office1%~1"
- call:getID "%~1"
-)
-if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
- call:getID "%~1"
-)
-goto:eof
- 
-:getID
-if %~1 equ 4 (
-  for /d %%c in %keyoff14% do (
-   echo Installing key %%c...
-   cscript //nologo ospp.vbs /inpkey:%%c | find "key"
-  )
- )
-if %~1 equ 5 (
-  for /d %%c in %keyoff15% do (
-   echo Installing key %%c...
-   cscript //nologo ospp.vbs /inpkey:%%c | find "key"
-  )
- )
-if %~1 equ 6 (
-  for /d %%c in %keyoff16% do (
-   echo Installing key %%c...
-   cscript //nologo ospp.vbs /inpkey:%%c | find "key"
-  )
- )
-for /f "tokens=4-8 delims=:, " %%b in ('cscript //nologo ospp.vbs /dinstid ^| findstr /i "Installation ID"') do (
- set id=%%f
- if %~1 EQU 4 (
-  set id1=!id:~0,6!& set id2=!id:~6,6!& set id3=!id:~12,6!& set id4=!id:~18,6!& set id5=!id:~24,6!& set id6=!id:~30,6!& set id7=!id:~36,6!& set id8=!id:~42,6!& set id9=!id:~48,6!
-  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt 
- ) else (
-  set id1=!id:~0,7!& set id2=!id:~7,7!& set id3=!id:~14,7!& set id4=!id:~21,7!& set id5=!id:~28,7!& set id6=!id:~35,7!& set id7=!id:~42,7!& set id8=!id:~49,7!& set id9=!id:~56,7!
-  (echo %%b %%c, %%d & echo.Installation ID: !id1!-!id2!-!id3!-!id4!-!id5!-!id6!-!id7!-!id8!-!id9!&echo.) >>%~dp0id.txt
- )
-)
-exit /b</pre><pre id="li4">:: Author - Hoang Hung - https://hung1001nd.blogspot.com
-@echo off
-color 0f
-pushd "%~dp0"
-set command=cscript //nologo ospp.vbs 
-title Auto activate Office 2010-2013-2016 Volume License
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
- echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
- echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
- "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
-set ver=(4,5,6)
-for /d %%a in %ver% do call:path "%%a"
-cls
-echo ====================================================================
-echo  Checking license..
-echo ====================================================================
-for /d %%a in %ver% do call:check "%%a"
-echo ====================================================================
-echo  Press any key to exit ...
-echo ====================================================================
-pause >nul &exit
- 
-:path
-if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files\Microsoft Office\Office1%~1"
- call:setkey "%~1"
-)
- 
-if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
- call:setkey "%~1"
-)
-goto:eof
- 
-:setkey
-%command% /sethst:kms.lotro.cc | find "Successfully"
-for /f "tokens=5 delims=: " %%b in ('cscript //nologo ospp.vbs /dstatus ^| findstr /c:"LICENSE NAME"') do (
- if %~1==4 (
-  :: Offfice 2010 Pro Plus
-  if "%%b"=="OfficeProPlus-KMS_Client" %command% /inpkey:VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB | find "successful"
-  if "%%b"=="OfficeProPlus-MAK" %command% /inpkey:VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB | find "successful"
-  :: Offfice 2010 Std
-  if "%%b"=="OfficeStandard-MAK" %command% /inpkey:V7QKV-4XVVR-XYV4D-F7DFM-8R6BM | find "successful"
-  if "%%b"=="OfficeStandard-KMS_Client" %command% /inpkey:V7QKV-4XVVR-XYV4D-F7DFM-8R6BM | find "successful"
-  :: Office 2010 Project Pro
-  if "%%b"=="OfficeProjectPro-MAK" %command% /inpkey:YGX6F-PGV49-PGW3J-9BTGG-VHKC6 | find "successful"
-  if "%%b"=="OfficeProjectPro-KMS_Client" %command% /inpkey:YGX6F-PGV49-PGW3J-9BTGG-VHKC6 | find "successful"
-  :: Office 2010 Visio Premium
-  if "%%b"=="OfficeVisioPrem-MAK" %command% /inpkey:D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ | find "successful"
-  if "%%b"=="OfficeVisioPrem-KMS_Client" %command% /inpkey:D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ | find "successful"
-  :: Office 2010 Visio Pro
-  if "%%b"=="OfficeVisioPro-MAK" %command% /inpkey:7MCW8-VRQVK-G677T-PDJCM-Q8TCP | find "successful"
-  if "%%b"=="OfficeVisioPro-KMS_Client" %command% /inpkey:7MCW8-VRQVK-G677T-PDJCM-Q8TCP | find "successful"
-  :: Office 2010 Visio Std
-  if "%%b"=="OfficeVisioStd-MAK" %command% /inpkey:767HD-QGMWX-8QTDB-9G3R2-KHFGJ | find "successful"
-  if "%%b"=="OfficeVisioStd-KMS_Client" %command% /inpkey:767HD-QGMWX-8QTDB-9G3R2-KHFGJ | find "successful"
-  :: Office 2010 Project Std
-  if "%%b"=="OfficeProjectStd-MAK" %command% /inpkey:4HP3K-88W3F-W2K3D-6677X-F9PGB | find "successful"
-  if "%%b"=="OfficeProjectStd-KMS_Client" %command% /inpkey:4HP3K-88W3F-W2K3D-6677X-F9PGB | find "successful"
-  )
- if %~1==5 (
-  :: Offfice 2013 Pro Plus
-  if "%%b"=="OfficeProPlusVL_MAK" %command% /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT | find "successful"
-  if "%%b"=="OfficeProPlusVL_KMS_Client" %command% /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT | find "successful"
-  :: Offfice 2013 Project Pro
-  if "%%b"=="OfficeProjectProVL_MAK" %command% /inpkey:FN8TT-7WMH6-2D4X9-M337T-2342K | find "successful"
-  if "%%b"=="OfficeProjectProVL_KMS_Client" %command% /inpkey:FN8TT-7WMH6-2D4X9-M337T-2342K | find "successful"
-  :: Offfice 2013 Visio Pro
-  if "%%b"=="OfficeVisioProVL_MAK" %command% /inpkey:C2FG9-N6J68-H8BTJ-BW3QX-RM3B3 | find "successful"
-  if "%%b"=="OfficeVisioProVL_KMS_Client" %command% /inpkey:C2FG9-N6J68-H8BTJ-BW3QX-RM3B3 | find "successful"
-  :: Offfice 2013 Std
-  if "%%b"=="OfficeStandardVL_MAK" %command% /inpkey:KBKQT-2NMXY-JJWGP-M62JB-92CD4 | find "successful"
-  if "%%b"=="OfficeStandardVL_KMS_Client" %command% /inpkey:KBKQT-2NMXY-JJWGP-M62JB-92CD4 | find "successful"
-  :: Offfice 2013 Project Std
-  if "%%b"=="OfficeProjectStdVL_MAK" %command% /inpkey:6NTH3-CW976-3G3Y2-JK3TX-8QHTT | find "successful"
-  if "%%b"=="OfficeProjectStdVL_KMS_Client" %command% /inpkey:6NTH3-CW976-3G3Y2-JK3TX-8QHTT | find "successful"
-  :: Offfice 2013 Visio Std
-  if "%%b"=="OfficeVisioStdVL_MAK" %command% /inpkey:J484Y-4NKBF-W2HMG-DBMJC-PGWR7 | find "successful"
-  if "%%b"=="OfficeVisioStdVL_KMS_Client" %command% /inpkey:J484Y-4NKBF-W2HMG-DBMJC-PGWR7 | find "successful"
-  )
- if %~1==6 (
-  :: Offfice 2016 Pro Plus
-  if "%%b"=="Office16ProPlusVL_MAK" %command% /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99 | find "successful"
-  if "%%b"=="Office16ProPlusVL_KMS_Client" %command% /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99 | find "successful"
-  :: Offfice 2016 Std
-  if "%%b"=="Office16StandardVL_MAK" %command% /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM | find "successful"
-  if "%%b"=="Office16StandardVL_KMS_Client" %command% /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM | find "successful"
-  :: Offfice 2016 Project Pro
-  if "%%b"=="Office16ProjectProVL_MAK" %command% /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT | find "successful"
-  if "%%b"=="Office16ProjectProVL_KMS_Client" %command% /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT | find "successful"
-  :: Offfice 2016 Project Std
-  if "%%b"=="Office16ProjectStdVL_MAK" %command% /inpkey:GNFHQ-F6YQM-KQDGJ-327XX-KQBVC | find "successful"
-  if "%%b"=="Office16ProjectStdVL_KMS_Client" %command% /inpkey:GNFHQ-F6YQM-KQDGJ-327XX-KQBVC | find "successful"
-  :: Offfice 2016 Visio Pro
-  if "%%b"=="Office16VisioProVL_MAK" %command% /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK | find "successful"
-  if "%%b"=="Office16VisioProVL_KMS_Client" %command% /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK | find "successful"
-  :: Offfice 2016 Visio Std
-  if "%%b"=="Office16VisioStdVL_MAK" %command% /inpkey:7WHWN-4T7MP-G96JF-G33KR-W8GF4 | find "successful"
-  if "%%b"=="Office16VisioStdVL_KMS_Client" %command% /inpkey:7WHWN-4T7MP-G96JF-G33KR-W8GF4 | find "successful"
- )
-)
-%command% /act
-exit /b
- 
-:check
-if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files\Microsoft Office\Office1%~1"
- %command% /dstatus
-)
- 
-if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
- cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
- %command% /dstatus
-)
-goto:eof</pre><pre id="li5">set key=NK96Y-D9CD8-W44CQ-R8YTK-DYJWX
-for /f "tokens=6 delims=[.] " %a in ('ver') do set ver=%a
-cscript //nologo %windir%\system32\slmgr.vbs /ipk %key%
-for /f "tokens=3" %i in ('cscript //nologo %windir%\system32\slmgr.vbs /dti') do set id=%i
-if %ver% LEQ 7601 ((echo Key: %key%&echo.&echo Installation ID: %id:~0,6%-%id:~6,6%-%id:~12,6%-%id:~18,6%-%id:~24,6%-%id:~30,6%-%id:~36,6%-%id:~42,6%-%id:~48,6%)> id.txt) else (
-(echo Key: %key%&echo.&echo Installation ID: %id:~0,7%-%id:~7,7%-%id:~14,7%-%id:~21,7%-%id:~28,7%-%id:~35,7%-%id:~42,7%-%id:~49,7%-%id:~56,7%)> id.txt)
-start id.txt&timeout 2 >nul&del /f /q %windir%\system32\id.txt
-cls</pre><pre id="li6">:: Made by Hoang Hung
-:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
-:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
-
-@echo off
- 
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
- echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
- echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
- "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
- 
-Title Remove Windows Defender
- 
-for /f "tokens=2*" %%e in ('reg query "HKEY_CLASSES_ROOT\CLSID\{5FDD51E2-A9D0-44CE-8C8D-162BA0C591A0}" /v "Version"') do set vers=%%f
- 
-if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arc=amd64) else (set arc=x86)
- 
-echo.
-echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications"
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications\Microsoft.Windows.SecHealthUI_%vers%_neutral_neutral_cw5n1h2txyewy" /f >nul 2>&1
- 
-reg delete "HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\EPP" /f >nul 2>&1
-reg delete "HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\EPP" /f >nul 2>&1
-reg delete "HKEY_CLASSES_ROOT\Drive\shellex\ContextMenuHandlers\EPP" /f >nul 2>&1
- 
-set pack=(Windows-Defender-AM-Default-Definitions-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-ApplicationGuard-Inbox-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Client-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-CloudClean-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Core-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Core-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Core-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Group-Policy-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-MDM-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Management-Powershell-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Nis-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Shield-Provider-Core-Package~31bf3856ad364e35~%arc%~~%vers%)
- 
-for /d %%b in %pack% do (
-echo ========================================================================
-echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f >nul 2>&1
-)
- 
-set packremove=(Windows-Defender-AM-Default-Definitions-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-amcore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-onecore-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-AppLayer-Group-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-ApplicationGuard-Inbox-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Client-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Defender-Group-Policy-Package~31bf3856ad364e35~%arc%~~%vers%,Windows-Shield-Provider-Core-Package~31bf3856ad364e35~%arc%~~%vers%)
- 
-for /d %%c in %packremove% do (
-echo ========================================================================
-echo Removing package %%c...
-dism /online /remove-package /packagename:%%c /NoRestart
-)
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT" /v DontOfferThroughWUAU /t REG_DWORD /d 1 /f >nul 2>&1
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "SettingsPageVisibility" /t REG_SZ /d "hide:windowsdefender" /f >nul 2>&1
-echo ========================================================================
-pause</pre><pre id="li7">:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
-
-@echo off
- 
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
- echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
- echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
- "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
- 
-title Remove Internet Explorer
- 
-if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arch=amd64) else (set arch=x86)
- 
-for /f "tokens=10 delims=\ " %%a in ('reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages" ^| find /i "Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~"') do (set pack=%%a)
-for /f "tokens=7-10 delims=-~." %%b in ("%pack%") do (set vers=%%b.%%c.%%d.%%e)
- 
-set packremove=(Microsoft-Windows-InternetExplorer-Package~31bf3856ad364e35~%arch%~~%vers%,Microsoft-Windows-InternetExplorer-Optional-Package~31bf3856ad364e35~%arch%~~%vers%)
- 
-for /d %%b in %packremove% do (
-echo ========================================================================
-echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f
-echo.
-echo ========================================================================
-echo Removing package %%b...
-dism /online /remove-package /packagename:%%b /NoRestart
-)
-echo ========================================================================
-pause</pre><pre id="li8">:: Made by Hoang Hung
-:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications
-:: Get permission : Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages
-
-@echo off
- 
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
- echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
- echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
- "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
- 
-Title Remove Contact Support
- 
-for /f "tokens=2*" %%e in ('reg query "HKEY_CLASSES_ROOT\CLSID\{5FDD51E2-A9D0-44CE-8C8D-162BA0C591A0}" /v "Version"') do set vers=%%f
- 
-if %PROCESSOR_ARCHITECTURE% EQU AMD64 (set arc=amd64) else (set arc=x86)
- 
-echo.
-echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications"
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\InboxApplications\windows.contactsupport_%vers%_neutral_neutral_cw5n1h2txyewy " /f
- 
-set pack=(Microsoft-Windows-ContactSupport-Package~31bf3856ad364e35~%arc%~~%vers%)
- 
-for /d %%b in %pack% do (
-echo ========================================================================
-echo Deleting key in "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners"
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\%%b\Owners" /f
-echo.
-echo ========================================================================
-echo Removing package %%b...
-dism /online /remove-package /packagename:%%b /NoRestart
-)
-echo ========================================================================
-pause</pre><pre id="li9">for %a in (4,5,6) do (
-if exist "%ProgramFiles%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%a" & cscript //nologo OSPP.VBS /dstatus)
-if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%a" & cscript //nologo OSPP.VBS /dstatus))</pre>
-<pre id="li10">@echo off
-color 0f
-title Auto activate Office 2016 Retail
-echo.&echo Processing...&echo.
-for /f "tokens=2*" %%a in ('"reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun" /v InstallPath" 2^>nul') do (set "path=%%b\Office16\OSPP.VBS"&set "lic=%%b\root\Licenses16")
-cscript //nologo "%path%" /sethst:kms.lotro.cc >nul 2>&1
-if not exist "%lic%\*.xrm-ms" (echo Please re-install Offfice 2016 Retail&pause&exit)
-cscript //nologo "%path%" /inpkey:BN346-KPVRG-HHQG3-6YDPV-8HV7H >nul 2>&1
-cscript //nologo "%path%" /inpkey:NBMXG-XG8XX-J9PR6-WRHGH-JQKY7 >nul 2>&1
-cscript //nologo "%path%" /inpkey:NQ38H-GKVJH-FXKYG-3GRQX-66PQD >nul 2>&1
-for /f "tokens=5 delims=,_ " %%c in ('cscript //nologo "%path%" /dstatus ^| find "NAME"') do (set version=%%c&call:check)
-cls&cscript //nologo "%path%" /act
-cls&cscript //nologo "%path%" /dstatus
-pause
-:check
-if "%version%" EQU "Office16ProjectProR" (
-for /f %%x in ('dir /b "%lic%\ProjectProVL_KMS*.xrm-ms"') do cscript //nologo "%path%" /inslic:"%lic%\%%x"
-cscript //nologo "%path%" /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT
-cscript //nologo "%path%" /unpkey:66PQD >nul 2>&1
-)
-if "%version%" EQU "Office16VisioProR" (
-for /f %%x in ('dir /b "%lic%\VisioProVL_KMS*.xrm-ms"') do cscript //nologo "%path%" /inslic:"%lic%\%%x"
-cscript //nologo "%path%" /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK
-cscript //nologo "%path%" /unpkey:JQKY7 >nul 2>&1
-)
-if "%version%" EQU "Office16ProPlusR" (
-for /f %%x in ('dir /b "%lic%\ProPlusVL_KMS*.xrm-ms"') do cscript //nologo "%path%" /inslic:"%lic%\%%x"
-cscript //nologo "%path%" /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
-cscript //nologo "%path%" /unpkey:8HV7H >nul 2>&1
-)
-goto:eof</pre><pre id="li11">:: Made by Hoang Hung
-@echo off
-color 0f
-title Auto activate Office 2016 VL
-if exist "C:\Program Files\Microsoft Office\Office16\ospp.vbs" set folder="C:\Program Files\Microsoft Office\Office16
-if exist "C:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" set folder="C:\Program Files (x86)\Microsoft Office\Office16
-cscript //nologo %folder%\ospp.vbs" /sethst:kms.lotro.cc
-for /f "tokens=5 delims=,_ " %%b in ('cscript //nologo %folder%\ospp.vbs" /dstatus ^| find "NAME"') do (set version=%%b&call:check)
-cscript //nologo %folder%\ospp.vbs" /act & cls & cscript //nologo %folder%\ospp.vbs" /dstatus
-pause & exit
-:check
-if "%version%" EQU "Office16ProPlusVL" cscript //nologo %folder%\ospp.vbs" /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
-if "%version%" EQU "Office16ProjectProVL" cscript //nologo %folder%\ospp.vbs" /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT
-if "%version%" EQU "Office16VisioProVL" cscript //nologo %folder%\ospp.vbs" /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK
-if "%version%" EQU "Office16StandardVL" cscript //nologo %folder%\ospp.vbs" /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM
-if "%version%" EQU "Office16ProjectStdVL" cscript //nologo %folder%\ospp.vbs" /inpkey:GNFHQ-F6YQM-KQDGJ-327XX-KQBVC
-if "%version%" EQU "Office16VisioStdVL" cscript //nologo %folder%\ospp.vbs" /inpkey:7WHWN-4T7MP-G96JF-G33KR-W8GF4
-goto:eof</pre><pre id="li12">:: Author - Hoang Hung
-@echo off
-Title Remove Office Product Key
-color 0f
-::----------------------------------------------------------
-:: Update version here
-set ver=(4,5,6)
-::----------------------------------------------------------
-:main
-cls
-echo ========================================================
-echo Checking license...
-echo ========================================================&echo.
-for %%a in %ver% do (
-if exist "%ProgramFiles%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles%\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus)
-if exist "%ProgramFiles(x86)%\Microsoft Office\Office1%%a\ospp.vbs" (cd /d "%ProgramFiles(x86)%\Microsoft Office\Office1%%a" & cscript //nologo OSPP.VBS /dstatus))
-echo.&echo ========================================================
-set /p key=Enter last 5 characters of installed product key: 
-echo ========================================================
-echo Removing product key %key%
-echo.&cscript //nologo OSPP.VBS /unpkey:%key%
-echo.&echo ========================================================
-CHOICE /C YN /M "Do you want to continue: "
-IF %ERRORLEVEL%==1 GOTO:main
-IF %ERRORLEVEL%==2 GOTO:EOF</pre><pre id="li13">@echo off
-color a
-mode con cols=60 lines=25
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-if "%errorlevel%" NEQ "0" (
-  echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-  echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-  "%temp%\getadmin.vbs" & exit 
-)
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-title Change Product Key Office 2007
-echo ===========================================================
-echo:
-echo:
-echo                [1] 32-bit versions
-echo:
-echo:
-echo                [2] 64-bit versions
-echo:
-echo:
-echo ===========================================================
-echo:
-CHOICE /C 12 /M "Choice: "
-if %errorlevel% == 2 goto:2
-if %errorlevel% == 1 goto:1
-goto:eof
-
-:1
-reg delete HKLM\Software\Microsoft\Office\12.0\Registration /v DigitalProductID /f >nul 2>&1
-reg delete HKLM\Software\Microsoft\Office\12.0\Registration /v ProductID /f >nul 2>&1
-start winword
-exit
-
-:2
-reg delete HKLM\SOFTWARE\Wow6432Node\Microsoft\Office\12.0\Registration /v DigitalProductID /f >nul 2>&1
-reg delete HKLM\SOFTWARE\Wow6432Node\Microsoft\Office\12.0\Registration /v ProductID /f >nul 2>&1
-start winword
-exit</pre><pre id="li14">echo 23.101.130.247 microsoft.gointeract.io >> %SystemRoot%\System32\drivers\etc\hosts
-
-Go to web: https://tinyurl.com/getCIDMS</pre>
+                <hr />
+                <div class="row" style="margin-left: 0">
+                    Note: With <b>@echo off</b> you need create <b>.bat/.cmd</b> file and run it with <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms717801(v=vs.85).aspx">Administrator Privileges</a>
                 </div>
             </div>
         </div>
     </div>
     <div class='backTop'>
         <a href='#' id='backTop'>
-  <span id='backTopBackground'></span>
- <i class="glyphicon glyphicon-chevron-up"></i>
- </a>
+          <span id='backTopBackground'></span>
+          <i class="glyphicon glyphicon-chevron-up"></i>
+        </a>
     </div>
-    <div style="border-top:1px solid #eee;margin: 10px 0 0"></div>
+    <hr />
     <footer class="container-fluid text-center">
         <h4>@ <script>document.write(new Date().getFullYear())</script> by <i class="glyphicon glyphicon-heart"></i><a href="https://hung1001nd.blogspot.com/" target="_blank"> Hưng Hoàng Văn</a></h4>
     </footer>
-    <script src="./lib/js.js"></script>
-    <div id="fb-root"></div>
+    <script src="assests/js.js"></script>
 </body>
 
 </html>

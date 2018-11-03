@@ -1,13 +1,15 @@
+
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s);
     js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=466632713668792&autoLogAppEvents=1';
+    js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=235684560514250&autoLogAppEvents=1';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-$(function() {
 
+$(function() {
+    new ClipboardJS('#btnCopy');
     $('#backTop').click(function(e) {
         $('html,body').animate({
             scrollTop: 0
@@ -36,14 +38,10 @@ $(function() {
         $('#backTopBackground').css('top', position + '%');
     }
 });
-$(document).ready(function() {
-    new ClipboardJS('#btnCopy');
-});
 
-function target(element) {
-    var htmlString = document.getElementById(element).innerHTML;
-    document.getElementById('code').innerHTML = htmlString;
-}
+$("#clear").click(function() {
+    document.getElementById('code').innerHTML = "";
+});
 
 $('#btnCopy').tooltip({
     trigger: 'click',
@@ -62,7 +60,7 @@ function hideTooltip() {
     }, 1000);
 }
 
-var clipboard = new Clipboard('#btnCopy');
+var clipboard = new ClipboardJS('#btnCopy');
 
 clipboard.on('success', function(e) {
     setTooltip('Copied');
@@ -73,3 +71,12 @@ clipboard.on('error', function(e) {
     setTooltip('Failed');
     hideTooltip();
 });
+
+function getText(file) {
+    $.ajax({
+        url: "/assests/ajax/" + file + ".txt",
+        success: function(data) {
+            document.getElementById('code').innerHTML = data;
+        }
+    });
+}

@@ -1,0 +1,118 @@
+:: Author - Hoang Hung - https://hung1001nd.blogspot.com
+@echo off
+color 0f
+pushd "%~dp0"
+set command=cscript //nologo ospp.vbs 
+title Auto activate Office 2010-2013-2016 Volume License
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if "%errorlevel%" NEQ "0" (
+ echo: Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+ echo: UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
+ "%temp%\getadmin.vbs" & exit 
+)
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+set ver=(4,5,6)
+for /d %%a in %ver% do call:path "%%a"
+cls
+echo ====================================================================
+echo  Checking license..
+echo ====================================================================
+for /d %%a in %ver% do call:check "%%a"
+echo ====================================================================
+echo  Press any key to exit ...
+echo ====================================================================
+pause >nul &exit
+ 
+:path
+if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
+ cd /d "C:\Program Files\Microsoft Office\Office1%~1"
+ call:setkey "%~1"
+)
+ 
+if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
+ cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
+ call:setkey "%~1"
+)
+goto:eof
+ 
+:setkey
+%command% /sethst:kms.lotro.cc | find "Successfully"
+for /f "tokens=5 delims=: " %%b in ('cscript //nologo ospp.vbs /dstatus ^| findstr /c:"LICENSE NAME"') do (
+ if %~1==4 (
+  :: Offfice 2010 Pro Plus
+  if "%%b"=="OfficeProPlus-KMS_Client" %command% /inpkey:VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB | find "successful"
+  if "%%b"=="OfficeProPlus-MAK" %command% /inpkey:VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB | find "successful"
+  :: Offfice 2010 Std
+  if "%%b"=="OfficeStandard-MAK" %command% /inpkey:V7QKV-4XVVR-XYV4D-F7DFM-8R6BM | find "successful"
+  if "%%b"=="OfficeStandard-KMS_Client" %command% /inpkey:V7QKV-4XVVR-XYV4D-F7DFM-8R6BM | find "successful"
+  :: Office 2010 Project Pro
+  if "%%b"=="OfficeProjectPro-MAK" %command% /inpkey:YGX6F-PGV49-PGW3J-9BTGG-VHKC6 | find "successful"
+  if "%%b"=="OfficeProjectPro-KMS_Client" %command% /inpkey:YGX6F-PGV49-PGW3J-9BTGG-VHKC6 | find "successful"
+  :: Office 2010 Visio Premium
+  if "%%b"=="OfficeVisioPrem-MAK" %command% /inpkey:D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ | find "successful"
+  if "%%b"=="OfficeVisioPrem-KMS_Client" %command% /inpkey:D9DWC-HPYVV-JGF4P-BTWQB-WX8BJ | find "successful"
+  :: Office 2010 Visio Pro
+  if "%%b"=="OfficeVisioPro-MAK" %command% /inpkey:7MCW8-VRQVK-G677T-PDJCM-Q8TCP | find "successful"
+  if "%%b"=="OfficeVisioPro-KMS_Client" %command% /inpkey:7MCW8-VRQVK-G677T-PDJCM-Q8TCP | find "successful"
+  :: Office 2010 Visio Std
+  if "%%b"=="OfficeVisioStd-MAK" %command% /inpkey:767HD-QGMWX-8QTDB-9G3R2-KHFGJ | find "successful"
+  if "%%b"=="OfficeVisioStd-KMS_Client" %command% /inpkey:767HD-QGMWX-8QTDB-9G3R2-KHFGJ | find "successful"
+  :: Office 2010 Project Std
+  if "%%b"=="OfficeProjectStd-MAK" %command% /inpkey:4HP3K-88W3F-W2K3D-6677X-F9PGB | find "successful"
+  if "%%b"=="OfficeProjectStd-KMS_Client" %command% /inpkey:4HP3K-88W3F-W2K3D-6677X-F9PGB | find "successful"
+  )
+ if %~1==5 (
+  :: Offfice 2013 Pro Plus
+  if "%%b"=="OfficeProPlusVL_MAK" %command% /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT | find "successful"
+  if "%%b"=="OfficeProPlusVL_KMS_Client" %command% /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT | find "successful"
+  :: Offfice 2013 Project Pro
+  if "%%b"=="OfficeProjectProVL_MAK" %command% /inpkey:FN8TT-7WMH6-2D4X9-M337T-2342K | find "successful"
+  if "%%b"=="OfficeProjectProVL_KMS_Client" %command% /inpkey:FN8TT-7WMH6-2D4X9-M337T-2342K | find "successful"
+  :: Offfice 2013 Visio Pro
+  if "%%b"=="OfficeVisioProVL_MAK" %command% /inpkey:C2FG9-N6J68-H8BTJ-BW3QX-RM3B3 | find "successful"
+  if "%%b"=="OfficeVisioProVL_KMS_Client" %command% /inpkey:C2FG9-N6J68-H8BTJ-BW3QX-RM3B3 | find "successful"
+  :: Offfice 2013 Std
+  if "%%b"=="OfficeStandardVL_MAK" %command% /inpkey:KBKQT-2NMXY-JJWGP-M62JB-92CD4 | find "successful"
+  if "%%b"=="OfficeStandardVL_KMS_Client" %command% /inpkey:KBKQT-2NMXY-JJWGP-M62JB-92CD4 | find "successful"
+  :: Offfice 2013 Project Std
+  if "%%b"=="OfficeProjectStdVL_MAK" %command% /inpkey:6NTH3-CW976-3G3Y2-JK3TX-8QHTT | find "successful"
+  if "%%b"=="OfficeProjectStdVL_KMS_Client" %command% /inpkey:6NTH3-CW976-3G3Y2-JK3TX-8QHTT | find "successful"
+  :: Offfice 2013 Visio Std
+  if "%%b"=="OfficeVisioStdVL_MAK" %command% /inpkey:J484Y-4NKBF-W2HMG-DBMJC-PGWR7 | find "successful"
+  if "%%b"=="OfficeVisioStdVL_KMS_Client" %command% /inpkey:J484Y-4NKBF-W2HMG-DBMJC-PGWR7 | find "successful"
+  )
+ if %~1==6 (
+  :: Offfice 2016 Pro Plus
+  if "%%b"=="Office16ProPlusVL_MAK" %command% /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99 | find "successful"
+  if "%%b"=="Office16ProPlusVL_KMS_Client" %command% /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99 | find "successful"
+  :: Offfice 2016 Std
+  if "%%b"=="Office16StandardVL_MAK" %command% /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM | find "successful"
+  if "%%b"=="Office16StandardVL_KMS_Client" %command% /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM | find "successful"
+  :: Offfice 2016 Project Pro
+  if "%%b"=="Office16ProjectProVL_MAK" %command% /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT | find "successful"
+  if "%%b"=="Office16ProjectProVL_KMS_Client" %command% /inpkey:YG9NW-3K39V-2T3HJ-93F3Q-G83KT | find "successful"
+  :: Offfice 2016 Project Std
+  if "%%b"=="Office16ProjectStdVL_MAK" %command% /inpkey:GNFHQ-F6YQM-KQDGJ-327XX-KQBVC | find "successful"
+  if "%%b"=="Office16ProjectStdVL_KMS_Client" %command% /inpkey:GNFHQ-F6YQM-KQDGJ-327XX-KQBVC | find "successful"
+  :: Offfice 2016 Visio Pro
+  if "%%b"=="Office16VisioProVL_MAK" %command% /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK | find "successful"
+  if "%%b"=="Office16VisioProVL_KMS_Client" %command% /inpkey:PD3PC-RHNGV-FXJ29-8JK7D-RJRJK | find "successful"
+  :: Offfice 2016 Visio Std
+  if "%%b"=="Office16VisioStdVL_MAK" %command% /inpkey:7WHWN-4T7MP-G96JF-G33KR-W8GF4 | find "successful"
+  if "%%b"=="Office16VisioStdVL_KMS_Client" %command% /inpkey:7WHWN-4T7MP-G96JF-G33KR-W8GF4 | find "successful"
+ )
+)
+%command% /act
+exit /b
+ 
+:check
+if exist "C:\Program Files\Microsoft Office\Office1%~1\ospp.vbs" (
+ cd /d "C:\Program Files\Microsoft Office\Office1%~1"
+ %command% /dstatus
+)
+ 
+if exist "C:\Program Files (x86)\Microsoft Office\Office1%~1\ospp.vbs" (
+ cd /d "C:\Program Files (x86)\Microsoft Office\Office1%~1"
+ %command% /dstatus
+)
+goto:eof
