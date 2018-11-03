@@ -74,7 +74,7 @@ clipboard.on('error', function(e) {
 
 function getText(file) {
     $.ajax({
-        url: "/assests/ajax/" + file + ".txt",
+        url: "assests/ajax/" + file + ".txt",
         success: function(data) {
             document.getElementById('code').innerHTML = data;
         }
