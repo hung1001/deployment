@@ -1,3 +1,43 @@
+.youtube-wrap {
+    width: 100%;
+    max-width: 650px;
+    margin: 15px auto
+}
+
+.youtube-inner {
+    position: relative;
+    padding-bottom: 43%;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+    border-image: url(../images/iframe.png) 50 233 112 228 stretch stretch;
+    border-color: rgba(0, 0, 0, 0);
+    border-width: 27px 76px 55px 76px;
+    border-style: inset
+}
+
+.youtube-inner iframe,
+.youtube-inner object,
+.youtube-inner embed {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ddd
+}
+
+@media all and (max-width:500px) {
+    .youtube-inner {
+        border-width: 20px 62px 40px 62px
+    }
+}
+
+@media all and (max-width:400px) {
+    .youtube-inner {
+        border: 0 !important;
+    }
+}
+
 #checkboxes-1 .checkbox input[type=checkbox],
 #checkboxes-2 .checkbox input[type=checkbox],
 #checkboxes-3 .checkbox input[type=checkbox] {
@@ -26,9 +66,10 @@
     overflow: auto
 }
 
-.selectBox{
+.selectBox {
     cursor: pointer;
 }
+
 .selectBox,
 .multiselect {
     position: relative;

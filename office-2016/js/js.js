@@ -1,6 +1,13 @@
 SyntaxHighlighter.all();
 new ClipboardJS('#copy-config');
 
+var vidDefer = document.getElementsByTagName('iframe');
+for (var i = 0; i < vidDefer.length; i++) {
+    if (vidDefer[i].getAttribute('data-src')) {
+        vidDefer[i].setAttribute('src', vidDefer[i].getAttribute('data-src'));
+    }
+}
+
 function saveTextAsFile() {
     var textToSave = document.getElementById("config").value;
     var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
