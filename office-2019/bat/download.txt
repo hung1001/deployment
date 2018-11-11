@@ -1,0 +1,35 @@
+:: Made by Hoang Hung
+@echo off
+title Download Office Click To Run
+color 0f
+pushd "%~dp0"
+  
+echo Step 1. Extract office deployment tool
+if not exist "%~dp0setup.exe" ( 
+    md temp
+    for /f %%A in ('dir /b officedeploymenttool*.exe') do (
+        echo.&echo Extracting %%A...&echo.
+        %%A /extract:temp /quiet
+        )
+    move "%~dp0\temp\setup.exe" "%~dp0" >nul 2>&1
+    rd "%~dp0\temp" /s /q
+) else (
+echo.&echo Office deployment tool has extracted
+)
+  
+echo =======================================================
+echo Step 2. Download file from "configuration.xml"
+if not exist "%~dp0configuration.xml" goto:exit
+echo.&echo Downloading file, keep your connection...
+setup.exe /download configuration.xml
+echo.&echo Download completed
+  
+echo.&echo Press any key to exit !
+pause >nul
+del %0 /q /f
+exit
+  
+:exit
+echo.&echo configuration.xml not exist, please generator it and save to this folder
+echo.&echo Press any key to exit !
+pause >nul
