@@ -101,7 +101,8 @@ function showCheckboxes(id) {
                 key6 = id("key19HB").value,
                 key7 = id("key19HS").value,
                 key8 = id("key19ProjectStd").value,
-                key9 = id("key19VisioStd").value;
+                key9 = id("key19VisioStd").value,
+                key10 = id("key19Personal").value;
             var flag_1 = false;
             for (var i = 0; i < radios1.length; i++) {
                 for (var j = 0; j < radios2.length; j++) {
@@ -129,6 +130,8 @@ function showCheckboxes(id) {
                         result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key6 + '">\n';
                     } else if (id('key19HS').value.length > 0 && radios[i].value == "HomeStudent2019Retail") {
                         result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key7 + '">\n';
+                    } else if (id('key19Personal').value.length > 0 && radios[i].value == "Personal2019Retail") {
+                        result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key10 + '">\n';
                     } else {
                         result += '        <Product ID="' + radios[i].value + '">\n';
                     }
@@ -329,7 +332,7 @@ function showCheckboxes(id) {
     checkbox("visio", "visiostd")
     checkbox("visiostd", "visio")
 
-    function unchecked(selector, flag) {
+    function disabled(selector, flag) {
         let x = d.querySelectorAll(selector);
         for (var j = 0; j < x.length; j++) {
             if (x[j].checked) {
@@ -354,38 +357,44 @@ function showCheckboxes(id) {
             switch (this.value) {
                 case "O365HomePremRetail":
                     {
-                        unchecked("#checkGroove,#checkLync,#checkOneDrive,#checkOneNote", true);
+                        disabled("#checkGroove,#checkLync,#checkOneDrive,#checkOneNote", true);
                         removeDisabled("#checkAccess,#checkOutlook,#checkPublisher");
                     }
                     break;
                 case "O365BusinessRetail":
                     {
-                        unchecked("#checkGroove,#checkLync,#checkOneDrive,#checkPublisher", true);
+                        disabled("#checkGroove,#checkLync,#checkOneDrive,#checkPublisher", true);
                         removeDisabled("#checkAccess,#checkOutlook,#checkOneNote");
                     }
                     break;
                 case "Professional2019Retail":
                     {
-                        unchecked("#checkGroove,#checkLync", true);
+                        disabled("#checkGroove,#checkLync", true);
                         removeDisabled("#checkAccess,#checkOneDrive,#checkOutlook,#checkPublisher,#checkOneNote");
+                    }
+                    break;
+                case "Personal2019Retail":
+                    {
+                        disabled("#checkGroove,#checkLync,#checkOneDrive", true);
+                        removeDisabled("#checkAccess,#checkOutlook,#checkPublisher,#checkOneNote");
                     }
                     break;
                 case "Standard2019Retail":
                 case "Standard2019Volume":
                     {
-                        unchecked("#checkAccess,#checkGroove,#checkLync", true);
+                        disabled("#checkAccess,#checkGroove,#checkLync", true);
                         removeDisabled("#checkOneDrive,#checkOutlook,#checkPublisher,#checkOneNote");
                     }
                     break;
                 case "HomeBusiness2019Retail":
                     {
-                        unchecked("#checkAccess,#checkGroove,#checkLync,#checkOneDrive,#checkPublisher", true);
+                        disabled("#checkAccess,#checkGroove,#checkLync,#checkOneDrive,#checkPublisher", true);
                         removeDisabled("#checkOutlook,#checkOneNote");
                     }
                     break;
                 case "HomeStudent2019Retail":
                     {
-                        unchecked("#checkAccess,#checkGroove,#checkLync,#checkOneDrive,#checkOutlook,#checkPublisher", true);
+                        disabled("#checkAccess,#checkGroove,#checkLync,#checkOneDrive,#checkOutlook,#checkPublisher", true);
                         removeDisabled("#checkOneNote");
                     }
                     break;
