@@ -37,6 +37,7 @@ function showCheckboxes(id) {
         expanded = false;
     }
 }
+
 (function(d) {
     const df = '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n    <Updates Enabled="TRUE" />\n    <Property Name="SCLCacheOverride" Value="0"/>\n    <RemoveMSI All="TRUE"/>\n';
 
@@ -51,6 +52,12 @@ function showCheckboxes(id) {
     function name(name) {
         return d.getElementsByName(name);
     }
+
+    id("checkboxes-5").appendChild(cl("clone")[0].cloneNode(true));
+    id("checkboxes-3").appendChild(cl("clone-2")[0].cloneNode(true));
+    id("checkboxes-6").appendChild(cl("clone-2")[0].cloneNode(true));
+    id("checkboxes-7").appendChild(cl("clone-2")[0].cloneNode(true));
+
     var x1 = id("checkAccess"),
         x2 = id("checkExcel"),
         x3 = id("checkGroove"),
@@ -63,6 +70,8 @@ function showCheckboxes(id) {
         x10 = id("checkWord"),
         x11 = id("project"),
         x12 = id("visio"),
+        x13 = id("projectstd"),
+        x14 = id("visiostd"),
         result = "",
         result_2 = "";
     var t = $("#BackToTop");
@@ -75,6 +84,7 @@ function showCheckboxes(id) {
             scrollTop: 0
         }, 800)
     })
+
     id("generator").addEventListener("click", function() {
         if (!x1.checked && !x2.checked && !x3.checked && !x4.checked && !x5.checked && !x6.checked && !x7.checked && !x8.checked && !x9.checked && !x10.checked) {
             alert('Please choose minimize 1 app to install');
@@ -87,7 +97,11 @@ function showCheckboxes(id) {
                 key2 = id("key19Project").value,
                 key3 = id("key19Visio").value,
                 key4 = id("key19Std").value,
-                key5 = id("key19Profesional").value;
+                key5 = id("key19Profesional").value,
+                key6 = id("key19HB").value,
+                key7 = id("key19HS").value,
+                key8 = id("key19ProjectStd").value,
+                key9 = id("key19VisioStd").value;
             var flag_1 = false;
             for (var i = 0; i < radios1.length; i++) {
                 for (var j = 0; j < radios2.length; j++) {
@@ -111,6 +125,10 @@ function showCheckboxes(id) {
                         result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key4 + '">\n';
                     } else if (id('key19Profesional').value.length > 0 && radios[i].value == "Professional2019Retail") {
                         result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key5 + '">\n';
+                    } else if (id('key19HB').value.length > 0 && radios[i].value == "HomeBusiness2019Retail") {
+                        result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key6 + '">\n';
+                    } else if (id('key19HS').value.length > 0 && radios[i].value == "HomeStudent2019Retail") {
+                        result += '        <Product ID="' + radios[i].value + '" PIDKEY="' + key7 + '">\n';
                     } else {
                         result += '        <Product ID="' + radios[i].value + '">\n';
                     }
@@ -169,6 +187,7 @@ function showCheckboxes(id) {
                     }
                 }
             }
+
             if (x12.checked) {
                 for (var i = 0; i < radios.length; i++) {
                     if (radios[i].checked) {
@@ -176,6 +195,30 @@ function showCheckboxes(id) {
                             a("key19Visio", "VisioPro", "Volume", key3, "checkboxes-3");
                         } else {
                             a("key19Visio", "VisioPro", "Retail", key3, "checkboxes-3");
+                        }
+                    }
+                }
+            }
+
+            if (x13.checked) {
+                for (var i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        if (radios[i].value == "ProPlus2019Volume" || radios[i].value == "Standard2019Volume") {
+                            a("key19ProjectStd", "ProjectStd", "Volume", key8, "checkboxes-6");
+                        } else {
+                            a("key19ProjectStd", "ProjectStd", "Retail", key8, "checkboxes-6");
+                        }
+                    }
+                }
+            }
+
+            if (x14.checked) {
+                for (var i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        if (radios[i].value == "ProPlus2019Volume" || radios[i].value == "Standard2019Volume") {
+                            a("key19VisioStd", "VisioStd", "Volume", key9, "checkboxes-7");
+                        } else {
+                            a("key19VisioStd", "VisioStd", "Retail", key9, "checkboxes-7");
                         }
                     }
                 }
@@ -218,11 +261,24 @@ function showCheckboxes(id) {
 
             function n(a, b) {
                 if (id(a).checked) {
-                    if (id(b).value.length > 0) {
-                        result_2 += '        <Product ID="' + id(a).value + '" PIDKEY="' + id(b).value + '">\n';
-                    } else {
-                        result_2 += '        <Product ID="' + $("#" + a).val() + '">\n';
+                    for (var j = 0; j < rd3.length; j++) {
+                        if (rd3[j].checked) {
+                            if (rd3[j].value == "retail") {
+                                if (id(b).value.length > 0) {
+                                    result_2 += '        <Product ID="' + id(a).value + 'Retail" PIDKEY="' + id(b).value + '">\n';
+                                } else {
+                                    result_2 += '        <Product ID="' + id(a).value + 'Retail">\n';
+                                }
+                            } else {
+                                if (id(b).value.length > 0) {
+                                    result_2 += '        <Product ID="' + id(a).value + 'Volume" PIDKEY="' + id(b).value + '">\n';
+                                } else {
+                                    result_2 += '        <Product ID="' + id(a).value + 'Volume">\n';
+                                }
+                            }
+                        }
                     }
+
                     let u = false;
                     var c5 = d.querySelectorAll('#checkboxes-5 input[type=checkbox]');
                     for (var i = 0; i < c5.length; i++) {
@@ -246,8 +302,8 @@ function showCheckboxes(id) {
             n("19Publisher", "key19Publisher")
             n("19ProjectPro", "key19ProjectPro")
             n("19VisioPro", "key19VisioPro")
-            n("19ProjectStd", "key19ProjectStd")
-            n("19VisioStd", "key19VisioStd")
+            n("19ProjectStd", "_key19ProjectStd")
+            n("19VisioStd", "_key19VisioStd")
             result_2 += df;
             result_2 += '</Configuration>';
             id("config-2").value = result_2;
@@ -268,59 +324,103 @@ function showCheckboxes(id) {
     checkbox("19VisioPro", "19VisioStd")
     checkbox("19ProjectStd", "19ProjectPro")
     checkbox("19VisioStd", "19VisioPro")
+    checkbox("project", "projectstd")
+    checkbox("projectstd", "project")
+    checkbox("visio", "visiostd")
+    checkbox("visiostd", "visio")
+
+    function unchecked(selector, flag) {
+        let x = d.querySelectorAll(selector);
+        for (var j = 0; j < x.length; j++) {
+            if (x[j].checked) {
+                x[j].checked = false;
+            }
+            if (flag) {
+                x[j].setAttribute("disabled", "disabled")
+            };
+        };
+
+    }
+
+    function removeDisabled(selector) {
+        let x = d.querySelectorAll(selector);
+        for (var j = 0; j < x.length; j++) {
+            x[j].removeAttribute("disabled");
+        };
+    }
     var ip = d.querySelectorAll("input[type=radio][name=edition]");
     for (var i = 0; i < ip.length; i++) {
         ip[i].addEventListener("change", function() {
-            if (this.value == 'Professional2019Retail') {
-                let x = d.querySelectorAll("#checkGroove,#checkLync");
-                for (var j = 0; j < x.length; j++) {
-                    if (x[j].checked) {
-                        x[j].checked = false;
+            switch (this.value) {
+                case "O365HomePremRetail":
+                    {
+                        unchecked("#checkGroove,#checkLync,#checkOneDrive,#checkOneNote", true);
+                        removeDisabled("#checkAccess,#checkOutlook,#checkPublisher");
                     }
-                };
-                id("checkGroove").setAttribute("disabled", "disabled");
-                id("checkLync").setAttribute("disabled", "disabled");
-                id("checkAccess").removeAttribute("disabled");
-            } else if (this.value == "Standard2019Retail" || this.value == "Standard2019Volume") {
-                let x = d.querySelectorAll("#checkAccess,#checkGroove,#checkLync");
-                for (var j = 0; j < x.length; j++) {
-                    if (x[j].checked) {
-                        x[j].checked = false;
+                    break;
+                case "O365BusinessRetail":
+                    {
+                        unchecked("#checkGroove,#checkLync,#checkOneDrive,#checkPublisher", true);
+                        removeDisabled("#checkAccess,#checkOutlook,#checkOneNote");
                     }
-                    x[j].setAttribute("disabled", "disabled");
-                };
-            } else {
-                let x = d.querySelectorAll("#checkAccess,#checkGroove,#checkLync");
-                for (var j = 0; j < x.length; j++) {
-                    x[j].removeAttribute("disabled");
-                };
+                    break;
+                case "Professional2019Retail":
+                    {
+                        unchecked("#checkGroove,#checkLync", true);
+                        removeDisabled("#checkAccess,#checkOneDrive,#checkOutlook,#checkPublisher,#checkOneNote");
+                    }
+                    break;
+                case "Standard2019Retail":
+                case "Standard2019Volume":
+                    {
+                        unchecked("#checkAccess,#checkGroove,#checkLync", true);
+                        removeDisabled("#checkOneDrive,#checkOutlook,#checkPublisher,#checkOneNote");
+                    }
+                    break;
+                case "HomeBusiness2019Retail":
+                    {
+                        unchecked("#checkAccess,#checkGroove,#checkLync,#checkOneDrive,#checkPublisher", true);
+                        removeDisabled("#checkOutlook,#checkOneNote");
+                    }
+                    break;
+                case "HomeStudent2019Retail":
+                    {
+                        unchecked("#checkAccess,#checkGroove,#checkLync,#checkOneDrive,#checkOutlook,#checkPublisher", true);
+                        removeDisabled("#checkOneNote");
+                    }
+                    break;
+                default:
+                    {
+                        let x = d.querySelectorAll("#checkAccess,#checkGroove,#checkLync");
+                        for (var j = 0; j < x.length; j++) {
+                            x[j].removeAttribute("disabled");
+                        };
+
+                    }
+                    break;
             }
+
         });
     };
     id("reset").addEventListener("click", function() {
-        var x = d.querySelectorAll("#config,#key19Visio,#key19Project,#key19Pro");
+        id("config").value = "";
+        var x = d.querySelectorAll("#key-group input[type=text]");
         for (var i = 0; i < x.length; i++) {
             x[i].value = "";
         };
         id("rad1").checked = true;
         id("rad2").checked = true;
         id("rad3").checked = true;
-        var y = d.querySelectorAll(".checkAllApps,.checkAllApps1");
-        for (var i = 0; i < y.length; i++) {
-            y[i].checked = false;
-        };
-        var z = d.querySelectorAll("#checkboxes-1 input[type=checkbox],#checkboxes-2 input[type=checkbox],#checkboxes-3 input[type=checkbox]");
-        for (var i = 0; i < x.length; i++) {
-            if (z[i].checked) {
-                z[i].checked = false;
-            }
-        };
         id("checkboxes-1").style.display = "none";
         id("checkboxes-2").style.display = "none";
         id("checkboxes-3").style.display = "none";
-        var m = cl("checkAllApps");
-        for (var i = 0; i < x.length; i++) {
-            m[i].removeAttribute("disabled");
+        id("checkboxes-6").style.display = "none";
+        id("checkboxes-7").style.display = "none";
+
+        var p = d.querySelectorAll("#checkboxes-1 input[type=checkbox],#checkboxes-2 input[type=checkbox],#checkboxes-3 input[type=checkbox],#project,#visio,#projectstd,#visiostd,.checkAllApps");
+        for (var j = 0; j < p.length; j++) {
+            p[j].removeAttribute("disabled");
+            p[j].checked = false;
         };
     });
     id("reset-2").addEventListener("click", function() {
@@ -329,12 +429,12 @@ function showCheckboxes(id) {
         id("rad31").checked = true;
         var x = d.querySelectorAll("#checkboxes-4 input[type=checkbox],#checkboxes-5 input[type=checkbox]");
         for (var i = 0; i < x.length; i++) {
-            if (x[i].checked) {
-                x[i].checked = false;
-            }
+            x[i].removeAttribute("disabled");
+            x[i].checked = false;
         };
         id("checkboxes-5").style.display = "none";
-        var y = d.querySelectorAll("#key-group input[type=text]");
+
+        var y = d.querySelectorAll("#key-group-2 input[type=text]");
         for (var j = 0; j < y.length; j++) {
             y[j].value = "";
         };
@@ -356,12 +456,6 @@ function showCheckboxes(id) {
     }
     id("uncheckAllApps").addEventListener("click", function() {
         check("checkAllApps", false)
-    })
-    id("checkAllApps1").addEventListener("click", function() {
-        check("checkAllApps1", true)
-    })
-    id("uncheckAllApps1").addEventListener("click", function() {
-        check("checkAllApps1", false)
     })
 
     function b(id) {
