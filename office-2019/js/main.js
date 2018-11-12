@@ -38,6 +38,10 @@ function showCheckboxes(id) {
     }
 }
 
+function hideCheckboxes(id) {
+    document.getElementById(id).style.display = "none";
+}
+
 (function(d) {
     const df = '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n    <Updates Enabled="TRUE" />\n    <Property Name="SCLCacheOverride" Value="0"/>\n    <RemoveMSI All="TRUE"/>\n';
 
