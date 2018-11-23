@@ -594,7 +594,7 @@ input[type="radio"]:disabled+.icon-radio {
 }
 
 .cm-s-default .cm-attribute {
-    color: red
+    color: #026501;
 }
 
 .cm-s-default .cm-hr {

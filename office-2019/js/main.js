@@ -19,6 +19,22 @@ var hideCheckboxes = id => {
     $("#" + id).slideUp('fast');
 }
 
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments)}
+
+var lazy = () => {
+    gtag('js', new Date());
+    gtag('config', 'UA-113310556-1');
+    let js, fjs = document.getElementsByTagName('script')[0];
+    if (document.getElementById('facebook-jssdk')) return;
+    js = document.createElement('script');
+    js.id = 'facebook-jssdk';
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=529310920882728&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+}
+
+window.onload = lazy;
+
 (function(d) {
 
     const df = '    </Add>\n    <Display Level="Full" AcceptEULA="TRUE"/>\n    <Property Name="AUTOACTIVATE" Value="1"/>\n    <Property Name="FORCEAPPSHUTDOWN" Value="TRUE"/>\n    <Property Name="SharedComputerLicensing" Value="0"/>\n    <Property Name="PinIconsToTaskbar" Value="TRUE"/>\n    <Updates Enabled="TRUE" />\n    <Property Name="SCLCacheOverride" Value="0"/>\n    <RemoveMSI All="TRUE"/>\n';
@@ -99,8 +115,8 @@ var hideCheckboxes = id => {
         result = "",
         result_2 = "";
     var t = $("#BackToTop");
-    $(window).scroll(() => {
-        $(this).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active")
+    $(window).scroll((e) => {
+        $(e.currentTarget).scrollTop() >= 200 ? t.show(10).animate("#BackToTop").addClass("active") : t.animate("#BackToTop").removeClass("active")
     });
     t.click(t => {
         t.preventDefault();
