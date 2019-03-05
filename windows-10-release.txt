@@ -1,0 +1,22 @@
+﻿Windows 10                                : Threshold 1 (TH1) - 10.0.10240.16384
+Windows 10 Version 1511                   : Threshold 2 (TH2) - 10.0.10586.0
+Windows 10 Version 1511 Updated Feb 2016  : Threshold 2 (TH2) - 10.0.10586.104
+Windows 10 Version 1511 Updated Apr 2016  : Threshold 2 (TH2) - 10.0.10586.164
+Windows 10 Version 1607                   : Redstone 1  (RS1) - 10.0.14393.0 - Anniversary Update
+Windows 10 Version 1607 Updated Jan 2017  : Redstone 1  (RS1) - 10.0.14393.447 - Anniversary Update
+Windows 10 Version 1703                   : Redstone 2  (RS2) - 10.0.15063.0
+Windows 10 Version 1703 Updated June 2017 : Redstone 2  (RS2) - 10.0.15063.413
+Windows 10 Version 1703 Updated July 2017 : Redstone 2  (RS2) - 10.0.15063.483
+Windows 10 Version 1709                   : Redstone 3  (RS3) - 10.0.16299.15 - Fall Creators Update
+Windows 10 Version 1709 Updated Nov 2017  : Redstone 3  (RS3) - 10.0.16299.64 - Fall Creators Update
+Windows 10 Version 1709 Updated Dec 2017  : Redstone 3  (RS3) - 10.0.16299.125 - Fall Creators Update
+Windows 10 Version 1803                   : Redstone 4  (RS4) - 10.0.17134.1
+Windows 10 Version 1803 Updated Jul 2018  : Redstone 4  (RS4) - 10.0.17134.112
+Windows 10 Version 1803 Updated Aug 2018  : Redstone 4  (RS4) - 10.0.17134.228
+Windows 10 Version 1803 Updated Sep 2018  : Redstone 4  (RS4) - 10.0.17134.285
+Windows 10 Version 1803 Updated Jan 2019  : Redstone 4  (RS4) - 10.0.17134.523
+Windows 10 Version 1809                   : Redstone 5  (RS5) - 10.0.17763.1
+Windows 10 Version 1809 re-release        : Redstone 5  (RS5) - 10.0.17763.107
+Windows 10 Version 1809 Updated Dec 2018  : Redstone 5  (RS5) - 10.0.17763.194
+Windows 10 Version 1809 Updated Jan 2019  : Redstone 5  (RS5) - 10.0.17763.253
+Windows 10 Version 1809 Updated Feb 2019  : Redstone 5  (RS5) - 10.0.17763.316
