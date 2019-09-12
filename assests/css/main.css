@@ -1,0 +1,15 @@
+::-webkit-scrollbar{height:5px;width:5px}
+::-webkit-scrollbar-thumb{background:#ccc;border-radius:100px}
+::-webkit-scrollbar-thumb:active{background:#bbb}
+a:hover{text-decoration:none}
+.btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus{box-shadow:none;outline:none}
+#code{height:36em}
+.nav-pills>li>a{cursor:pointer}
+.nav>li>a{font-size:13px}
+.sidebar{background-color:#f6f6f6;height:100vh;overflow-y:auto}
+.p-0{padding:0}
+.m-0{margin:0}
+.environment{margin-top:10px}
+.g-icon{font-size:13px}
+footer .glyphicon{top:0}
+@media (max-width:767px){.sidebar{height:auto;padding:15px}}
