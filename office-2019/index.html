@@ -2,774 +2,775 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Office 2019 Configuration Generator v1.0</title>
-    <meta content='#333333' name='theme-color' />
-    <meta content='#333333' name='msapplication-navbutton-color' />
-    <meta content='#333333' name='apple-mobile-web-app-status-bar-style' />
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
-    <meta content='IE=edge' http-equiv='X-UA-Compatible' />
-    <meta content='https://hung1001.github.io/deployment/office-2019/images/office-2019.jpg' property='og:image' />
-    <meta content='https://hung1001.github.io/deployment/office-2019/images/office-2019.jpg' name='twitter:image' />
-    <meta content='https://hung1001.github.io/deployment/office-2019/' property='og:url' />
-    <meta content='Office Configuration Generator' property='og:title' />
-    <meta content='Configuration options for the Office Deployment Tool' property='og:description' />
-    <meta content='summary_large_image' name='twitter:card' />
-    <meta content='@hoanghung1001nd' name='twitter:site' />
-    <meta content='@hoanghung1001nd' name='twitter:creator' />
-    <meta content='https://hung1001.github.io/deployment/office-2019/' name='twitter:domain' />
-    <meta content='https://hung1001.github.io/deployment/office-2019/' name='twitter:url' />
-    <meta content='Hưng Hoàng Văn' name='twitter:title' />
-    <meta content='Hưng Hoàng Văn' name='Author' />
-    <meta content='general' name='rating' />
-    <meta content='VN-HN' name='geo.region' />
-    <meta content='Hanoi' name='geo.placename' />
-    <meta content='21.027764;105.83416' name='geo.position' />
-    <meta content='21.027764, 105.83416' name='ICBM' />
-    <meta content='VN' name='geo.country' />
-    <meta content='1 days' name='revisit' />
-    <meta content='1 days' name='revisit-after' />
-    <meta content='document' name='resource-type' />
-    <meta content='global' name='distribution' />
-    <meta content='all' name='audience' />
-    <meta content='vi_VN' property='og:locale' />
-    <meta content='en_US' property='og:locale:alternate' />
-    <meta content='529310920882728' property='fb:app_id' />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/bootstrap@3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/css.css">
+  <meta charset="UTF-8">
+  <title>Office 2019 Configuration Generator v1.0</title>
+  <meta content='#333333' name='theme-color' />
+  <meta content='#333333' name='msapplication-navbutton-color' />
+  <meta content='#333333' name='apple-mobile-web-app-status-bar-style' />
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport' />
+  <meta content='IE=edge' http-equiv='X-UA-Compatible' />
+  <meta content='https://hung1001.github.io/deployment/office-2019/images/office-2019.jpg' property='og:image' />
+  <meta content='https://hung1001.github.io/deployment/office-2019/images/office-2019.jpg' name='twitter:image' />
+  <meta content='https://hung1001.github.io/deployment/office-2019/' property='og:url' />
+  <meta content='Office Configuration Generator' property='og:title' />
+  <meta content='Configuration options for the Office Deployment Tool' property='og:description' />
+  <meta content='summary_large_image' name='twitter:card' />
+  <meta content='@hoanghung1001nd' name='twitter:site' />
+  <meta content='@hoanghung1001nd' name='twitter:creator' />
+  <meta content='https://hung1001.github.io/deployment/office-2019/' name='twitter:domain' />
+  <meta content='https://hung1001.github.io/deployment/office-2019/' name='twitter:url' />
+  <meta content='Hưng Hoàng Văn' name='twitter:title' />
+  <meta content='Hưng Hoàng Văn' name='Author' />
+  <meta content='general' name='rating' />
+  <meta content='VN-HN' name='geo.region' />
+  <meta content='Hanoi' name='geo.placename' />
+  <meta content='21.027764;105.83416' name='geo.position' />
+  <meta content='21.027764, 105.83416' name='ICBM' />
+  <meta content='VN' name='geo.country' />
+  <meta content='1 days' name='revisit' />
+  <meta content='1 days' name='revisit-after' />
+  <meta content='document' name='resource-type' />
+  <meta content='global' name='distribution' />
+  <meta content='all' name='audience' />
+  <meta content='vi_VN' property='og:locale' />
+  <meta content='en_US' property='og:locale:alternate' />
+  <meta content='529310920882728' property='fb:app_id' />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/bootstrap@3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="javascript:void(0)"><img src="images/office.png" width="20"> C2R CONFIGURATION</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a target="blank" href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=49117"><i class="glyphicon glyphicon-star"></i> Deployment Tool</a></li>
-                    <li><a target="blank" href="https://docs.microsoft.com/en-us/DeployOffice/office2019/deploy"><i class="glyphicon glyphicon-education"></i> Reference for Click-to-Run</a></li>
-                    <li><a target="blank" href="https://support.office.com/en-us/article/uninstall-office-from-a-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8"><i class="glyphicon glyphicon-remove"></i> Uninstall Office</a></li>
-                    <li><a target="blank" href="https://www.facebook.com/hung.hoangvan.1001"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <!-- Full Product  -->
-        <div class="row full-product">
-            <h3 class="text-center"><b>Full Product</b></h3>
-            <div class="col-lg-6">
-                <div class="col-lg-6">
-                    <h4>Choose your edition</h4>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="O365ProPlusRetail" /><i class="icon-radio"></i> Office 365 Pro Plus Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="O365BusinessRetail" /><i class="icon-radio"></i> Office 365 Business Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="O365HomePremRetail" /><i class="icon-radio"></i> Office 365 Home Pre Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="ProPlus2019Retail" checked="" id="rad1" /><i class="icon-radio"></i> Office 2019 Pro Plus Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="ProPlus2019Volume" /><i class="icon-radio"></i> Office 2019 Pro Plus Volume
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="Standard2019Retail" /><i class="icon-radio"></i> Office 2019 Standard Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="Standard2019Volume" /><i class="icon-radio"></i> Office 2019 Standard Volume
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="Professional2019Retail" /><i class="icon-radio"></i> Office 2019 Professional
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="Personal2019Retail" /><i class="icon-radio"></i> Office 2019 Personal
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="HomeBusiness2019Retail" /><i class="icon-radio"></i> Office 2019 Home Business Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="edition" value="HomeStudent2019Retail" /><i class="icon-radio"></i> Office 2019 Home Student Retail
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <div class="multiselect">
-                            <div class="selectBox" onclick="showCheckboxes('checkboxes-1')">
-                                <select class="form-control">
-                                    <option>Language</option>
-                                </select>
-                                <div class="overSelect"></div>
-                            </div>
-                            <div id="checkboxes-1">
-                                <a class="close-btn" onclick="hideCheckboxes('checkboxes-1')"><i class="glyphicon glyphicon-remove"></i></a>
-                                <div class="clone">
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="ar-sa" /><i class="icon-checkbox"></i> <span class="text">Arabic</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="bg-bg" /><i class="icon-checkbox"></i> <span class="text">Bulgarian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="zh-cn" /><i class="icon-checkbox"></i> <span class="text">Chinese (Simplified)</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="zh-tw" /><i class="icon-checkbox"></i> <span class="text">Chinese</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="hr-hr" /><i class="icon-checkbox"></i> <span class="text">Croatian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="cs-cz" /><i class="icon-checkbox"></i> <span class="text">Czech</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="da-dk" /><i class="icon-checkbox"></i> <span class="text">Danish</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="nl-nl" /><i class="icon-checkbox"></i> <span class="text">Dutch</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="en-us" /><i class="icon-checkbox"></i> <span class="text">English</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="et-ee" /><i class="icon-checkbox"></i> <span class="text">Estonian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="fi-fi" /><i class="icon-checkbox"></i> <span class="text">Finnish</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="fr-fr" /><i class="icon-checkbox"></i> <span class="text">French</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="de-de" /><i class="icon-checkbox"></i> <span class="text">German</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="el-gr" /><i class="icon-checkbox"></i> <span class="text">Greek</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="he-il" /><i class="icon-checkbox"></i> <span class="text">Hebrew</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="hi-in" /><i class="icon-checkbox"></i> <span class="text">Hindi</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="hu-hu" /><i class="icon-checkbox"></i> <span class="text">Hungarian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="id-id" /><i class="icon-checkbox"></i> <span class="text">Indonesian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="it-it" /><i class="icon-checkbox"></i> <span class="text">Italian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="ja-jp" /><i class="icon-checkbox"></i> <span class="text">Japanese</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="kk-kz" /><i class="icon-checkbox"></i> <span class="text">Kazakh</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="ko-kr" /><i class="icon-checkbox"></i> <span class="text">Korean</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="lv-lv" /><i class="icon-checkbox"></i> <span class="text">Latvian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="lt-lt" /><i class="icon-checkbox"></i> <span class="text">Lithuanian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="ms-my" /><i class="icon-checkbox"></i> <span class="text">Malay</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="nb-no" /><i class="icon-checkbox"></i> <span class="text">Norwegian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="pl-pl" /><i class="icon-checkbox"></i> <span class="text">Polish</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="pt-br" /><i class="icon-checkbox"></i> <span class="text">Portuguese (Brazil)</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="pt-pt" /><i class="icon-checkbox"></i> <span class="text">Portuguese</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="ro-ro" /><i class="icon-checkbox"></i> <span class="text">Romanian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="ru-ru" /><i class="icon-checkbox"></i> <span class="text">Russian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="sr-latn-rs" /><i class="icon-checkbox"></i> <span class="text">Serbian (Latin)</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="sk-sk" /><i class="icon-checkbox"></i> <span class="text">Slovak</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="sl-si" /><i class="icon-checkbox"></i> <span class="text">Slovenian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="es-es" /><i class="icon-checkbox"></i> <span class="text">Spanish</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="sv-se" /><i class="icon-checkbox"></i> <span class="text">Swedish</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="th-th" /><i class="icon-checkbox"></i> <span class="text">Thai</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="tr-tr" /><i class="icon-checkbox"></i> <span class="text">Turkish</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="uk-ua" /><i class="icon-checkbox"></i> <span class="text">Ukrainian</span></label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label><input type="checkbox" value="vi-vn" /><i class="icon-checkbox"></i> <span class="text">Vietnamese</span></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <h4>Choose apps you want to install</h4>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Access" id="checkAccess" class="checkAllApps"><i class="icon-checkbox"></i> Access
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Excel" id="checkExcel" class="checkAllApps"><i class="icon-checkbox"></i> Excel
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Groove" id="checkGroove" class="checkAllApps"><i class="icon-checkbox"></i> Groove (OneDrive Business)
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Lync" id="checkLync" class="checkAllApps"><i class="icon-checkbox"></i> Lync (Skype Business)
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="OneDrive" id="checkOneDrive" class="checkAllApps"><i class="icon-checkbox"></i> OneDrive Desktop
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="OneNote" id="checkOneNote" class="checkAllApps"><i class="icon-checkbox"></i> OneNote
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Outlook" id="checkOutlook" class="checkAllApps"><i class="icon-checkbox"></i> Outlook
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="PowerPoint" id="checkPowerPoint" class="checkAllApps"><i class="icon-checkbox"></i> PowerPoint
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Publisher" id="checkPublisher" class="checkAllApps"><i class="icon-checkbox"></i> Publisher
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="Word" id="checkWord" class="checkAllApps"><i class="icon-checkbox"></i> Word
-                        </label>
-                    </div>
-                    <a id="checkAllApps"><i class="glyphicon glyphicon-ok"></i> Check All</a> |
-                    <a id="uncheckAllApps"><i class="glyphicon glyphicon-remove"></i> Uncheck All</a>
-                    <hr />
-                    <h4>Choose your platform</h4>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="platform" value="32" id="rad8" /><i class="icon-radio"></i> 32-bit
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="platform" value="64" checked="" id="rad2" /><i class="icon-radio"></i> 64-bit
-                        </label>
-                    </div>
-                    <hr />
-                </div>
-                <div class="col-lg-6">
-                    <h4>[Extra] Want to install Project or Visio</h4>
-                    <div class="checkbox">
-                        <div class="row">
-                            <div class="col-lg-6 project">
-                                <label>
-                                    <input type="checkbox" value="" class="checkAllApps1" id="project"><i class="icon-checkbox"></i> ProjectPro
-                                </label>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group project1">
-                                    <div class="multiselect">
-                                        <div class="selectBox" onclick="showCheckboxes('checkboxes-2')">
-                                            <select class="form-control">
-                                                <option>Language</option>
-                                            </select>
-                                            <div class="overSelect"></div>
-                                        </div>
-                                        <div id="checkboxes-2">
-                                            <a class="close-btn" onclick="hideCheckboxes('checkboxes-2')"><i class="glyphicon glyphicon-remove"></i></a>
-                                            <div class="clone-2">
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="ar-sa" /><i class="icon-checkbox"></i> <span class="text">Arabic</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="zh-cn" /><i class="icon-checkbox"></i> <span class="text">Chinese (Simplified)</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="zh-tw" /><i class="icon-checkbox"></i> <span class="text">Chinese</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="cs-cz" /><i class="icon-checkbox"></i> <span class="text">Czech</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="da-dk" /><i class="icon-checkbox"></i> <span class="text">Danish</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="nl-nl" /><i class="icon-checkbox"></i> <span class="text">Dutch</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="en-us" /><i class="icon-checkbox"></i> <span class="text">English</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="fi-fi" /><i class="icon-checkbox"></i> <span class="text">Finnish</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="fr-fr" /><i class="icon-checkbox"></i> <span class="text">French</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="de-de" /><i class="icon-checkbox"></i> <span class="text">German</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="el-gr" /><i class="icon-checkbox"></i> <span class="text">Greek</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="he-il" /><i class="icon-checkbox"></i> <span class="text">Hebrew</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="hu-hu" /><i class="icon-checkbox"></i> <span class="text">Hungarian</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="it-it" /><i class="icon-checkbox"></i> <span class="text">Italian</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="ja-jp" /><i class="icon-checkbox"></i> <span class="text">Japanese</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="ko-kr" /><i class="icon-checkbox"></i> <span class="text">Korean</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="nb-no" /><i class="icon-checkbox"></i> <span class="text">Norwegian</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="pl-pl" /><i class="icon-checkbox"></i> <span class="text">Polish</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="pt-br" /><i class="icon-checkbox"></i> <span class="text">Portuguese (Brazil)</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="pt-pt" /><i class="icon-checkbox"></i> <span class="text">Portuguese</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="ro-ro" /><i class="icon-checkbox"></i> <span class="text">Romanian</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="ru-ru" /><i class="icon-checkbox"></i> <span class="text">Russian</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="sk-sk" /><i class="icon-checkbox"></i> <span class="text">Slovak</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="sl-si" /><i class="icon-checkbox"></i> <span class="text">Slovenian</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="es-es" /><i class="icon-checkbox"></i> <span class="text">Spanish</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="sv-se" /><i class="icon-checkbox"></i> <span class="text">Swedish</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="tr-tr" /><i class="icon-checkbox"></i> <span class="text">Turkish</span></label></div>
-                                                <div class="checkbox"><label>
-                                                        <input type="checkbox" value="uk-ua" /><i class="icon-checkbox"></i> <span class="text">Ukrainian</span></label></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkbox">
-                        <div class="row">
-                            <div class="col-lg-6 visio">
-                                <label>
-                                    <input type="checkbox" value="" class="checkAllApps1" id="visio"><i class="icon-checkbox"></i> VisioPro
-                                </label>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group visio1">
-                                    <div class="multiselect">
-                                        <div class="selectBox" onclick="showCheckboxes('checkboxes-3')">
-                                            <select class="form-control">
-                                                <option>Language</option>
-                                            </select>
-                                            <div class="overSelect"></div>
-                                        </div>
-                                        <div id="checkboxes-3">
-                                            <a class="close-btn" onclick="hideCheckboxes('checkboxes-3')"><i class="glyphicon glyphicon-remove"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkbox">
-                        <div class="row">
-                            <div class="col-lg-6 project">
-                                <label>
-                                    <input type="checkbox" value="" class="checkAllApps1" id="projectstd"><i class="icon-checkbox"></i> ProjectStd
-                                </label>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group project1">
-                                    <div class="multiselect">
-                                        <div class="selectBox" onclick="showCheckboxes('checkboxes-6')">
-                                            <select class="form-control">
-                                                <option>Language</option>
-                                            </select>
-                                            <div class="overSelect"></div>
-                                        </div>
-                                        <div id="checkboxes-6">
-                                            <a class="close-btn" onclick="hideCheckboxes('checkboxes-6')"><i class="glyphicon glyphicon-remove"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkbox">
-                        <div class="row">
-                            <div class="col-lg-6 visio">
-                                <label>
-                                    <input type="checkbox" value="" class="checkAllApps1" id="visiostd"><i class="icon-checkbox"></i> VisioStd
-                                </label>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group visio1">
-                                    <div class="multiselect">
-                                        <div class="selectBox" onclick="showCheckboxes('checkboxes-7')">
-                                            <select class="form-control">
-                                                <option>Language</option>
-                                            </select>
-                                            <div class="overSelect"></div>
-                                        </div>
-                                        <div id="checkboxes-7">
-                                            <a class="close-btn" onclick="hideCheckboxes('checkboxes-7')"><i class="glyphicon glyphicon-remove"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <h4>Choose your channel (Retail)</h4>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel" checked="" value="Monthly" id="rad3"><i class="icon-radio"></i>Monthly Channel
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel" value="Insiders" id="rad4"><i class="icon-radio"></i>Monthly Channel (Targeted)
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel" value="Broad" id="rad5"><i class="icon-radio"></i>Semi-Annual Channel
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel" value="Targeted" id="rad6"><i class="icon-radio"></i>Semi-Annual Channel (Targeted)
-                        </label>
-                    </div>
-                    <hr />
-                    <h4>[Extra] Enter Product Key</h4>
-                    <div id="key-group">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Pro" placeholder="Office 2019 Pro Plus">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Std" placeholder="Office 2019 Standard">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Profesional" placeholder="Office 2019 Profesional">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Personal" placeholder="Office 2019 Personal">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Project" placeholder="Office 2019 Project Pro">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19ProjectStd" placeholder="Office 2019 Project Std">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Visio" placeholder="Office 2019 Visio Pro">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19VisioStd" placeholder="Office 2019 Visio Std">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19HB" placeholder="Office 2019 Home Business">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19HS" placeholder="Office 2019 Home Student">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h4>Configuration.xml</h4>
-                <textarea id="config" class="form-control" rows="20" readonly=""></textarea>
-                <br />
-                <button class="btn btn-primary" id="generator">Generator</button>
-                <button class="btn btn-danger" id="reset">Reset</button>
-                <button class="btn btn-success" id="copy-config">COPY</button>
-                <button class="btn btn-warning" id="save-config">Save</button>
-                <hr />
-            </div>
-        </div>
-        <hr />
-        <!-- Single Product -->
-        <div class="row single-product">
-            <h3 class="text-center"><b>Single Product</b></h3>
-            <div class="col-lg-6">
-                <div class="col-lg-6">
-                    <h4>Choose your license</h4>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="lic" value="retail" checked="" /><i class="icon-radio"></i> Retail
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="lic" value="volume" /><i class="icon-radio"></i> Volume
-                        </label>
-                    </div>
-                    <h4>Choose your edition</h4>
-                    <div id="checkboxes-4">
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="Word2019" id="19Word" /><i class="icon-checkbox"></i> <span class="text">Word</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="Excel2019" id="19Excel" /><i class="icon-checkbox"></i> <span class="text">Excel</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="Access2019" id="19Access" /><i class="icon-checkbox"></i> <span class="text">Access</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="OutLook2019" id="19Outlook" /><i class="icon-checkbox"></i> <span class="text">Outlook</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="OneNote2019" id="19OneNote" /><i class="icon-checkbox"></i> <span class="text">OneNote</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="PowerPoint2019" id="19PowerPoint" /><i class="icon-checkbox"></i> <span class="text">PowerPoint</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="Publisher2019" id="19Publisher" /><i class="icon-checkbox"></i> <span class="text">Publisher</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="ProjectPro2019" id="19ProjectPro" /><i class="icon-checkbox"></i> <span class="text">ProjectPro</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="VisioPro2019" id="19VisioPro" /><i class="icon-checkbox"></i> <span class="text">VisioPro</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="ProjectStd2019" id="19ProjectStd" /><i class="icon-checkbox"></i> <span class="text">ProjectStd</span></label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" value="VisioStd2019" id="19VisioStd" /><i class="icon-checkbox"></i> <span class="text">VisioStd</span></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="multiselect">
-                            <div class="selectBox" onclick="showCheckboxes('checkboxes-5')">
-                                <select class="form-control">
-                                    <option>Language</option>
-                                </select>
-                                <div class="overSelect"></div>
-                            </div>
-                            <div id="checkboxes-5">
-                                <a class="close-btn" onclick="hideCheckboxes('checkboxes-5')"><i class="glyphicon glyphicon-remove"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <h4>Choose your platform</h4>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="platform-2" value="32" id="rad81" /><i class="icon-radio"></i> 32-bit
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="platform-2" value="64" checked="" id="rad21" /><i class="icon-radio"></i> 64-bit
-                        </label>
-                    </div>
-                    <hr />
-                    <h4>Choose your channel (Retail)</h4>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel-2" checked="" value="Monthly" id="rad31"><i class="icon-radio"></i> Monthly Channel
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel-2" value="Insiders" id="rad41"><i class="icon-radio"></i> Monthly Channel (Targeted)
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel-2" value="Broad" id="rad51"><i class="icon-radio"></i> Semi-Annual Channel
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="channel-2" value="Targeted" id="rad61"><i class="icon-radio"></i> Semi-Annual Channel (Targeted)
-                        </label>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h4>[Extra] Enter Product Key</h4>
-                    <form id="key-group-2">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Word" placeholder="Office 2019 Word">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Excel" placeholder="Office 2019 Excel">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Access" placeholder="Office 2019 Access">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Outlook" placeholder="Office 2019 Outlook">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19OneNote" placeholder="Office 2019 OneNote">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19PowerPoint" placeholder="Office 2019 PowerPoint">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19Publisher" placeholder="Office 2019 Publisher">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19ProjectPro" placeholder="Office 2019 ProjectPro">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="key19VisioPro" placeholder="Office 2019 VisioPro">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="_key19ProjectStd" placeholder="Office 2019 ProjectStd">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="_key19VisioStd" placeholder="Office 2019 VisioStd">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h4>Configuration.xml</h4>
-                <textarea id="config-2" class="form-control" rows="20" readonly=""></textarea>
-                <br />
-                <button class="btn btn-primary" id="generator-2">Generator</button>
-                <button class="btn btn-danger" id="reset-2">Reset</button>
-                <button class="btn btn-success" id="copy-config-2">COPY</button>
-                <button class="btn btn-warning" id="save-config-2">Save</button>
-                <hr />
-            </div>
-        </div>
-        <hr />
-        <div class="row cmt">
-            <div id="fb-root"></div>
-            <div class="fb-comments" data-href="https://hung1001.github.io/deployment/office-2019/" data-numposts="5" data-width="100%"></div>
-        </div>
-        <hr />
-        <div class="row guide">
-            <div class="col-lg-12">
-                <h2 class="text-left"><b>I. Download, create folder and setup only 1 click (Recommended)</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download office deploymet tool</a>
-                <hr /> 2. Save batch file same folder with Office deployment tool
-                <br>
-                <br>
-                <a id="d1">Dowload and install</a> or <a id="d2">only dowload</a>
-                <hr />
-                3. Put configuration.xml same folder with Office deploymet tool
-                <img src="images/5.png">
-                <hr />4. Run file .cmd/.bat and enjoy
-                <br />
-                <img src="images/6.png">
-                <h2 class="text-left"><b>II. Channel</b></h2>
-                <br />
-                <h3 id="monthly-channel">1. Monthly Channel</h3>
-                <p>Monthly Channel might be the right choice for your organization in the following situations:</p>
-                <ul>
-                    <li>
-                        <p>You want to provide your users with the newest features of Office as soon as those features are available</p>
-                    </li>
-                    <li>
-                        <p>You don&#39;t have many line-of-business applications, add-ins, or macros that you need to test to determine if they work with an updated version of Office.</p>
-                    </li>
-                </ul>
-                <p>A Monthly Channel with new features is expected to be released each month, although there is no set schedule for when a feature release occurs. In addition to new or updated features, the release might also contain non-security updates, such as updates that provide stability or performance improvements for Office. Security updates for Monthly Channel are usually released on the second Tuesday of the month. At any other time, if there is a critical non-security issue that needs to be fixed, we will provide a separate Monthly Channel release that fixes the issue.</p>
-                <p>Monthly Channel releases are cumulative. The most current Monthly Channel release contains all the features, security updates, and non-security updates from the previous Monthly Channel releases.</p>
-                <p>A Monthly Channel release is supported only until the next Monthly Channel release is available. No new security updates are provided for previous Monthly Channel releases.</p>
-                <hr />
-                <h3 id="monthly-channel-targeted">2. Monthly Channel (Targeted)</h3>
-                <p>This update channel provides an early look at the upcoming Monthly Channel release. It is a supported update channel, and usually is available at least one week ahead of time when it's a Monthly Channel release that contains new features.</p>
-                <hr />
-                <h3 id="semi-annual-channel">3. Semi-Annual Channel</h3>
-                <p>If your organization doesn&#39;t want to deploy the latest features of Office right away or you have a significant number of line-of-business applications, add-ins, or macros that you need to test with Office, then Semi-Annual Channel might be the better choice for your organization. That&#39;s because new features are added to Semi-Annual Channel only twice a year, instead of every month. Semi-Annual Channel is the default update channel for Office 365 ProPlus.</p>
-                <p>A Semi-Annual Channel with new features is expected to be released twice a year, in January and July. New features aren&#39;t added to Semi-Annual Channel at any other time. The features that are included in Semi-Annual Channel are features that have been released previously in Monthly Channel.</p>
-                <p>In the four months prior to a new Semi-Annual Channel feature release, Microsoft provides builds of the upcoming release so that pilot users and application compatibility testers in your organization can work with the upcoming release. These builds are provided through the Semi-Annual Channel (Targeted) update channel.</p>
-                <p>After the January and July releases of Semi-Annual Channel, additional security updates, if needed, can also be added to Semi-Annual Channel. A release of Semi-Annual Channel with these updates usually occurs on the second Tuesday of the month. If there is a critical non-security issue that needs to be fixed in Semi-Annual Channel, that non-security update will also be included in a Semi-Annual Channel release.</p>
-                <hr />
-                <h3 id="semi-annual-channel-targeted">4. Semi-Annual Channel (Targeted)</h3>
-                <p>To help your organization prepare for a Semi-Annual Channel release, Microsoft provides Semi-Annual Channel (Targeted). The primary purpose of this update channel is to give pilot users and application compatibility testers in your organization a chance to work with the upcoming Semi-Annual Channel release. During this time, which is about four months, you might identify possible issues that you need to fix with your line-of-business applications, add-ins, or macros or that you want Microsoft to fix.</p>
-                <p>A Semi-Annual Channel (Targeted) with new features is expected to be released twice a year, in March and September. New features aren&#39;t added to Semi-Annual Channel (Targeted) at any other time. The features that are included in Semi-Annual Channel (Targeted) are features that have been released previously in Monthly Channel.</p>
-                <p>The March and September feature releases for Semi-Annual Channel (Targeted) also include security and non-security updates that have been released previously in Monthly Channel. After the March and September releases, additional security and non-security updates, if needed, can also be added to Semi-Annual Channel (Targeted). A release of Semi-Annual Channel (Targeted) with these updates usually occurs on the second Tuesday of the month.</p>
-                <p>Even though this update channel is primarily designed for your testing, it&#39;s a fully supported version of Office 365 ProPlus. </p>
-            </div>
-        </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)"><img src="images/office.png" width="20"> C2R CONFIGURATION</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a target="blank" href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=49117"><i class="glyphicon glyphicon-star"></i> Deployment Tool</a></li>
+          <li><a target="blank" href="https://docs.microsoft.com/en-us/DeployOffice/office2019/deploy"><i class="glyphicon glyphicon-education"></i> Reference for Click-to-Run</a></li>
+          <li><a target="blank" href="https://support.office.com/en-us/article/uninstall-office-from-a-pc-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8"><i class="glyphicon glyphicon-remove"></i> Uninstall Office</a></li>
+          <li><a target="blank" href="https://www.facebook.com/hung.hoangvan.1001"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <footer class="footer-bottom">
-        <div class="copyright-container">
-            <p class="text-center">©
-                <script type="text/javascript">
-                document.write(new Date().getFullYear())
-                </script> by <a href="https://hung1001nd.blogspot.com">Hưng Hoàng Văn</a></p>
+  </nav>
+  <div class="container-fluid">
+    <!-- Full Product  -->
+    <div class="row full-product">
+      <h3 class="text-center"><b>Full Product</b></h3>
+      <div class="col-lg-6">
+        <div class="col-lg-6">
+          <h4>Choose your edition</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="O365ProPlusRetail" /><i class="icon-radio"></i> Office 365 Pro Plus Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="O365BusinessRetail" /><i class="icon-radio"></i> Office 365 Business Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="O365HomePremRetail" /><i class="icon-radio"></i> Office 365 Home Pre Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="ProPlus2019Retail" checked="" id="rad1" /><i class="icon-radio"></i> Office 2019 Pro Plus Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="ProPlus2019Volume" /><i class="icon-radio"></i> Office 2019 Pro Plus Volume
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="Standard2019Retail" /><i class="icon-radio"></i> Office 2019 Standard Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="Standard2019Volume" /><i class="icon-radio"></i> Office 2019 Standard Volume
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="Professional2019Retail" /><i class="icon-radio"></i> Office 2019 Professional
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="Personal2019Retail" /><i class="icon-radio"></i> Office 2019 Personal
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="HomeBusiness2019Retail" /><i class="icon-radio"></i> Office 2019 Home Business Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="edition" value="HomeStudent2019Retail" /><i class="icon-radio"></i> Office 2019 Home Student Retail
+            </label>
+          </div>
+          <div class="form-group">
+            <div class="multiselect">
+              <div class="selectBox" onclick="showCheckboxes('checkboxes-1')">
+                <select class="form-control">
+                  <option>Language</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes-1">
+                <a class="close-btn" onclick="hideCheckboxes('checkboxes-1')"><i class="glyphicon glyphicon-remove"></i></a>
+                <div class="clone">
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="ar-sa" /><i class="icon-checkbox"></i> <span class="text">Arabic</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="bg-bg" /><i class="icon-checkbox"></i> <span class="text">Bulgarian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="zh-cn" /><i class="icon-checkbox"></i> <span class="text">Chinese (Simplified)</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="zh-tw" /><i class="icon-checkbox"></i> <span class="text">Chinese</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="hr-hr" /><i class="icon-checkbox"></i> <span class="text">Croatian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="cs-cz" /><i class="icon-checkbox"></i> <span class="text">Czech</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="da-dk" /><i class="icon-checkbox"></i> <span class="text">Danish</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="nl-nl" /><i class="icon-checkbox"></i> <span class="text">Dutch</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="en-us" /><i class="icon-checkbox"></i> <span class="text">English</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="et-ee" /><i class="icon-checkbox"></i> <span class="text">Estonian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="fi-fi" /><i class="icon-checkbox"></i> <span class="text">Finnish</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="fr-fr" /><i class="icon-checkbox"></i> <span class="text">French</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="de-de" /><i class="icon-checkbox"></i> <span class="text">German</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="el-gr" /><i class="icon-checkbox"></i> <span class="text">Greek</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="he-il" /><i class="icon-checkbox"></i> <span class="text">Hebrew</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="hi-in" /><i class="icon-checkbox"></i> <span class="text">Hindi</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="hu-hu" /><i class="icon-checkbox"></i> <span class="text">Hungarian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="id-id" /><i class="icon-checkbox"></i> <span class="text">Indonesian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="it-it" /><i class="icon-checkbox"></i> <span class="text">Italian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="ja-jp" /><i class="icon-checkbox"></i> <span class="text">Japanese</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="kk-kz" /><i class="icon-checkbox"></i> <span class="text">Kazakh</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="ko-kr" /><i class="icon-checkbox"></i> <span class="text">Korean</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="lv-lv" /><i class="icon-checkbox"></i> <span class="text">Latvian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="lt-lt" /><i class="icon-checkbox"></i> <span class="text">Lithuanian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="ms-my" /><i class="icon-checkbox"></i> <span class="text">Malay</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="nb-no" /><i class="icon-checkbox"></i> <span class="text">Norwegian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="pl-pl" /><i class="icon-checkbox"></i> <span class="text">Polish</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="pt-br" /><i class="icon-checkbox"></i> <span class="text">Portuguese (Brazil)</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="pt-pt" /><i class="icon-checkbox"></i> <span class="text">Portuguese</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="ro-ro" /><i class="icon-checkbox"></i> <span class="text">Romanian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="ru-ru" /><i class="icon-checkbox"></i> <span class="text">Russian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="sr-latn-rs" /><i class="icon-checkbox"></i> <span class="text">Serbian (Latin)</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="sk-sk" /><i class="icon-checkbox"></i> <span class="text">Slovak</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="sl-si" /><i class="icon-checkbox"></i> <span class="text">Slovenian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="es-es" /><i class="icon-checkbox"></i> <span class="text">Spanish</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="sv-se" /><i class="icon-checkbox"></i> <span class="text">Swedish</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="th-th" /><i class="icon-checkbox"></i> <span class="text">Thai</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="tr-tr" /><i class="icon-checkbox"></i> <span class="text">Turkish</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="uk-ua" /><i class="icon-checkbox"></i> <span class="text">Ukrainian</span></label>
+                  </div>
+                  <div class="checkbox">
+                    <label><input type="checkbox" value="vi-vn" /><i class="icon-checkbox"></i> <span class="text">Vietnamese</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <h4>Choose apps you want to install</h4>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Access" id="checkAccess" class="checkAllApps"><i class="icon-checkbox"></i> Access
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Excel" id="checkExcel" class="checkAllApps"><i class="icon-checkbox"></i> Excel
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Groove" id="checkGroove" class="checkAllApps"><i class="icon-checkbox"></i> Groove (OneDrive Business)
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Lync" id="checkLync" class="checkAllApps"><i class="icon-checkbox"></i> Lync (Skype Business)
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="OneDrive" id="checkOneDrive" class="checkAllApps"><i class="icon-checkbox"></i> OneDrive Desktop
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="OneNote" id="checkOneNote" class="checkAllApps"><i class="icon-checkbox"></i> OneNote
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Outlook" id="checkOutlook" class="checkAllApps"><i class="icon-checkbox"></i> Outlook
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="PowerPoint" id="checkPowerPoint" class="checkAllApps"><i class="icon-checkbox"></i> PowerPoint
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Publisher" id="checkPublisher" class="checkAllApps"><i class="icon-checkbox"></i> Publisher
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="Word" id="checkWord" class="checkAllApps"><i class="icon-checkbox"></i> Word
+            </label>
+          </div>
+          <a id="checkAllApps"><i class="glyphicon glyphicon-ok"></i> Check All</a> |
+          <a id="uncheckAllApps"><i class="glyphicon glyphicon-remove"></i> Uncheck All</a>
+          <hr />
+          <h4>Choose your platform</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="platform" value="32" id="rad8" /><i class="icon-radio"></i> 32-bit
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="platform" value="64" checked="" id="rad2" /><i class="icon-radio"></i> 64-bit
+            </label>
+          </div>
+          <hr />
         </div>
-    </footer>
-    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/bootstrap@3/dist/js/bootstrap.min.js"></script>
-    <script src='//cdn.jsdelivr.net/npm/codemirror@5/lib/codemirror.min.js'></script>
-    <script src='//cdn.jsdelivr.net/npm/codemirror@5/mode/htmlmixed/htmlmixed.min.js'></script>
-    <script src='//cdn.jsdelivr.net/npm/codemirror@5/mode/xml/xml.min.js'></script>
-    <script src="../assests/js/analytics.js?id=UA-113310556-1"></script>
-    <script src="js/main.min.js"></script>
+        <div class="col-lg-6">
+          <h4>[Extra] Want to install Project or Visio</h4>
+          <div class="checkbox">
+            <div class="row">
+              <div class="col-lg-6 project">
+                <label>
+                  <input type="checkbox" value="" class="checkAllApps1" id="project"><i class="icon-checkbox"></i> ProjectPro
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group project1">
+                  <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes('checkboxes-2')">
+                      <select class="form-control">
+                        <option>Language</option>
+                      </select>
+                      <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes-2">
+                      <a class="close-btn" onclick="hideCheckboxes('checkboxes-2')"><i class="glyphicon glyphicon-remove"></i></a>
+                      <div class="clone-2">
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="ar-sa" /><i class="icon-checkbox"></i> <span class="text">Arabic</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="zh-cn" /><i class="icon-checkbox"></i> <span class="text">Chinese (Simplified)</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="zh-tw" /><i class="icon-checkbox"></i> <span class="text">Chinese</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="cs-cz" /><i class="icon-checkbox"></i> <span class="text">Czech</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="da-dk" /><i class="icon-checkbox"></i> <span class="text">Danish</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="nl-nl" /><i class="icon-checkbox"></i> <span class="text">Dutch</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="en-us" /><i class="icon-checkbox"></i> <span class="text">English</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="fi-fi" /><i class="icon-checkbox"></i> <span class="text">Finnish</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="fr-fr" /><i class="icon-checkbox"></i> <span class="text">French</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="de-de" /><i class="icon-checkbox"></i> <span class="text">German</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="el-gr" /><i class="icon-checkbox"></i> <span class="text">Greek</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="he-il" /><i class="icon-checkbox"></i> <span class="text">Hebrew</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="hu-hu" /><i class="icon-checkbox"></i> <span class="text">Hungarian</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="it-it" /><i class="icon-checkbox"></i> <span class="text">Italian</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="ja-jp" /><i class="icon-checkbox"></i> <span class="text">Japanese</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="ko-kr" /><i class="icon-checkbox"></i> <span class="text">Korean</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="nb-no" /><i class="icon-checkbox"></i> <span class="text">Norwegian</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="pl-pl" /><i class="icon-checkbox"></i> <span class="text">Polish</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="pt-br" /><i class="icon-checkbox"></i> <span class="text">Portuguese (Brazil)</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="pt-pt" /><i class="icon-checkbox"></i> <span class="text">Portuguese</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="ro-ro" /><i class="icon-checkbox"></i> <span class="text">Romanian</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="ru-ru" /><i class="icon-checkbox"></i> <span class="text">Russian</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="sk-sk" /><i class="icon-checkbox"></i> <span class="text">Slovak</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="sl-si" /><i class="icon-checkbox"></i> <span class="text">Slovenian</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="es-es" /><i class="icon-checkbox"></i> <span class="text">Spanish</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="sv-se" /><i class="icon-checkbox"></i> <span class="text">Swedish</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="tr-tr" /><i class="icon-checkbox"></i> <span class="text">Turkish</span></label></div>
+                        <div class="checkbox"><label>
+                            <input type="checkbox" value="uk-ua" /><i class="icon-checkbox"></i> <span class="text">Ukrainian</span></label></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="checkbox">
+            <div class="row">
+              <div class="col-lg-6 visio">
+                <label>
+                  <input type="checkbox" value="" class="checkAllApps1" id="visio"><i class="icon-checkbox"></i> VisioPro
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group visio1">
+                  <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes('checkboxes-3')">
+                      <select class="form-control">
+                        <option>Language</option>
+                      </select>
+                      <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes-3">
+                      <a class="close-btn" onclick="hideCheckboxes('checkboxes-3')"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="checkbox">
+            <div class="row">
+              <div class="col-lg-6 project">
+                <label>
+                  <input type="checkbox" value="" class="checkAllApps1" id="projectstd"><i class="icon-checkbox"></i> ProjectStd
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group project1">
+                  <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes('checkboxes-6')">
+                      <select class="form-control">
+                        <option>Language</option>
+                      </select>
+                      <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes-6">
+                      <a class="close-btn" onclick="hideCheckboxes('checkboxes-6')"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="checkbox">
+            <div class="row">
+              <div class="col-lg-6 visio">
+                <label>
+                  <input type="checkbox" value="" class="checkAllApps1" id="visiostd"><i class="icon-checkbox"></i> VisioStd
+                </label>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group visio1">
+                  <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes('checkboxes-7')">
+                      <select class="form-control">
+                        <option>Language</option>
+                      </select>
+                      <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes-7">
+                      <a class="close-btn" onclick="hideCheckboxes('checkboxes-7')"><i class="glyphicon glyphicon-remove"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <h4>Choose your channel (Retail)</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel" checked="" value="Monthly" id="rad3"><i class="icon-radio"></i>Monthly Channel
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel" value="Insiders" id="rad4"><i class="icon-radio"></i>Monthly Channel (Targeted)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel" value="Broad" id="rad5"><i class="icon-radio"></i>Semi-Annual Channel
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel" value="Targeted" id="rad6"><i class="icon-radio"></i>Semi-Annual Channel (Targeted)
+            </label>
+          </div>
+          <hr />
+          <h4>[Extra] Enter Product Key</h4>
+          <div id="key-group">
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Pro" placeholder="Office 2019 Pro Plus">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Std" placeholder="Office 2019 Standard">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Profesional" placeholder="Office 2019 Profesional">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Personal" placeholder="Office 2019 Personal">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Project" placeholder="Office 2019 Project Pro">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19ProjectStd" placeholder="Office 2019 Project Std">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Visio" placeholder="Office 2019 Visio Pro">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19VisioStd" placeholder="Office 2019 Visio Std">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19HB" placeholder="Office 2019 Home Business">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19HS" placeholder="Office 2019 Home Student">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h4>Configuration.xml</h4>
+        <textarea id="config" class="form-control" rows="20" readonly=""></textarea>
+        <br />
+        <button class="btn btn-primary" id="generator">Generator</button>
+        <button class="btn btn-danger" id="reset">Reset</button>
+        <button class="btn btn-success" id="copy-config">COPY</button>
+        <button class="btn btn-warning" id="save-config">Save</button>
+        <hr />
+      </div>
+    </div>
+    <hr />
+    <!-- Single Product -->
+    <div class="row single-product">
+      <h3 class="text-center"><b>Single Product</b></h3>
+      <div class="col-lg-6">
+        <div class="col-lg-6">
+          <h4>Choose your license</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="lic" value="retail" checked="" /><i class="icon-radio"></i> Retail
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="lic" value="volume" /><i class="icon-radio"></i> Volume
+            </label>
+          </div>
+          <h4>Choose your edition</h4>
+          <div id="checkboxes-4">
+            <div class="checkbox"><label>
+                <input type="checkbox" value="Word2019" id="19Word" /><i class="icon-checkbox"></i> <span class="text">Word</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="Excel2019" id="19Excel" /><i class="icon-checkbox"></i> <span class="text">Excel</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="Access2019" id="19Access" /><i class="icon-checkbox"></i> <span class="text">Access</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="OutLook2019" id="19Outlook" /><i class="icon-checkbox"></i> <span class="text">Outlook</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="OneNote2019" id="19OneNote" /><i class="icon-checkbox"></i> <span class="text">OneNote</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="PowerPoint2019" id="19PowerPoint" /><i class="icon-checkbox"></i> <span class="text">PowerPoint</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="Publisher2019" id="19Publisher" /><i class="icon-checkbox"></i> <span class="text">Publisher</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="ProjectPro2019" id="19ProjectPro" /><i class="icon-checkbox"></i> <span class="text">ProjectPro</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="VisioPro2019" id="19VisioPro" /><i class="icon-checkbox"></i> <span class="text">VisioPro</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="ProjectStd2019" id="19ProjectStd" /><i class="icon-checkbox"></i> <span class="text">ProjectStd</span></label>
+            </div>
+            <div class="checkbox"><label>
+                <input type="checkbox" value="VisioStd2019" id="19VisioStd" /><i class="icon-checkbox"></i> <span class="text">VisioStd</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="multiselect">
+              <div class="selectBox" onclick="showCheckboxes('checkboxes-5')">
+                <select class="form-control">
+                  <option>Language</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes-5">
+                <a class="close-btn" onclick="hideCheckboxes('checkboxes-5')"><i class="glyphicon glyphicon-remove"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <h4>Choose your platform</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="platform-2" value="32" id="rad81" /><i class="icon-radio"></i> 32-bit
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="platform-2" value="64" checked="" id="rad21" /><i class="icon-radio"></i> 64-bit
+            </label>
+          </div>
+          <hr />
+          <h4>Choose your channel (Retail)</h4>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel-2" checked="" value="Monthly" id="rad31"><i class="icon-radio"></i> Monthly Channel
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel-2" value="Insiders" id="rad41"><i class="icon-radio"></i> Monthly Channel (Targeted)
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel-2" value="Broad" id="rad51"><i class="icon-radio"></i> Semi-Annual Channel
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="channel-2" value="Targeted" id="rad61"><i class="icon-radio"></i> Semi-Annual Channel (Targeted)
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h4>[Extra] Enter Product Key</h4>
+          <form id="key-group-2">
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Word" placeholder="Office 2019 Word">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Excel" placeholder="Office 2019 Excel">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Access" placeholder="Office 2019 Access">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Outlook" placeholder="Office 2019 Outlook">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19OneNote" placeholder="Office 2019 OneNote">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19PowerPoint" placeholder="Office 2019 PowerPoint">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19Publisher" placeholder="Office 2019 Publisher">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19ProjectPro" placeholder="Office 2019 ProjectPro">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="key19VisioPro" placeholder="Office 2019 VisioPro">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="_key19ProjectStd" placeholder="Office 2019 ProjectStd">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="_key19VisioStd" placeholder="Office 2019 VisioStd">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h4>Configuration.xml</h4>
+        <textarea id="config-2" class="form-control" rows="20" readonly=""></textarea>
+        <br />
+        <button class="btn btn-primary" id="generator-2">Generator</button>
+        <button class="btn btn-danger" id="reset-2">Reset</button>
+        <button class="btn btn-success" id="copy-config-2">COPY</button>
+        <button class="btn btn-warning" id="save-config-2">Save</button>
+        <hr />
+      </div>
+    </div>
+    <hr />
+    <div class="row cmt">
+      <div id="fb-root"></div>
+      <div class="fb-comments" data-href="https://hung1001.github.io/deployment/office-2019/" data-numposts="5" data-width="100%"></div>
+    </div>
+    <hr />
+    <div class="row guide">
+      <div class="col-lg-12">
+        <h2 class="text-left"><b>I. Download, create folder and setup only 1 click (Recommended)</b></h2> 1. <a href="https://www.microsoft.com/en-us/download/details.aspx?id=49117" target="blank">Download office deploymet tool</a>
+        <hr /> 2. Save batch file same folder with Office deployment tool
+        <br>
+        <br>
+        <a id="d1">Dowload and install</a> or <a id="d2">only dowload</a>
+        <hr />
+        3. Put configuration.xml same folder with Office deploymet tool
+        <img src="images/5.png">
+        <hr />4. Run file .cmd/.bat and enjoy
+        <br />
+        <img src="images/6.png">
+        <h2 class="text-left"><b>II. Channel</b></h2>
+        <br />
+        <h3 id="monthly-channel">1. Monthly Channel</h3>
+        <p>Monthly Channel might be the right choice for your organization in the following situations:</p>
+        <ul>
+          <li>
+            <p>You want to provide your users with the newest features of Office as soon as those features are available</p>
+          </li>
+          <li>
+            <p>You don&#39;t have many line-of-business applications, add-ins, or macros that you need to test to determine if they work with an updated version of Office.</p>
+          </li>
+        </ul>
+        <p>A Monthly Channel with new features is expected to be released each month, although there is no set schedule for when a feature release occurs. In addition to new or updated features, the release might also contain non-security updates, such as updates that provide stability or performance improvements for Office. Security updates for Monthly Channel are usually released on the second Tuesday of the month. At any other time, if there is a critical non-security issue that needs to be fixed, we will provide a separate Monthly Channel release that fixes the issue.</p>
+        <p>Monthly Channel releases are cumulative. The most current Monthly Channel release contains all the features, security updates, and non-security updates from the previous Monthly Channel releases.</p>
+        <p>A Monthly Channel release is supported only until the next Monthly Channel release is available. No new security updates are provided for previous Monthly Channel releases.</p>
+        <hr />
+        <h3 id="monthly-channel-targeted">2. Monthly Channel (Targeted)</h3>
+        <p>This update channel provides an early look at the upcoming Monthly Channel release. It is a supported update channel, and usually is available at least one week ahead of time when it's a Monthly Channel release that contains new features.</p>
+        <hr />
+        <h3 id="semi-annual-channel">3. Semi-Annual Channel</h3>
+        <p>If your organization doesn&#39;t want to deploy the latest features of Office right away or you have a significant number of line-of-business applications, add-ins, or macros that you need to test with Office, then Semi-Annual Channel might be the better choice for your organization. That&#39;s because new features are added to Semi-Annual Channel only twice a year, instead of every month. Semi-Annual Channel is the default update channel for Office 365 ProPlus.</p>
+        <p>A Semi-Annual Channel with new features is expected to be released twice a year, in January and July. New features aren&#39;t added to Semi-Annual Channel at any other time. The features that are included in Semi-Annual Channel are features that have been released previously in Monthly Channel.</p>
+        <p>In the four months prior to a new Semi-Annual Channel feature release, Microsoft provides builds of the upcoming release so that pilot users and application compatibility testers in your organization can work with the upcoming release. These builds are provided through the Semi-Annual Channel (Targeted) update channel.</p>
+        <p>After the January and July releases of Semi-Annual Channel, additional security updates, if needed, can also be added to Semi-Annual Channel. A release of Semi-Annual Channel with these updates usually occurs on the second Tuesday of the month. If there is a critical non-security issue that needs to be fixed in Semi-Annual Channel, that non-security update will also be included in a Semi-Annual Channel release.</p>
+        <hr />
+        <h3 id="semi-annual-channel-targeted">4. Semi-Annual Channel (Targeted)</h3>
+        <p>To help your organization prepare for a Semi-Annual Channel release, Microsoft provides Semi-Annual Channel (Targeted). The primary purpose of this update channel is to give pilot users and application compatibility testers in your organization a chance to work with the upcoming Semi-Annual Channel release. During this time, which is about four months, you might identify possible issues that you need to fix with your line-of-business applications, add-ins, or macros or that you want Microsoft to fix.</p>
+        <p>A Semi-Annual Channel (Targeted) with new features is expected to be released twice a year, in March and September. New features aren&#39;t added to Semi-Annual Channel (Targeted) at any other time. The features that are included in Semi-Annual Channel (Targeted) are features that have been released previously in Monthly Channel.</p>
+        <p>The March and September feature releases for Semi-Annual Channel (Targeted) also include security and non-security updates that have been released previously in Monthly Channel. After the March and September releases, additional security and non-security updates, if needed, can also be added to Semi-Annual Channel (Targeted). A release of Semi-Annual Channel (Targeted) with these updates usually occurs on the second Tuesday of the month.</p>
+        <p>Even though this update channel is primarily designed for your testing, it&#39;s a fully supported version of Office 365 ProPlus. </p>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-bottom">
+    <div class="copyright-container">
+      <p class="text-center">©
+        <script type="text/javascript">
+        document.write(new Date().getFullYear())
+
+        </script> by <a href="https://hung1001nd.blogspot.com">Hưng Hoàng Văn</a></p>
+    </div>
+  </footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/bootstrap@3/dist/js/bootstrap.min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/codemirror@5/lib/codemirror.min.js'></script>
+  <script src='//cdn.jsdelivr.net/npm/codemirror@5/mode/htmlmixed/htmlmixed.min.js'></script>
+  <script src='//cdn.jsdelivr.net/npm/codemirror@5/mode/xml/xml.min.js'></script>
+  <script src="../assests/js/analytics.js?id=UA-113310556-1"></script>
+  <script src="js/main.min.js"></script>
 </body>
 
 </html>
